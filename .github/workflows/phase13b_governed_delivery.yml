@@ -110,7 +110,7 @@ jobs:
     permissions:
       contents: write
       actions: read
-      attestations: read
+      attestations: write
       id-token: write
     steps:
       - name: Checkout
@@ -122,6 +122,7 @@ jobs:
             sudo apt-get update
             sudo apt-get install -y gh
           fi
+          gh --version
 
       - name: Download build artifact
         uses: actions/download-artifact@v4
@@ -129,11 +130,47 @@ jobs:
           name: phase13b-release-bundle
           path: dist
 
+      - name: Prepare proof directory
+        run: |
+          mkdir -p artifacts/phase13b_real/proof
+          ls -lah dist
+          sha256sum dist/phase13b-release-bundle.tar.gz | tee artifacts/phase13b_real/proof/release_bundle_sha256.txt
+
       - name: Verify artifact attestation before release
         env:
           GH_TOKEN: ${{ github.token }}
+        shell: bash
         run: |
-          gh attestation verify dist/phase13b-release-bundle.tar.gz --repo "${GITHUB_REPOSITORY}"
+          set -euo pipefail
+
+          ATT_JSON="artifacts/phase13b_real/proof/attestation_verify_result.json"
+          ATT_LOG="artifacts/phase13b_real/proof/attestation_verify_attempts.log"
+
+          : > "$ATT_LOG"
+
+          ok=0
+          for attempt in 1 2 3 4 5 6; do
+            echo "attempt=${attempt} ts=$(date -u +%Y-%m-%dT%H:%M:%SZ)" | tee -a "$ATT_LOG"
+
+            if gh attestation verify \
+              dist/phase13b-release-bundle.tar.gz \
+              --repo "${GITHUB_REPOSITORY}" \
+              --format json > "$ATT_JSON" 2>>"$ATT_LOG"; then
+              ok=1
+              break
+            fi
+
+            echo "verify_failed_attempt=${attempt}" | tee -a "$ATT_LOG"
+            sleep 15
+          done
+
+          if [ "$ok" -ne 1 ]; then
+            echo "final_attestation_verify_status=failed" | tee -a "$ATT_LOG"
+            exit 1
+          fi
+
+          echo "final_attestation_verify_status=success" | tee -a "$ATT_LOG"
+          cat "$ATT_JSON"
 
       - name: Compute release tag
         id: tag
@@ -172,8 +209,7 @@ jobs:
 
       - name: Write governed release summary
         run: |
-          mkdir -p artifacts/phase13b_real/proof
-          cat > artifacts/phase13b_real/proof/latest_release_from_workflow.json <<'JSON'
+          cat > artifacts/phase13b_real/proof/latest_release_from_workflow.json <<JSON
           {
             "ok": true,
             "release_tag": "${{ steps.tag.outputs.tag }}",
@@ -189,7 +225,11 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: phase13b-governed-release-proof
-          path: artifacts/phase13b_real/proof/latest_release_from_workflow.json
+          path: |
+            artifacts/phase13b_real/proof/latest_release_from_workflow.json
+            artifacts/phase13b_real/proof/attestation_verify_result.json
+            artifacts/phase13b_real/proof/attestation_verify_attempts.log
+            artifacts/phase13b_real/proof/release_bundle_sha256.txt
 
   incident-on-failure:
     name: phase13b / incident-on-failure
@@ -211,6 +251,7 @@ jobs:
           fi
 
       - name: Open incident issue
+        continue-on-error: true
         env:
           GH_TOKEN: ${{ github.token }}
         shell: bash
@@ -232,4 +273,4 @@ jobs:
             --body "$BODY" \
             --label "incident" \
             --label "phase13b" \
-            --label "governed-delivery"
+            --label "governed-delivery" || true
