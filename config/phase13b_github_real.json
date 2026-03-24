@@ -2,7 +2,7 @@
   "github": {
     "owner": "Behzadnazar",
     "repo": "orchestrator_control_plane_v1",
-    "visibility": "private",
+    "visibility": "public",
     "create_repo_if_missing": true,
     "default_branch": "main",
     "required_status_checks": [

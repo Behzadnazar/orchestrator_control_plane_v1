@@ -1,6 +1,0 @@
-{
-  "private_key_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/state/detached_external_signer_ledger_rotation/R16_detached_signer_ledger_rotation_proof/attestation_private_rotation.pem",
-  "read_allowed": false,
-  "exception_type": "FileNotFoundError",
-  "exception_message": "[Errno 2] No such file or directory: '/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/state/detached_external_signer_ledger_rotation/R16_detached_signer_ledger_rotation_proof/attestation_private_rotation.pem'"
-}

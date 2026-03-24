@@ -1,9 +1,0 @@
-{
-  "proof_label": "R20_detached_signer_approval_freshness_proof",
-  "proof_status": "PASS",
-  "base_verification_time_utc": "2026-03-21T08:23:14+00:00",
-  "summary_json_path": "artifacts/operations/detached_external_signer_approval_freshness_proof/R20_detached_signer_approval_freshness_proof/detached_external_signer_approval_freshness_proof.json",
-  "summary_md_path": "artifacts/operations/detached_external_signer_approval_freshness_proof/R20_detached_signer_approval_freshness_proof/detached_external_signer_approval_freshness_proof.md",
-  "approval_freshness_safe": true,
-  "no_on_disk_private_keys_after_proof": true
-}

@@ -1,9 +1,0 @@
-{
-  "ready": true,
-  "service": "detached_external_signer",
-  "key_id": "r16-attestation-key-rotation",
-  "fd_path": "/proc/self/fd/3",
-  "private_key_path_exists_after_detach": false,
-  "ledger_dir": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/operations/detached_external_signer_ledger_rotation_proof/R16_detached_signer_ledger_rotation_proof/rotated_ledger",
-  "segment_size": 2
-}

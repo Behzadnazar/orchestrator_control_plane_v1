@@ -1,9 +1,0 @@
-{
-  "proof_label": "R17_detached_signer_multi_signer_rotation_proof",
-  "proof_status": "PASS",
-  "base_verification_time_utc": "2026-03-20T14:02:33+00:00",
-  "summary_json_path": "artifacts/operations/detached_external_signer_multi_signer_rotation_proof/R17_detached_signer_multi_signer_rotation_proof/detached_external_signer_multi_signer_rotation_proof.json",
-  "summary_md_path": "artifacts/operations/detached_external_signer_multi_signer_rotation_proof/R17_detached_signer_multi_signer_rotation_proof/detached_external_signer_multi_signer_rotation_proof.md",
-  "multi_signer_rotation_safe": true,
-  "no_on_disk_private_keys_after_proof": true
-}

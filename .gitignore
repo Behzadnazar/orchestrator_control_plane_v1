@@ -1,0 +1,86 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Build / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# Test / coverage / caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# Local databases / runtime state
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+data/
+run/
+runtime/
+logs/
+
+# Local artifacts that should not be versioned
+artifacts/
+tmp/
+temp/
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Node / frontend caches if present
+node_modules/
+.next/
+coverage/
+
+# Secrets / keys
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Generated protobuf / binaries / compiled output
+*.so
+*.dylib
+*.dll
+
+# Keep GitHub workflow and config tracked
+!.github/
+!.github/workflows/
+!.github/CODEOWNERS
+!config/
+!scripts/
+!app/
+!tests/
+!migrations/
+!protos/
+!agent-registry/
+!README.md
+!README_TESTS.md
+!Makefile
+!pytest.ini
+!requirements.txt
+!worker_loop_final.py

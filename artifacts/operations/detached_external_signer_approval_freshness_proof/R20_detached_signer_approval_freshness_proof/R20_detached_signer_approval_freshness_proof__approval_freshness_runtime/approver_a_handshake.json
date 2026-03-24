@@ -1,8 +1,0 @@
-{
-  "ready": true,
-  "service": "approver",
-  "approver_id": "approver_a",
-  "key_id": "r20-approver-a-key",
-  "public_key_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/operations/detached_external_signer_approval_freshness_proof/R20_detached_signer_approval_freshness_proof/public_keys/approver_a_public.pem",
-  "private_key_path_exists_after_detach": false
-}

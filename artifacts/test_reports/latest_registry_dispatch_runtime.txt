@@ -1,7 +1,0 @@
-phase=J.7
-successful=True
-dispatch_success_ok=True
-dispatch_unknown_code=UNKNOWN_TASK_TYPE
-dispatch_missing_handler_code=HANDLER_NOT_CALLABLE
-dispatch_failure_code=HANDLER_RESULT_INVALID
-dead_letter_count=3

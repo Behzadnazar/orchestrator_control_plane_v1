@@ -1,9 +1,0 @@
-phase=J.6
-successful=True
-worker_ok=True
-worker_bad_code=HANDLER_RESULT_INVALID
-replay_bad_ok=True
-invalid_replay_state_code=INVALID_STATE_TRANSITION
-bypass_rejected_code=INVALID_STATE_TRANSITION
-replay_without_context_code=DEAD_LETTER_INVALID
-dead_letter_count=1

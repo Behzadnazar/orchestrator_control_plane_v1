@@ -1,9 +1,0 @@
-{
-  "proof_label": "R18_detached_signer_revocation_truststore_proof",
-  "proof_status": "PASS",
-  "base_verification_time_utc": "2026-03-21T06:55:03+00:00",
-  "summary_json_path": "artifacts/operations/detached_external_signer_revocation_truststore_proof/R18_detached_signer_revocation_truststore_proof/detached_external_signer_revocation_truststore_proof.json",
-  "summary_md_path": "artifacts/operations/detached_external_signer_revocation_truststore_proof/R18_detached_signer_revocation_truststore_proof/detached_external_signer_revocation_truststore_proof.md",
-  "revocation_truststore_safe": true,
-  "no_on_disk_private_keys_after_proof": true
-}

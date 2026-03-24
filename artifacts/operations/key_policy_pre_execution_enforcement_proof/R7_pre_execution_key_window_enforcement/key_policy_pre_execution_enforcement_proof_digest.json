@@ -1,8 +1,0 @@
-{
-  "proof_label": "R7_pre_execution_key_window_enforcement",
-  "proof_status": "FAIL",
-  "verification_time_utc": "2026-03-20T11:42:43+00:00",
-  "summary_json_path": "artifacts/operations/key_policy_pre_execution_enforcement_proof/R7_pre_execution_key_window_enforcement/key_policy_pre_execution_enforcement_proof.json",
-  "summary_md_path": "artifacts/operations/key_policy_pre_execution_enforcement_proof/R7_pre_execution_key_window_enforcement/key_policy_pre_execution_enforcement_proof.md",
-  "denied_paths_blocked": false
-}

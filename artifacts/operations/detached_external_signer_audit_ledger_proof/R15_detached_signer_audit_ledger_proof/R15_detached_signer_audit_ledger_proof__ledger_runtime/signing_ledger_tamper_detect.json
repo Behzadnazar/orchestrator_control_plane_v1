@@ -1,8 +1,0 @@
-{
-  "entry_count": 2,
-  "chain_valid": false,
-  "replay_detected": false,
-  "problems": [
-    "entry_hash_mismatch_at_1"
-  ]
-}

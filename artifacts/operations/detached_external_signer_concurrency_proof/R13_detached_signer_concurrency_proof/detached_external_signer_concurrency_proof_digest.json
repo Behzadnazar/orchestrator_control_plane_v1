@@ -1,9 +1,0 @@
-{
-  "proof_label": "R13_detached_signer_concurrency_proof",
-  "proof_status": "PASS",
-  "base_verification_time_utc": "2026-03-20T13:24:34+00:00",
-  "summary_json_path": "artifacts/operations/detached_external_signer_concurrency_proof/R13_detached_signer_concurrency_proof/detached_external_signer_concurrency_proof.json",
-  "summary_md_path": "artifacts/operations/detached_external_signer_concurrency_proof/R13_detached_signer_concurrency_proof/detached_external_signer_concurrency_proof.md",
-  "concurrency_safe": true,
-  "no_on_disk_private_keys_after_proof": true
-}

@@ -1,1 +1,0 @@
-bundle generated after frontend component handoff
