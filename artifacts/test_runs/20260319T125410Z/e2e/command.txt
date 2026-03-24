@@ -1,1 +1,0 @@
-/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/.venv/bin/python3 -m pytest --junit-xml /home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/test_runs/20260319T125410Z/e2e/junit.xml -q -m e2e

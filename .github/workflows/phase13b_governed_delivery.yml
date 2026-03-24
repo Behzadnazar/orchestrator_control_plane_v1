@@ -1,6 +1,9 @@
 name: phase13b_governed_delivery
 
 on:
+  pull_request:
+    branches:
+      - main
   push:
     branches:
       - main
@@ -83,11 +86,13 @@ jobs:
             artifacts/phase13b_real/build/build_summary.json
 
       - name: Attest provenance
+        if: github.event_name != 'pull_request'
         uses: actions/attest-build-provenance@v3
         with:
           subject-path: dist/phase13b-release-bundle.tar.gz
 
       - name: Attest SBOM
+        if: github.event_name != 'pull_request'
         uses: actions/attest-sbom@v3
         with:
           subject-path: dist/phase13b-release-bundle.tar.gz
@@ -95,6 +100,7 @@ jobs:
 
   governed-release:
     name: phase13b / governed-release
+    if: github.event_name != 'pull_request'
     needs:
       - build-and-attest
     runs-on: ubuntu-latest
@@ -187,7 +193,7 @@ jobs:
 
   incident-on-failure:
     name: phase13b / incident-on-failure
-    if: ${{ failure() }}
+    if: ${{ failure() && github.event_name != 'pull_request' }}
     needs:
       - verify-local
       - build-and-attest

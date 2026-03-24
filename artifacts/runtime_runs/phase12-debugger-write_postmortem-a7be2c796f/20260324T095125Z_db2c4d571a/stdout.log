@@ -1,1 +1,0 @@
-{"ok": true, "task_type": "debugger.write_postmortem", "result": {"ok": true, "action": "write_text_file", "path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/runs/phase12_prod_v1/postmortem/postmortem.md", "ts": "2026-03-24T09:51:26+00:00"}, "ts": "2026-03-24T09:51:26+00:00"}

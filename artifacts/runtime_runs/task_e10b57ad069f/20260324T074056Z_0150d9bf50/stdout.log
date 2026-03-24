@@ -1,1 +1,0 @@
-{"ok": true, "task_type": "backend.write_file", "result": {"ok": true, "action": "write_text_file", "path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/runs/phase_h_demo_v2/workflows/phase_h_bundle.txt", "bytes_written": 50, "ts": "2026-03-24T07:40:56+00:00"}, "ts": "2026-03-24T07:40:56+00:00"}

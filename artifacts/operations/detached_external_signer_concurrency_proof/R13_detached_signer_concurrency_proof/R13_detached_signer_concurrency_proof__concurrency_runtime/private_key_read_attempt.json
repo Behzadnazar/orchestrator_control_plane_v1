@@ -1,6 +1,0 @@
-{
-  "private_key_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/state/detached_external_signer_concurrency/R13_detached_signer_concurrency_proof/attestation_private_concurrency.pem",
-  "read_allowed": false,
-  "exception_type": "FileNotFoundError",
-  "exception_message": "[Errno 2] No such file or directory: '/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/state/detached_external_signer_concurrency/R13_detached_signer_concurrency_proof/attestation_private_concurrency.pem'"
-}

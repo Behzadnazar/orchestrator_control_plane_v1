@@ -1,8 +1,0 @@
-{
-  "retention_version": 1,
-  "policy": "retain_all_segments_for_proof",
-  "retained_segments": [
-    "artifacts/operations/detached_external_signer_ledger_rotation_proof/R16_detached_signer_ledger_rotation_proof/rotated_ledger/segment_0001.jsonl",
-    "artifacts/operations/detached_external_signer_ledger_rotation_proof/R16_detached_signer_ledger_rotation_proof/rotated_ledger/segment_0002.jsonl"
-  ]
-}

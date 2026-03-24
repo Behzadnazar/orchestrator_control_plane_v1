@@ -1,9 +1,0 @@
-{
-  "proof_label": "R15_detached_signer_audit_ledger_proof",
-  "proof_status": "PASS",
-  "base_verification_time_utc": "2026-03-20T13:41:12+00:00",
-  "summary_json_path": "artifacts/operations/detached_external_signer_audit_ledger_proof/R15_detached_signer_audit_ledger_proof/detached_external_signer_audit_ledger_proof.json",
-  "summary_md_path": "artifacts/operations/detached_external_signer_audit_ledger_proof/R15_detached_signer_audit_ledger_proof/detached_external_signer_audit_ledger_proof.md",
-  "audit_ledger_safe": true,
-  "no_on_disk_private_keys_after_proof": true
-}
