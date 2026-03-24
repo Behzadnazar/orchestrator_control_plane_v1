@@ -1,0 +1,7 @@
+{
+  "integrity_valid": false,
+  "problems": [
+    "old_key_status_not_revoked",
+    "old_key_new_signing_policy_invalid"
+  ]
+}

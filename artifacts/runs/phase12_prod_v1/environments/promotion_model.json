@@ -1,0 +1,46 @@
+{
+  "environments": {
+    "dev": {
+      "approvals": 0,
+      "checks": [
+        "lint",
+        "unit",
+        "static-analysis"
+      ]
+    },
+    "prod": {
+      "approvals": 2,
+      "checks": [
+        "manual-approval",
+        "signed-sbom",
+        "provenance",
+        "safe-deployment",
+        "rollback-ready"
+      ]
+    },
+    "staging": {
+      "approvals": 1,
+      "checks": [
+        "smoke",
+        "observability-baseline",
+        "release-gates"
+      ]
+    },
+    "test": {
+      "approvals": 1,
+      "checks": [
+        "integration",
+        "contract",
+        "security-scan"
+      ]
+    }
+  },
+  "generated_at": "2026-03-24T09:51:24+00:00",
+  "model_name": "phase12-prod-promotion-model",
+  "promotion_flow": [
+    "dev",
+    "test",
+    "staging",
+    "prod"
+  ]
+}

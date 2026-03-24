@@ -1,0 +1,10 @@
+{
+  "proof_label": "R12_detached_signer_crash_recovery_proof",
+  "proof_status": "PASS",
+  "base_verification_time_utc": "2026-03-20T13:18:58+00:00",
+  "summary_json_path": "artifacts/operations/detached_external_signer_crash_recovery_proof/R12_detached_signer_crash_recovery_proof/detached_external_signer_crash_recovery_proof.json",
+  "summary_md_path": "artifacts/operations/detached_external_signer_crash_recovery_proof/R12_detached_signer_crash_recovery_proof/detached_external_signer_crash_recovery_proof.md",
+  "crash_path_safe": true,
+  "recovery_path_successful": true,
+  "no_on_disk_private_keys_after_proof": true
+}

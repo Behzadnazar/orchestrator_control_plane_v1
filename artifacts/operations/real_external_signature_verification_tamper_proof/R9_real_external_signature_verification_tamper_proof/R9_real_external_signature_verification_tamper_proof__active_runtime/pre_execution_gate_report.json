@@ -1,0 +1,22 @@
+{
+  "report_version": 1,
+  "report_type": "pre_execution_gate_report",
+  "proof_label": "R9_real_external_signature_verification_tamper_proof",
+  "scenario": "R9_real_external_signature_verification_tamper_proof__active_runtime",
+  "evaluation_time_utc": "2026-03-20T12:09:09+00:00",
+  "verification_mode": "base_time",
+  "status": "PASS",
+  "decision": "ALLOW",
+  "window_verdict": "within_window",
+  "runtime_status_allow_executed": true,
+  "preventive_block_applied": false,
+  "receipt_exists": true,
+  "receipt_signature_exists": true,
+  "attestation_exists": true,
+  "attestation_signature_exists": true,
+  "runtime_report_exists": true,
+  "receipt_signature_verified": true,
+  "receipt_tamper_rejected": true,
+  "attestation_signature_verified": true,
+  "attestation_tamper_rejected": true
+}

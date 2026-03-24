@@ -1,0 +1,16 @@
+{
+  "command": [
+    "openssl",
+    "dgst",
+    "-sha256",
+    "-verify",
+    "artifacts/operations/detached_external_signer_ledger_rotation_proof/R16_detached_signer_ledger_rotation_proof/public_keys/attestation_public_rotation.pem",
+    "-signature",
+    "artifacts/operations/detached_external_signer_ledger_rotation_proof/R16_detached_signer_ledger_rotation_proof/R16_detached_signer_ledger_rotation_proof__rotation_runtime/allowed_signature_c.sig",
+    "artifacts/operations/detached_external_signer_ledger_rotation_proof/R16_detached_signer_ledger_rotation_proof/R16_detached_signer_ledger_rotation_proof__rotation_runtime/allowed_payload_c.json"
+  ],
+  "returncode": 0,
+  "stdout": "Verified OK\n",
+  "stderr": "",
+  "verified_ok": true
+}

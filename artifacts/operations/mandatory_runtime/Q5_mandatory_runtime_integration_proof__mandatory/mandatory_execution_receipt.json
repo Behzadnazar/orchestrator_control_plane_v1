@@ -1,0 +1,18 @@
+{
+  "receipt_version": 1,
+  "receipt_type": "mandatory_execution_receipt",
+  "generated_at_utc": "2026-03-20T11:03:45+00:00",
+  "runtime_label": "Q5_mandatory_runtime_integration_proof__mandatory",
+  "workflow_id": "Q5_mandatory_runtime_integration_proof__workflow",
+  "operation": "release",
+  "gate_label": "Q5_mandatory_runtime_integration_proof__mandatory__gate",
+  "gate_decision": "ALLOW",
+  "runtime_status": "ALLOW_EXECUTED",
+  "manifest_path": "artifacts/operations/mandatory_runtime/Q5_mandatory_runtime_integration_proof__mandatory/normalized_request_manifest.json",
+  "manifest_sha256": "4a3c2a9699168853ecacc58883d82b95c8cd5d280ecd9ee1bd0d985a6947f632",
+  "gate_decision_path": "artifacts/operations/admission/Q5_mandatory_runtime_integration_proof__mandatory__gate/admission_gate_decision.json",
+  "gate_decision_sha256": "5857371d01bbd796ed00493e3d2523b8a04a5efede8c465a57ff751fa3647cd9",
+  "command_executed": true,
+  "command_returncode": 0,
+  "command_sha256": "43b2d45b2ad1d2a88b7c23154c4abd57170a5beaa70859fe8873c8121c884c7f"
+}

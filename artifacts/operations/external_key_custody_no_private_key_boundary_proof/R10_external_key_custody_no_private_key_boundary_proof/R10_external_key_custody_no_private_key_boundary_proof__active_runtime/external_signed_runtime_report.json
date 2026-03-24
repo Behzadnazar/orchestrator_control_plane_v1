@@ -1,0 +1,21 @@
+{
+  "report_version": 1,
+  "report_type": "external_key_custody_runtime_report",
+  "proof_label": "R10_external_key_custody_no_private_key_boundary_proof",
+  "scenario": "R10_external_key_custody_no_private_key_boundary_proof__active_runtime",
+  "status": "PASS",
+  "runtime_status_allow_executed": true,
+  "executed": true,
+  "execution_started_at_utc": "2026-03-20T12:28:58+00:00",
+  "execution_finished_at_utc": "2026-03-20T12:28:59+00:00",
+  "receipt_signature_verified": true,
+  "receipt_tamper_rejected": true,
+  "attestation_signature_verified": true,
+  "attestation_tamper_rejected": true,
+  "window_verdict": "within_window",
+  "notes": [
+    "Signing با private key خارجی انجام شد.",
+    "Runtime boundary فقط public key و verification evidence را می‌بیند.",
+    "Tampered receipt و attestation رد شدند."
+  ]
+}

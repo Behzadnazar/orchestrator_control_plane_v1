@@ -1,0 +1,229 @@
+name: phase13b_governed_delivery
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      release_channel:
+        description: "stable or canary"
+        required: true
+        default: stable
+        type: choice
+        options:
+          - stable
+          - canary
+
+concurrency:
+  group: phase13b-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  verify-local:
+    name: phase13b / verify-local
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Compile scripts
+        run: |
+          python -m py_compile \
+            scripts/phase13b_bootstrap_github.py \
+            scripts/phase13b_prepare_release_bundle.py \
+            scripts/phase13b_verify_github_state.py \
+            scripts/phase13b_freeze.py
+
+      - name: Verify release bundle inputs
+        run: |
+          python scripts/phase13b_prepare_release_bundle.py --verify-only
+
+  build-and-attest:
+    name: phase13b / build-and-attest
+    needs:
+      - verify-local
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+      attestations: write
+    outputs:
+      bundle_name: phase13b-release-bundle
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build governed release bundle
+        run: |
+          python scripts/phase13b_prepare_release_bundle.py
+
+      - name: Upload bundle artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: phase13b-release-bundle
+          path: |
+            dist/phase13b-release-bundle.tar.gz
+            dist/phase13b-release-bundle.sha256
+            dist/phase13b-release-bundle.spdx.json
+            dist/phase13b-release-notes.md
+            artifacts/phase13b_real/build/bundle_manifest.json
+            artifacts/phase13b_real/build/build_summary.json
+
+      - name: Attest provenance
+        uses: actions/attest-build-provenance@v3
+        with:
+          subject-path: dist/phase13b-release-bundle.tar.gz
+
+      - name: Attest SBOM
+        uses: actions/attest-sbom@v3
+        with:
+          subject-path: dist/phase13b-release-bundle.tar.gz
+          sbom-path: dist/phase13b-release-bundle.spdx.json
+
+  governed-release:
+    name: phase13b / governed-release
+    needs:
+      - build-and-attest
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://github.com/${{ github.repository }}/releases
+    permissions:
+      contents: write
+      actions: read
+      attestations: read
+      id-token: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Ensure GitHub CLI exists
+        run: |
+          if ! command -v gh >/dev/null 2>&1; then
+            sudo apt-get update
+            sudo apt-get install -y gh
+          fi
+
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: phase13b-release-bundle
+          path: dist
+
+      - name: Verify artifact attestation before release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh attestation verify dist/phase13b-release-bundle.tar.gz --repo "${GITHUB_REPOSITORY}"
+
+      - name: Compute release tag
+        id: tag
+        shell: bash
+        run: |
+          SHORT_SHA="${GITHUB_SHA::12}"
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            CHANNEL="${{ github.event.inputs.release_channel }}"
+          else
+            CHANNEL="stable"
+          fi
+          TAG="phase13b-${CHANNEL}-${SHORT_SHA}"
+          echo "tag=${TAG}" >> "$GITHUB_OUTPUT"
+
+      - name: Create or update GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.tag.outputs.tag }}
+        shell: bash
+        run: |
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" \
+              dist/phase13b-release-bundle.tar.gz \
+              dist/phase13b-release-bundle.sha256 \
+              dist/phase13b-release-bundle.spdx.json \
+              dist/phase13b-release-notes.md \
+              --clobber
+          else
+            gh release create "$TAG" \
+              dist/phase13b-release-bundle.tar.gz \
+              dist/phase13b-release-bundle.sha256 \
+              dist/phase13b-release-bundle.spdx.json \
+              --title "$TAG" \
+              --notes-file dist/phase13b-release-notes.md
+          fi
+
+      - name: Write governed release summary
+        run: |
+          mkdir -p artifacts/phase13b_real/proof
+          cat > artifacts/phase13b_real/proof/latest_release_from_workflow.json <<'JSON'
+          {
+            "ok": true,
+            "release_tag": "${{ steps.tag.outputs.tag }}",
+            "repo": "${{ github.repository }}",
+            "run_id": "${{ github.run_id }}",
+            "run_attempt": "${{ github.run_attempt }}",
+            "sha": "${{ github.sha }}",
+            "environment": "production"
+          }
+          JSON
+
+      - name: Upload governed release proof
+        uses: actions/upload-artifact@v4
+        with:
+          name: phase13b-governed-release-proof
+          path: artifacts/phase13b_real/proof/latest_release_from_workflow.json
+
+  incident-on-failure:
+    name: phase13b / incident-on-failure
+    if: ${{ failure() }}
+    needs:
+      - verify-local
+      - build-and-attest
+      - governed-release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - name: Ensure GitHub CLI exists
+        run: |
+          if ! command -v gh >/dev/null 2>&1; then
+            sudo apt-get update
+            sudo apt-get install -y gh
+          fi
+
+      - name: Open incident issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          TITLE="phase13b incident: run ${GITHUB_RUN_ID}"
+          BODY=$(cat <<EOF
+          Phase 13.B governed delivery failed.
+
+          - repository: ${GITHUB_REPOSITORY}
+          - workflow: ${GITHUB_WORKFLOW}
+          - run_id: ${GITHUB_RUN_ID}
+          - run_attempt: ${GITHUB_RUN_ATTEMPT}
+          - sha: ${GITHUB_SHA}
+          - ref: ${GITHUB_REF}
+          EOF
+          )
+          gh issue create \
+            --title "$TITLE" \
+            --body "$BODY" \
+            --label "incident" \
+            --label "phase13b" \
+            --label "governed-delivery"

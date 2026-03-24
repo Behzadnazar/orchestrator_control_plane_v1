@@ -1,0 +1,28 @@
+{
+  "report_version": 1,
+  "report_type": "detached_signer_ledger_rotation_runtime_report",
+  "proof_label": "R16_detached_signer_ledger_rotation_proof",
+  "scenario": "R16_detached_signer_ledger_rotation_proof__rotation_runtime",
+  "status": "PASS",
+  "runtime_status_allow_executed": true,
+  "detached_signer_ready": true,
+  "detached_signer_key_path_exists_after_detach": false,
+  "control_plane_private_key_read_allowed": false,
+  "request_a_signature_verified": true,
+  "request_b_signature_verified": true,
+  "request_c_signature_verified": true,
+  "segment_count": 2,
+  "entry_count": 3,
+  "rotation_continuity_valid": true,
+  "rotation_chain_valid": true,
+  "snapshot_valid": true,
+  "retention_valid": true,
+  "rotation_tamper_detected": true,
+  "window_verdict": "within_window",
+  "notes": [
+    "ledger پس از رسیدن به segment_size rotate شده است.",
+    "snapshot و retention manifest ساخته شده‌اند.",
+    "continuity بین segmentها verify شده است.",
+    "tamper در segment manifest detectable بوده است."
+  ]
+}

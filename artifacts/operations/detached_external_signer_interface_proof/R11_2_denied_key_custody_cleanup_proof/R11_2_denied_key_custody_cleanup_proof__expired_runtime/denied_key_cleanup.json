@@ -1,0 +1,8 @@
+{
+  "private_key_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/state/detached_external_signer/R11_2_denied_key_custody_cleanup_proof/attestation_private_expired.pem",
+  "existed_before_cleanup": true,
+  "removed": true,
+  "exists_after_cleanup": false,
+  "error_type": null,
+  "error_message": null
+}

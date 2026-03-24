@@ -1,0 +1,21 @@
+{
+  "command": [
+    "python3",
+    "scripts/operational_task_runner.py",
+    "research.collect_notes"
+  ],
+  "command_shell_escaped": "python3 scripts/operational_task_runner.py research.collect_notes",
+  "cwd": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1",
+  "duration_ms": 30,
+  "exit_code": 0,
+  "finished_at": "2026-03-24T07:03:22+00:00",
+  "service_path": "research.collect_notes",
+  "stderr_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/runtime_runs/task_e6f108897cf0/20260324T070322Z_d571e21ed4/stderr.log",
+  "stderr_tail": "",
+  "stdout_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/runtime_runs/task_e6f108897cf0/20260324T070322Z_d571e21ed4/stdout.log",
+  "stdout_tail": "{\"ok\": true, \"task_type\": \"research.collect_notes\", \"result\": {\"ok\": true, \"action\": \"write_text_file\", \"path\": \"/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/research_notes/samewf-a.md\", \"bytes_written\": 80, \"ts\": \"2026-03-24T07:03:22+00:00\"}, \"ts\": \"2026-03-24T07:03:22+00:00\"}\n",
+  "task_id": "task_e6f108897cf0",
+  "task_type": "research.collect_notes",
+  "timed_out": false,
+  "worker": "runtime-worker-51456"
+}

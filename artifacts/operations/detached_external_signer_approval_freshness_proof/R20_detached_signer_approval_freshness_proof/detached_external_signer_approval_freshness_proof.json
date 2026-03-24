@@ -1,0 +1,86 @@
+{
+  "report_version": 1,
+  "report_type": "detached_external_signer_approval_freshness_proof",
+  "generated_at_utc": "2026-03-21T08:23:19+00:00",
+  "proof_label": "R20_detached_signer_approval_freshness_proof",
+  "base_verification_time_utc": "2026-03-21T08:23:14+00:00",
+  "future_fixture_time_utc": "2026-03-22T08:23:13+00:00",
+  "openssl_version": "OpenSSL 3.0.13 30 Jan 2024 (Library: OpenSSL 3.0.13 30 Jan 2024)",
+  "proof_status": "PASS",
+  "output_directory": "artifacts/operations/detached_external_signer_approval_freshness_proof/R20_detached_signer_approval_freshness_proof",
+  "detached_signer_custody_directory": "state/detached_external_signer_approval_freshness/R20_detached_signer_approval_freshness_proof",
+  "artifact_boundary_scan": {
+    "scanned_root": "artifacts/operations/detached_external_signer_approval_freshness_proof/R20_detached_signer_approval_freshness_proof",
+    "private_key_files_found": [],
+    "contains_private_keys": false
+  },
+  "runtime_boundary_scan": {
+    "scanned_root": "artifacts/operations/detached_external_signer_approval_freshness_proof/R20_detached_signer_approval_freshness_proof",
+    "private_key_files_found": [],
+    "contains_private_keys": false
+  },
+  "detached_signer_custody_scan": {
+    "scanned_root": "state/detached_external_signer_approval_freshness/R20_detached_signer_approval_freshness_proof",
+    "private_key_files_found": [],
+    "contains_private_keys": false
+  },
+  "scenarios": {
+    "approval_freshness_runtime": {
+      "scenario": "R20_detached_signer_approval_freshness_proof__approval_freshness_runtime",
+      "verification_time_utc": "2026-03-21T08:23:14+00:00",
+      "verification_mode": "base_time",
+      "gate_decision_allow": true,
+      "runtime_status_allow_executed": true,
+      "signer_ready": true,
+      "approver_a_ready": true,
+      "approver_b_ready": true,
+      "signer_key_path_exists_after_detach": false,
+      "approver_a_key_path_exists_after_detach": false,
+      "approver_b_key_path_exists_after_detach": false,
+      "signer_private_read_allowed": false,
+      "approver_a_private_read_allowed": false,
+      "approver_b_private_read_allowed": false,
+      "fresh_dual_approval_accepted": true,
+      "token_replay_rejected": true,
+      "token_replay_reason": "approval_token_replay_approver_a",
+      "expired_token_rejected": true,
+      "expired_token_reason": "approval_expired_approver_a",
+      "nonce_mismatch_rejected": true,
+      "nonce_mismatch_reason": "nonce_mismatch_approver_a",
+      "request_mismatch_rejected": true,
+      "request_mismatch_reason": "request_id_mismatch_approver_a",
+      "fresh_payload_signature_verified": true,
+      "fresh_payload_tamper_rejected": true,
+      "approval_a_signature_verified": true,
+      "approval_b_signature_verified": true,
+      "used_token_count_after_first_accept": 2,
+      "runtime_report_exists": true,
+      "runtime_report_path": "artifacts/operations/detached_external_signer_approval_freshness_proof/R20_detached_signer_approval_freshness_proof/R20_detached_signer_approval_freshness_proof__approval_freshness_runtime/approval_freshness_runtime_report.json",
+      "gate_report_path": "artifacts/operations/detached_external_signer_approval_freshness_proof/R20_detached_signer_approval_freshness_proof/R20_detached_signer_approval_freshness_proof__approval_freshness_runtime/pre_execution_gate_report.json"
+    },
+    "expired_runtime": {
+      "scenario": "R20_detached_signer_approval_freshness_proof__expired_runtime",
+      "verification_time_utc": "2026-03-21T08:23:14+00:00",
+      "verification_mode": "base_time",
+      "gate_decision_allow": false,
+      "window_verdict": "expired",
+      "runtime_status_allow_executed": false,
+      "denied_key_cleanup_removed": true,
+      "denied_key_exists_after_cleanup": false,
+      "gate_report_path": "artifacts/operations/detached_external_signer_approval_freshness_proof/R20_detached_signer_approval_freshness_proof/R20_detached_signer_approval_freshness_proof__expired_runtime/pre_execution_gate_report.json",
+      "denied_key_cleanup_path": "artifacts/operations/detached_external_signer_approval_freshness_proof/R20_detached_signer_approval_freshness_proof/R20_detached_signer_approval_freshness_proof__expired_runtime/denied_key_cleanup.json"
+    },
+    "future_runtime": {
+      "scenario": "R20_detached_signer_approval_freshness_proof__future_runtime",
+      "verification_time_utc": "2026-03-22T08:23:13+00:00",
+      "verification_mode": "strict_pre_not_before_fixture",
+      "gate_decision_allow": false,
+      "window_verdict": "not_yet_valid",
+      "runtime_status_allow_executed": false,
+      "denied_key_cleanup_removed": true,
+      "denied_key_exists_after_cleanup": false,
+      "gate_report_path": "artifacts/operations/detached_external_signer_approval_freshness_proof/R20_detached_signer_approval_freshness_proof/R20_detached_signer_approval_freshness_proof__future_runtime/pre_execution_gate_report.json",
+      "denied_key_cleanup_path": "artifacts/operations/detached_external_signer_approval_freshness_proof/R20_detached_signer_approval_freshness_proof/R20_detached_signer_approval_freshness_proof__future_runtime/denied_key_cleanup.json"
+    }
+  }
+}

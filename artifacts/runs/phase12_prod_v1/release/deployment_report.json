@@ -1,0 +1,40 @@
+{
+  "deployment_decision": "promoted",
+  "generated_at": "2026-03-24T09:51:25+00:00",
+  "observability_validation_gates": {
+    "post_deploy": [
+      "smoke_green",
+      "alerts_clear",
+      "rollback_signal_ready"
+    ],
+    "pre_deploy": [
+      "baseline_available",
+      "no_open_sev0"
+    ]
+  },
+  "prod_checks": [
+    "manual-approval",
+    "signed-sbom",
+    "provenance",
+    "safe-deployment",
+    "rollback-ready"
+  ],
+  "promotion_flow": [
+    "dev",
+    "test",
+    "staging",
+    "prod"
+  ],
+  "rollback_ready": true,
+  "safe_deployment": {
+    "current_ring": "internal",
+    "mode": "ring_canary",
+    "next_rings": [
+      "limited",
+      "broad",
+      "global"
+    ]
+  },
+  "strategy": "ring_canary_safe_deployment",
+  "target_environment": "prod"
+}

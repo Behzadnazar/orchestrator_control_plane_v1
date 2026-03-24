@@ -1,0 +1,10 @@
+{
+  "proof_label": "R9_real_external_signature_verification_tamper_proof",
+  "proof_status": "PASS",
+  "base_verification_time_utc": "2026-03-20T12:09:09+00:00",
+  "future_fixture_time_utc": "2026-03-21T12:09:08+00:00",
+  "summary_json_path": "artifacts/operations/real_external_signature_verification_tamper_proof/R9_real_external_signature_verification_tamper_proof/real_external_signature_verification_tamper_proof.json",
+  "summary_md_path": "artifacts/operations/real_external_signature_verification_tamper_proof/R9_real_external_signature_verification_tamper_proof/real_external_signature_verification_tamper_proof.md",
+  "active_path_real_signature_verified": true,
+  "denied_paths_blocked": true
+}

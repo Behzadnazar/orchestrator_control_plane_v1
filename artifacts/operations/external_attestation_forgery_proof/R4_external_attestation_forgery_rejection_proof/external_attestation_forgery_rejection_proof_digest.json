@@ -1,0 +1,27 @@
+{
+  "generated_at_utc": "2026-03-20T11:22:02+00:00",
+  "label": "R4_external_attestation_forgery_rejection_proof",
+  "proof_status": "PASS",
+  "artifacts": [
+    {
+      "path": "artifacts/operations/external_attestation_forgery_proof/R4_external_attestation_forgery_rejection_proof/external_attestation_forgery_rejection_proof.json",
+      "size_bytes": 3569,
+      "sha256": "0898d4d24cb67d31e27d08ba72a00ac1e354326d028745a740e6d0c08e821efb"
+    },
+    {
+      "path": "artifacts/operations/external_attestation_forgery_proof/R4_external_attestation_forgery_rejection_proof/external_attestation_forgery_rejection_proof.md",
+      "size_bytes": 1239,
+      "sha256": "d31d6e48d1e60edca9d1d87689f2dd4bbcd454e551145a20f3580223c3145759"
+    },
+    {
+      "path": "artifacts/operations/external_attestation_forgery_proof/R4_external_attestation_forgery_rejection_proof/external_signed_execution_attestation.backup.json",
+      "size_bytes": 2003,
+      "sha256": "bf7bec698bf6a171c30fc360194ba5188032c8ece8d29b2d5c33a333d072c978"
+    },
+    {
+      "path": "artifacts/operations/external_attestation_forgery_proof/R4_external_attestation_forgery_rejection_proof/attestation_public.backup.pem",
+      "size_bytes": 625,
+      "sha256": "36c5ae24d7aa6de693ef43505042fb8f1cd6887970713b36f3641f670bb0d111"
+    }
+  ]
+}

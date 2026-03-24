@@ -1,0 +1,18 @@
+# Phase11 Baseline Freeze
+
+- generated_at: 2026-03-24T09:30:27+00:00
+- baseline_name: phase11_real_agent_onboarding_freeze_v1
+- files_count: 10
+
+## Files
+
+- artifacts/runs/phase11_demo_v1/research/market_notes.md | sha256=c3e1f6a50c9fdb85b6e25c30b039c31eb1f6646353fd66321696d6e9c5a79744 | bytes=235
+- artifacts/runs/phase11_demo_v1/frontend/ResearchHero.tsx | sha256=ef276c75a54d4b312c52ed374e7e4cb6efb728e377e3fd2ca385e6eb02abf886 | bytes=369
+- artifacts/runs/phase11_demo_v1/workflows/backend_bundle.txt | sha256=a5b969bcc6c23520227c3f52a136d219a939c68166b8261d1dbe8c297c2951c4 | bytes=57
+- artifacts/state/phase11/workflow_state.json | sha256=86c42ee18bbfd2f7c2d2fdb54b99d79269a0171a46b9dc4012261ba750b98d5a | bytes=104
+- artifacts/runs/phase11_demo_v1/debugger/rca.md | sha256=67ec67e443da380058797fc123cfc86d0531242af98470bab0463ff37119e8f8 | bytes=530
+- artifacts/runs/phase11_demo_v1/devops/release_manifest.json | sha256=ce2e8d69081a35965e8f29c2fbdbefe5d47806ee395fe6844b889ff34e0f0b8a | bytes=1106
+- artifacts/runs/phase11_demo_v1/devops/release_bundle.txt | sha256=a31ac57aecb4e9bdb992432f97a167ee2750f8ff11b61f10dd05d554de58da4e | bytes=328
+- artifacts/runs/phase11_demo_v1/architect/review.json | sha256=a9d91f21a54f8d99151f49eadec11a04b2b31717985eb0fdd2cc8a03122d2402 | bytes=1143
+- artifacts/phase11_handover/phase11_proof_summary.json | sha256=3276dae151438df03fe6edd2187755dd454ed5ae59b5f1992833327981455253 | bytes=4507
+- artifacts/phase11_handover/phase11_proof_summary.md | sha256=fb94f0efe209254c6072ff7c4bd9e90f84f4ea773cfc60e375b64eb6a41bd681 | bytes=2346

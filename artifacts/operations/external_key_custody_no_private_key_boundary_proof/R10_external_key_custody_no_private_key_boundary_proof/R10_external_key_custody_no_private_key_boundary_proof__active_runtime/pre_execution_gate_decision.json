@@ -1,0 +1,24 @@
+{
+  "decision_version": 1,
+  "decision_type": "pre_execution_key_policy_gate",
+  "proof_label": "R10_external_key_custody_no_private_key_boundary_proof",
+  "scenario": "R10_external_key_custody_no_private_key_boundary_proof__active_runtime",
+  "decision_time_utc": "2026-03-20T12:28:58+00:00",
+  "verification_mode": "base_time",
+  "public_key_path": "artifacts/operations/external_key_custody_no_private_key_boundary_proof/R10_external_key_custody_no_private_key_boundary_proof/public_keys/attestation_public_active.pem",
+  "checks": {
+    "public_key_exists": true,
+    "private_key_exists_in_external_custody": true,
+    "public_key_sha256": "545dbee3f7805f5009581459e7985dba6e071c6fee851a87eaf66deb6f41406a",
+    "registry_key_within_window": true
+  },
+  "registry_entry": {
+    "key_id": "r10-attestation-key-active",
+    "not_before": "2026-03-19T12:28:58+00:00",
+    "not_after": "2026-04-19T12:28:58+00:00"
+  },
+  "derived": {
+    "window_verdict": "within_window"
+  },
+  "gate_decision_allow": true
+}

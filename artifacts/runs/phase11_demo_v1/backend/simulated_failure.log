@@ -1,0 +1,2 @@
+ERROR: simulated packaging mismatch
+DETAIL: release bundle references unresolved frontend artifact hash

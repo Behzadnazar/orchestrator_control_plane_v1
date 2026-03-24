@@ -1,0 +1,27 @@
+{
+  "artifact_policy": {
+    "immutable_after_signing": true,
+    "registry_push_only_after_attestation": true
+  },
+  "attestation": {
+    "provider": "github_artifact_attestations",
+    "required": true,
+    "verification_stage": "pre-prod-and-prod"
+  },
+  "generated_at": "2026-03-24T10:15:35+00:00",
+  "provenance": {
+    "claims": [
+      "repository",
+      "workflow",
+      "environment",
+      "commit_sha",
+      "builder_identity"
+    ],
+    "required": true
+  },
+  "sbom": {
+    "format": "json",
+    "required": true,
+    "signed": true
+  }
+}

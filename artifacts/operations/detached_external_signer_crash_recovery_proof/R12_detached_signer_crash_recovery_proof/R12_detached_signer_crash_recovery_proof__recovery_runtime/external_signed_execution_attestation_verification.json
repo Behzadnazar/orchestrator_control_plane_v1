@@ -1,0 +1,16 @@
+{
+  "command": [
+    "openssl",
+    "dgst",
+    "-sha256",
+    "-verify",
+    "artifacts/operations/detached_external_signer_crash_recovery_proof/R12_detached_signer_crash_recovery_proof/public_keys/attestation_public_recovery.pem",
+    "-signature",
+    "artifacts/operations/detached_external_signer_crash_recovery_proof/R12_detached_signer_crash_recovery_proof/R12_detached_signer_crash_recovery_proof__recovery_runtime/external_signed_execution_attestation.sig",
+    "artifacts/operations/detached_external_signer_crash_recovery_proof/R12_detached_signer_crash_recovery_proof/R12_detached_signer_crash_recovery_proof__recovery_runtime/external_signed_execution_attestation_payload.json"
+  ],
+  "returncode": 0,
+  "stdout": "Verified OK\n",
+  "stderr": "",
+  "verified_ok": true
+}

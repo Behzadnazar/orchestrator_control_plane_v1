@@ -1,0 +1,10 @@
+{
+  "operation": "release",
+  "workflow_id": "Q5_mandatory_runtime_integration_proof__workflow",
+  "readiness_label": "Q1_operational_readiness",
+  "chain_label": "Q1_post_readiness_chain_check",
+  "milestone": "O3_independent_freeze",
+  "release_candidate": "RC3",
+  "require_rc": true,
+  "command": "python3 -c \"import os, sys; from pathlib import Path; p = Path(r'/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/operations/mandatory_integration_proof/Q5_mandatory_runtime_integration_proof/allowed_payload.marker'); flag = os.environ.get('CONTROL_PLANE_MANDATORY_EXECUTION'); wf = os.environ.get('CONTROL_PLANE_WORKFLOW_ID'); expected = r'Q5_mandatory_runtime_integration_proof__workflow'; ok = (flag == '1' and wf == expected); sys.exit(7) if not ok else p.write_text('AUTHORIZED_EXECUTION', encoding='utf-8')\""
+}

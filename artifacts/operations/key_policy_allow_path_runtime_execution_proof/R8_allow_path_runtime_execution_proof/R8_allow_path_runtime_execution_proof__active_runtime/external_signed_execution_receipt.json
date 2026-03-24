@@ -1,0 +1,21 @@
+{
+  "receipt_version": 1,
+  "receipt_type": "external_signed_execution_receipt",
+  "proof_label": "R8_allow_path_runtime_execution_proof",
+  "scenario": "R8_allow_path_runtime_execution_proof__active_runtime",
+  "status": "EXECUTED",
+  "executed": true,
+  "execution_started_at_utc": "2026-03-20T12:00:52+00:00",
+  "execution_finished_at_utc": "2026-03-20T12:00:53+00:00",
+  "task_id": "R8_allow_path_runtime_execution_proof__active_runtime__task",
+  "task_type": "backend.write_file",
+  "public_key_path": "artifacts/operations/key_rotation_revocation_proof/R5_key_rotation_revocation_proof/attestation_public_v2.pem",
+  "key_id": "attestation-key-policy-active",
+  "manifest_sha256": "950e34b4657da0aac35611f8f13de002f34cdee35f13718788edd490f733fd15",
+  "gate_decision_sha256": "5d9d1d5260401dcf63d425b43907dbe9dd0398e54b3a63d2b86621816e18dc0e",
+  "execution_output": {
+    "target_path": "proof/R8_allow_path_runtime_execution_proof__active_runtime/output.txt",
+    "content_sha256": "e1c2e1d702bc00890dc688fcf52c0a9a38e719e552d9170dbea79bc6f201bf9e"
+  },
+  "receipt_sha256": "80d8964b1f77600b7059f33e70bddf97c3afb0a72c2ddc4cd5f03d61e7ec27f4"
+}

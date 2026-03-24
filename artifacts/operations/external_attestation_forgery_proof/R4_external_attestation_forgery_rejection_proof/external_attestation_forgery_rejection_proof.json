@@ -1,0 +1,52 @@
+{
+  "report_version": 1,
+  "report_type": "external_attestation_forgery_rejection_proof",
+  "generated_at_utc": "2026-03-20T11:22:02+00:00",
+  "proof_label": "R4_external_attestation_forgery_rejection_proof",
+  "runtime_label": "R3_trust_separation_external_key_proof__runtime",
+  "proof_status": "PASS",
+  "baseline_phase": {
+    "label": "R4_external_attestation_forgery_rejection_proof__baseline",
+    "returncode": 0,
+    "verification_status": "PASS",
+    "verification_path": "artifacts/operations/external_attestation_verification/R4_external_attestation_forgery_rejection_proof__baseline/external_signed_attestation_verification.json",
+    "signature_valid": true
+  },
+  "tamper_phase": {
+    "label": "R4_external_attestation_forgery_rejection_proof__tampered",
+    "returncode": 1,
+    "verification_status": "FAIL",
+    "verification_path": "artifacts/operations/external_attestation_verification/R4_external_attestation_forgery_rejection_proof__tampered/external_signed_attestation_verification.json",
+    "tamper_type": "signature_b64_forgery",
+    "target_file": "artifacts/operations/external_signed_runtime/R3_trust_separation_external_key_proof__runtime/external_signed_execution_attestation.json",
+    "field": "signature_b64",
+    "original_signature_sha256": "79f1102c15714fb8582b48f22cb77a4f38c86e4beed0124c8da5ba5054714efa",
+    "tampered_signature_sha256": "01eb065c4ee2d1102aa8045e23395328c6c13b20b39f982b889bf330f5971112",
+    "signature_valid": false
+  },
+  "wrong_key_phase": {
+    "label": "R4_external_attestation_forgery_rejection_proof__wrong_key",
+    "returncode": 1,
+    "verification_status": "FAIL",
+    "verification_path": "artifacts/operations/external_attestation_verification/R4_external_attestation_forgery_rejection_proof__wrong_key/external_signed_attestation_verification.json",
+    "tamper_type": "wrong_public_key_verification",
+    "target_file": "artifacts/keys/attestation/attestation_public.pem",
+    "replacement_public_key": "artifacts/operations/external_attestation_forgery_proof/R4_external_attestation_forgery_rejection_proof/wrong_attestation_public.pem",
+    "signature_valid": false
+  },
+  "restore_phase": {
+    "label": "R4_external_attestation_forgery_rejection_proof__restored",
+    "returncode": 0,
+    "verification_status": "PASS",
+    "verification_path": "artifacts/operations/external_attestation_verification/R4_external_attestation_forgery_rejection_proof__restored/external_signed_attestation_verification.json",
+    "signature_valid": true
+  },
+  "backup_artifacts": {
+    "attestation_backup": "artifacts/operations/external_attestation_forgery_proof/R4_external_attestation_forgery_rejection_proof/external_signed_execution_attestation.backup.json",
+    "receipt_backup": "artifacts/operations/external_attestation_forgery_proof/R4_external_attestation_forgery_rejection_proof/external_signed_execution_receipt.backup.json",
+    "report_backup": "artifacts/operations/external_attestation_forgery_proof/R4_external_attestation_forgery_rejection_proof/external_signed_runtime_report.backup.json",
+    "manifest_backup": "artifacts/operations/external_attestation_forgery_proof/R4_external_attestation_forgery_rejection_proof/normalized_request_manifest.backup.json",
+    "public_key_backup": "artifacts/operations/external_attestation_forgery_proof/R4_external_attestation_forgery_rejection_proof/attestation_public.backup.pem",
+    "wrong_public_key": "artifacts/operations/external_attestation_forgery_proof/R4_external_attestation_forgery_rejection_proof/wrong_attestation_public.pem"
+  }
+}

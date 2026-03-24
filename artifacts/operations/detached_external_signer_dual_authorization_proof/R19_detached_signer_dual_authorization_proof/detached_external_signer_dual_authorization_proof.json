@@ -1,0 +1,84 @@
+{
+  "report_version": 1,
+  "report_type": "detached_external_signer_dual_authorization_proof",
+  "generated_at_utc": "2026-03-21T08:04:21+00:00",
+  "proof_label": "R19_detached_signer_dual_authorization_proof",
+  "base_verification_time_utc": "2026-03-21T08:04:17+00:00",
+  "future_fixture_time_utc": "2026-03-22T08:04:16+00:00",
+  "openssl_version": "OpenSSL 3.0.13 30 Jan 2024 (Library: OpenSSL 3.0.13 30 Jan 2024)",
+  "proof_status": "PASS",
+  "output_directory": "artifacts/operations/detached_external_signer_dual_authorization_proof/R19_detached_signer_dual_authorization_proof",
+  "detached_signer_custody_directory": "state/detached_external_signer_dual_authorization/R19_detached_signer_dual_authorization_proof",
+  "artifact_boundary_scan": {
+    "scanned_root": "artifacts/operations/detached_external_signer_dual_authorization_proof/R19_detached_signer_dual_authorization_proof",
+    "private_key_files_found": [],
+    "contains_private_keys": false
+  },
+  "runtime_boundary_scan": {
+    "scanned_root": "artifacts/operations/detached_external_signer_dual_authorization_proof/R19_detached_signer_dual_authorization_proof",
+    "private_key_files_found": [],
+    "contains_private_keys": false
+  },
+  "detached_signer_custody_scan": {
+    "scanned_root": "state/detached_external_signer_dual_authorization/R19_detached_signer_dual_authorization_proof",
+    "private_key_files_found": [],
+    "contains_private_keys": false
+  },
+  "scenarios": {
+    "dual_authorization_runtime": {
+      "scenario": "R19_detached_signer_dual_authorization_proof__dual_authorization_runtime",
+      "verification_time_utc": "2026-03-21T08:04:17+00:00",
+      "verification_mode": "base_time",
+      "gate_decision_allow": true,
+      "runtime_status_allow_executed": true,
+      "signer_ready": true,
+      "approver_a_ready": true,
+      "approver_b_ready": true,
+      "signer_key_path_exists_after_detach": false,
+      "approver_a_key_path_exists_after_detach": false,
+      "approver_b_key_path_exists_after_detach": false,
+      "signer_private_read_allowed": false,
+      "approver_a_private_read_allowed": false,
+      "approver_b_private_read_allowed": false,
+      "single_approval_rejected": true,
+      "single_approval_reason": "insufficient_distinct_approvals",
+      "duplicate_approval_rejected": true,
+      "duplicate_approval_reason": "duplicate_approver_ids",
+      "tampered_approval_rejected": true,
+      "tampered_approval_reason": "invalid_signature_approver_a",
+      "dual_approval_accepted": true,
+      "dual_payload_signature_verified": true,
+      "dual_payload_tamper_rejected": true,
+      "approval_a_signature_verified": true,
+      "approval_b_signature_verified": true,
+      "approval_a_tamper_rejected": true,
+      "runtime_report_exists": true,
+      "runtime_report_path": "artifacts/operations/detached_external_signer_dual_authorization_proof/R19_detached_signer_dual_authorization_proof/R19_detached_signer_dual_authorization_proof__dual_authorization_runtime/dual_authorization_runtime_report.json",
+      "gate_report_path": "artifacts/operations/detached_external_signer_dual_authorization_proof/R19_detached_signer_dual_authorization_proof/R19_detached_signer_dual_authorization_proof__dual_authorization_runtime/pre_execution_gate_report.json"
+    },
+    "expired_runtime": {
+      "scenario": "R19_detached_signer_dual_authorization_proof__expired_runtime",
+      "verification_time_utc": "2026-03-21T08:04:17+00:00",
+      "verification_mode": "base_time",
+      "gate_decision_allow": false,
+      "window_verdict": "expired",
+      "runtime_status_allow_executed": false,
+      "denied_key_cleanup_removed": true,
+      "denied_key_exists_after_cleanup": false,
+      "gate_report_path": "artifacts/operations/detached_external_signer_dual_authorization_proof/R19_detached_signer_dual_authorization_proof/R19_detached_signer_dual_authorization_proof__expired_runtime/pre_execution_gate_report.json",
+      "denied_key_cleanup_path": "artifacts/operations/detached_external_signer_dual_authorization_proof/R19_detached_signer_dual_authorization_proof/R19_detached_signer_dual_authorization_proof__expired_runtime/denied_key_cleanup.json"
+    },
+    "future_runtime": {
+      "scenario": "R19_detached_signer_dual_authorization_proof__future_runtime",
+      "verification_time_utc": "2026-03-22T08:04:16+00:00",
+      "verification_mode": "strict_pre_not_before_fixture",
+      "gate_decision_allow": false,
+      "window_verdict": "not_yet_valid",
+      "runtime_status_allow_executed": false,
+      "denied_key_cleanup_removed": true,
+      "denied_key_exists_after_cleanup": false,
+      "gate_report_path": "artifacts/operations/detached_external_signer_dual_authorization_proof/R19_detached_signer_dual_authorization_proof/R19_detached_signer_dual_authorization_proof__future_runtime/pre_execution_gate_report.json",
+      "denied_key_cleanup_path": "artifacts/operations/detached_external_signer_dual_authorization_proof/R19_detached_signer_dual_authorization_proof/R19_detached_signer_dual_authorization_proof__future_runtime/denied_key_cleanup.json"
+    }
+  }
+}

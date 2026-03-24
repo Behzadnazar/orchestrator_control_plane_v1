@@ -1,0 +1,20 @@
+{
+  "segments": [
+    {
+      "segment_index": 1,
+      "segment_path": "artifacts/operations/detached_external_signer_ledger_rotation_proof/R16_detached_signer_ledger_rotation_proof/rotated_ledger/segment_0001.jsonl",
+      "previous_segment_last_hash": "GENESIS",
+      "segment_first_entry_index": 1,
+      "segment_last_entry_index": 2,
+      "segment_last_entry_hash": "4e924c55248f53d8c89baccc90acc2ec2498fdc39c72f42996ce49e9f5dfedfd"
+    },
+    {
+      "segment_index": 2,
+      "segment_path": "artifacts/operations/detached_external_signer_ledger_rotation_proof/R16_detached_signer_ledger_rotation_proof/rotated_ledger/segment_0002.jsonl",
+      "previous_segment_last_hash": "4e924c55248f53d8c89baccc90acc2ec2498fdc39c72f42996ce49e9f5dfedfd",
+      "segment_first_entry_index": 3,
+      "segment_last_entry_index": 3,
+      "segment_last_entry_hash": "e96b09d6c3f474862076b19bf491c0964ff9126202aefe86e652e926b33a1648"
+    }
+  ]
+}

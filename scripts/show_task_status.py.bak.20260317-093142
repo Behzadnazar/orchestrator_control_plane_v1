@@ -1,0 +1,110 @@
+import json
+import sqlite3
+import sys
+from pathlib import Path
+
+DB_PATH = Path("orchestrator.db")
+
+
+def connect_db() -> sqlite3.Connection:
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+    conn.execute("PRAGMA journal_mode=WAL;")
+    conn.execute("PRAGMA synchronous=NORMAL;")
+    conn.execute("PRAGMA busy_timeout=5000;")
+    return conn
+
+
+def pretty_json(value: str | None) -> str:
+    if not value:
+        return ""
+    try:
+        obj = json.loads(value)
+        return json.dumps(obj, ensure_ascii=False, indent=2)
+    except Exception:
+        return value
+
+
+def show_task(conn: sqlite3.Connection, task_id: str) -> None:
+    row = conn.execute(
+        """
+        SELECT
+            task_id,
+            task_type,
+            priority,
+            status,
+            attempt_count,
+            max_attempts,
+            claimed_by_worker,
+            claimed_at,
+            heartbeat_at,
+            last_error,
+            result_payload,
+            created_at,
+            updated_at
+        FROM task_queue
+        WHERE task_id = ?
+        """,
+        (task_id,),
+    ).fetchone()
+
+    print("=" * 80)
+    print(f"TASK ID: {task_id}")
+
+    if row is None:
+        print("NOT FOUND")
+        return
+
+    print(f"task_type        : {row['task_type']}")
+    print(f"priority         : {row['priority']}")
+    print(f"status           : {row['status']}")
+    print(f"attempts         : {row['attempt_count']}/{row['max_attempts']}")
+    print(f"claimed_by       : {row['claimed_by_worker'] or ''}")
+    print(f"claimed_at       : {row['claimed_at'] or ''}")
+    print(f"heartbeat_at     : {row['heartbeat_at'] or ''}")
+    print(f"last_error       : {row['last_error'] or ''}")
+    print(f"created_at       : {row['created_at']}")
+    print(f"updated_at       : {row['updated_at']}")
+
+    print("\nRESULT PAYLOAD:")
+    result_payload = pretty_json(row["result_payload"])
+    print(result_payload if result_payload else "(empty)")
+
+    print("\nLAST EVENTS:")
+    events = conn.execute(
+        """
+        SELECT event_type, from_status, to_status, message, created_at
+        FROM task_events
+        WHERE task_id = ?
+        ORDER BY created_at DESC
+        LIMIT 10
+        """,
+        (task_id,),
+    ).fetchall()
+
+    if not events:
+        print("(no events)")
+        return
+
+    for event in events:
+        print(
+            f"- {event['created_at']} | "
+            f"{event['event_type']} | "
+            f"{event['from_status'] or ''} -> {event['to_status'] or ''} | "
+            f"{event['message'] or ''}"
+        )
+
+
+def main() -> None:
+    if len(sys.argv) < 2:
+        print("usage: python3 scripts/show_task_status.py <task_id> [<task_id> ...]")
+        raise SystemExit(1)
+
+    conn = connect_db()
+
+    for task_id in sys.argv[1:]:
+        show_task(conn, task_id)
+
+
+if __name__ == "__main__":
+    main()

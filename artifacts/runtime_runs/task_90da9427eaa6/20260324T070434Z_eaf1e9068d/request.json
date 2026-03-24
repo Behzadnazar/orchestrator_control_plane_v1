@@ -1,0 +1,18 @@
+{
+  "command": [
+    "python3",
+    "scripts/operational_task_runner.py",
+    "backend.fail_test"
+  ],
+  "command_shell_escaped": "python3 scripts/operational_task_runner.py backend.fail_test",
+  "cwd": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1",
+  "payload": {
+    "note": "retry then dead-letter still works"
+  },
+  "service_path": "backend.fail_test",
+  "started_at": "2026-03-24T07:04:34+00:00",
+  "task_id": "task_90da9427eaa6",
+  "task_type": "backend.fail_test",
+  "timeout_sec": 300,
+  "worker": "runtime-worker-51497"
+}

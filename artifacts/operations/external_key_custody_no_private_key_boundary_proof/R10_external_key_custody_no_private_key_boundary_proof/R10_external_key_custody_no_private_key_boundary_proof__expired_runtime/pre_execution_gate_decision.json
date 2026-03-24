@@ -1,0 +1,24 @@
+{
+  "decision_version": 1,
+  "decision_type": "pre_execution_key_policy_gate",
+  "proof_label": "R10_external_key_custody_no_private_key_boundary_proof",
+  "scenario": "R10_external_key_custody_no_private_key_boundary_proof__expired_runtime",
+  "decision_time_utc": "2026-03-20T12:28:58+00:00",
+  "verification_mode": "base_time",
+  "public_key_path": "artifacts/operations/external_key_custody_no_private_key_boundary_proof/R10_external_key_custody_no_private_key_boundary_proof/public_keys/attestation_public_expired.pem",
+  "checks": {
+    "public_key_exists": true,
+    "private_key_exists_in_external_custody": true,
+    "public_key_sha256": "3d9d36d4df43ca4c8aa20d343ad59445abc17eaf11306dda0961422c79c17a0f",
+    "registry_key_within_window": false
+  },
+  "registry_entry": {
+    "key_id": "r10-attestation-key-expired",
+    "not_before": "2026-02-18T12:28:58+00:00",
+    "not_after": "2026-03-20T12:28:57+00:00"
+  },
+  "derived": {
+    "window_verdict": "expired"
+  },
+  "gate_decision_allow": false
+}

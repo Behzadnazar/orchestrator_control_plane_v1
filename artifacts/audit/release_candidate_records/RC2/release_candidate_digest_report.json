@@ -1,0 +1,64 @@
+{
+  "generated_at_utc": "2026-03-20T10:26:39+00:00",
+  "milestone": "O2_growth_freeze",
+  "release_candidate": "RC2",
+  "promotion_status": "PASS",
+  "promotion_allowed": true,
+  "artifacts": [
+    {
+      "path": "artifacts/audit/milestone_records/O2_growth_freeze/signed_milestone_digest_report.json",
+      "size_bytes": 1663,
+      "sha256": "89cef7f7439d0440ab93b6444f62ed232027dc2498703490653c73b43edb886a"
+    },
+    {
+      "path": "artifacts/audit/milestone_records/O2_growth_freeze/signed_milestone_record.json",
+      "size_bytes": 4023,
+      "sha256": "fff45ffae8fe17f52d19405754b63e0138fb5fdc34801de2faf6aabeb62242f2"
+    },
+    {
+      "path": "artifacts/audit/verification/O2_growth_chain_after_milestone/audit_chain_verification_report.md",
+      "size_bytes": 3632,
+      "sha256": "447c88ad0be8c2edaa1057c896b89f848e2bad253d92dec6c39315abe23cbd66"
+    },
+    {
+      "path": "artifacts/audit/verification/O2_growth_chain_after_milestone/audit_chain_verification_summary.json",
+      "size_bytes": 7053,
+      "sha256": "62d0afe2e8f19d7b47fcac7e4c810a6a9fbbfe6a220d2ad32e9735cc90f3a0f1"
+    },
+    {
+      "path": "artifacts/freeze_gate/O2_growth_freeze/O2_growth_freeze_evidence_bundle.zip",
+      "size_bytes": 4917,
+      "sha256": "977b9d16a60486265079cbe0b14486b0bd9aa9067a49225de646326195f33335"
+    },
+    {
+      "path": "artifacts/freeze_gate/O2_growth_freeze/evidence_bundle_manifest.json",
+      "size_bytes": 2336,
+      "sha256": "5622860c395f1123ed4c8c71f4b0514c490a66af064404bd4fd5beb1a484a7d7"
+    },
+    {
+      "path": "artifacts/freeze_gate/O2_growth_freeze/freeze_gate_audit_report.md",
+      "size_bytes": 7402,
+      "sha256": "bc5ecc86ac124ed116220f85dfa01f9c0b945fe1f9ed652b8658871b68ae5172"
+    },
+    {
+      "path": "artifacts/freeze_gate/O2_growth_freeze/freeze_gate_summary.json",
+      "size_bytes": 1168,
+      "sha256": "9fa8ceed69ba1a0d5e2ccbb89da0514c846524dfa95c2387c780ea7b69c4cc22"
+    },
+    {
+      "path": "artifacts/release_candidates/RC2/promotion_gate_decision.json",
+      "size_bytes": 1633,
+      "sha256": "96d84a4d7fd745275543cf0a322a4fb5e693669dc0010b8e45a2933155307a19"
+    },
+    {
+      "path": "artifacts/release_candidates/RC2/release_candidate_record.json",
+      "size_bytes": 4284,
+      "sha256": "d4f549ab41b29a45f9f9c72f80eef661efabbfa885dbdc993fc0310fecdaba75"
+    }
+  ],
+  "audit_chain_contract": {
+    "link_field": "previous_entry_sha256",
+    "link_target": "previous.entry_sha256",
+    "contract_version": 2
+  }
+}

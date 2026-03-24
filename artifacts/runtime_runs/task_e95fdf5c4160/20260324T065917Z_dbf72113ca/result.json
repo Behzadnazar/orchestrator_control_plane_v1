@@ -1,0 +1,16 @@
+{
+  "artifact_dir": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/runtime_runs/task_e95fdf5c4160/20260324T065917Z_dbf72113ca",
+  "duration_ms": 0,
+  "error_summary": "RuntimeIntegrationError: Unknown service_path: research.collect_notes",
+  "exit_code": 1,
+  "finished_at": "2026-03-24T06:59:17+00:00",
+  "service_path": "research.collect_notes",
+  "stderr_path": null,
+  "stderr_tail": "RuntimeIntegrationError: Unknown service_path: research.collect_notes",
+  "stdout_path": null,
+  "stdout_tail": "",
+  "task_id": "task_e95fdf5c4160",
+  "task_type": "research.collect_notes",
+  "timed_out": false,
+  "worker": "runtime-worker-51342"
+}

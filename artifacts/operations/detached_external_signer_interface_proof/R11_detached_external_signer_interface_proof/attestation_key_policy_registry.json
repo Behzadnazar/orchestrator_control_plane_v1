@@ -1,0 +1,28 @@
+{
+  "registry_version": 1,
+  "registry_type": "detached_external_signer_registry",
+  "generated_at_utc": "2026-03-20T12:44:48+00:00",
+  "entries": [
+    {
+      "key_id": "r11-attestation-key-active",
+      "public_key_path": "artifacts/operations/detached_external_signer_interface_proof/R11_detached_external_signer_interface_proof/public_keys/attestation_public_active.pem",
+      "public_key_sha256": "02a220ef98aea36c673093f0c1587e43464383a28ab5825a8f0b4f48af4c30b0",
+      "not_before": "2026-03-19T12:44:46+00:00",
+      "not_after": "2026-04-19T12:44:46+00:00"
+    },
+    {
+      "key_id": "r11-attestation-key-expired",
+      "public_key_path": "artifacts/operations/detached_external_signer_interface_proof/R11_detached_external_signer_interface_proof/public_keys/attestation_public_expired.pem",
+      "public_key_sha256": "ce1bad729aefa90b7e03c14b61c3f84f932578c1f23e63c01339f5714b8dae36",
+      "not_before": "2026-02-18T12:44:46+00:00",
+      "not_after": "2026-03-20T12:44:45+00:00"
+    },
+    {
+      "key_id": "r11-attestation-key-future",
+      "public_key_path": "artifacts/operations/detached_external_signer_interface_proof/R11_detached_external_signer_interface_proof/public_keys/attestation_public_future.pem",
+      "public_key_sha256": "5e1533b44ae96967b7f8a9ebfc7cb1e0a26f0738d1f5c3a8d6a0ea5ef8a4bdd2",
+      "not_before": "2026-03-21T12:44:46+00:00",
+      "not_after": "2026-04-19T12:44:46+00:00"
+    }
+  ]
+}

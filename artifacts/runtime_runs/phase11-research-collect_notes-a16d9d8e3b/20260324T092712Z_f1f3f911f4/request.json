@@ -1,0 +1,27 @@
+{
+  "command": [
+    "python3",
+    "scripts/operational_task_runner.py",
+    "research.collect_notes"
+  ],
+  "command_shell_escaped": "python3 scripts/operational_task_runner.py research.collect_notes",
+  "cwd": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1",
+  "governance_owner_agent": "research_agent",
+  "governance_paths": [
+    {
+      "field": "notes_output_path",
+      "mode": "write",
+      "path": "artifacts/runs/phase11_demo_v1/research/market_notes.md"
+    }
+  ],
+  "payload": {
+    "notes": "Collect implementation constraints, handoff expectations, and artifact plan for phase11 governed workflow.",
+    "notes_output_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/runs/phase11_demo_v1/research/market_notes.md",
+    "topic": "Governed onboarding workflow for real agents",
+    "workflow_run_key": "phase11_demo_v1"
+  },
+  "service_path": "research.collect_notes",
+  "started_at": "2026-03-24T09:27:12+00:00",
+  "task_id": "phase11-research-collect_notes-a16d9d8e3b",
+  "task_type": "research.collect_notes"
+}

@@ -1,0 +1,41 @@
+{
+  "old_epoch": {
+    "request_a": {
+      "ok": true,
+      "action": "sign",
+      "request_id": "request_a",
+      "payload_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/operations/detached_external_signer_revocation_truststore_proof/R18_detached_signer_revocation_truststore_proof/R18_detached_signer_revocation_truststore_proof__revocation_runtime/old_epoch_payload_a.json",
+      "signature_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/operations/detached_external_signer_revocation_truststore_proof/R18_detached_signer_revocation_truststore_proof/R18_detached_signer_revocation_truststore_proof__revocation_runtime/old_epoch_signature_a.sig",
+      "key_epoch": "old_epoch",
+      "key_id": "r18-attestation-key-old",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "signature_exists": true
+    }
+  },
+  "new_epoch": {
+    "request_b": {
+      "ok": true,
+      "action": "sign",
+      "request_id": "request_b",
+      "payload_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/operations/detached_external_signer_revocation_truststore_proof/R18_detached_signer_revocation_truststore_proof/R18_detached_signer_revocation_truststore_proof__revocation_runtime/new_epoch_payload_b.json",
+      "signature_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/operations/detached_external_signer_revocation_truststore_proof/R18_detached_signer_revocation_truststore_proof/R18_detached_signer_revocation_truststore_proof__revocation_runtime/new_epoch_signature_b.sig",
+      "key_epoch": "new_epoch",
+      "key_id": "r18-attestation-key-new",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "signature_exists": true
+    }
+  },
+  "revoked_old_attempt": {
+    "ok": false,
+    "action": "sign",
+    "request_id": "request_revoked_old",
+    "payload_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/operations/detached_external_signer_revocation_truststore_proof/R18_detached_signer_revocation_truststore_proof/R18_detached_signer_revocation_truststore_proof__revocation_runtime/old_epoch_payload_after_revocation.json",
+    "signature_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/operations/detached_external_signer_revocation_truststore_proof/R18_detached_signer_revocation_truststore_proof/R18_detached_signer_revocation_truststore_proof__revocation_runtime/old_epoch_signature_after_revocation.sig",
+    "policy_reason": "key_revoked_for_new_signing",
+    "signature_exists": false
+  }
+}

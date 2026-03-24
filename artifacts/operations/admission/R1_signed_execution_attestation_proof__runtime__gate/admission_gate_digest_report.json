@@ -1,0 +1,17 @@
+{
+  "generated_at_utc": "2026-03-20T11:09:15+00:00",
+  "label": "R1_signed_execution_attestation_proof__runtime__gate",
+  "decision": "ALLOW",
+  "artifacts": [
+    {
+      "path": "artifacts/operations/admission/R1_signed_execution_attestation_proof__runtime__gate/admission_gate_decision.json",
+      "size_bytes": 3600,
+      "sha256": "afcc7f9ac8a5342059ef66cf9e38e729b175981ac78a0a803169eafa14dfec5e"
+    },
+    {
+      "path": "artifacts/operations/admission/R1_signed_execution_attestation_proof__runtime__gate/admission_gate_decision.md",
+      "size_bytes": 1430,
+      "sha256": "4fb10b1765900142b943608a7abfb823be20a67d512478c6aec011a40edc93c4"
+    }
+  ]
+}

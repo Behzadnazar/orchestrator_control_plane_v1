@@ -1,0 +1,11 @@
+{
+  "manifest_version": 1,
+  "proof_type": "detached_external_signer_approval_freshness_proof",
+  "proof_label": "R20_detached_signer_approval_freshness_proof",
+  "scenario": "R20_detached_signer_approval_freshness_proof__future_runtime",
+  "generated_at_utc": "2026-03-21T08:23:19+00:00",
+  "verification_context": {
+    "verification_time_utc": "2026-03-22T08:23:13+00:00",
+    "verification_mode": "strict_pre_not_before_fixture"
+  }
+}

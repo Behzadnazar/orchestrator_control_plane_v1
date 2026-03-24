@@ -1,0 +1,28 @@
+{
+  "trust_store_version": 1,
+  "generated_at_utc": "2026-03-21T06:55:08+00:00",
+  "keys": [
+    {
+      "key_id": "r18-attestation-key-old",
+      "public_key_path": "artifacts/operations/detached_external_signer_revocation_truststore_proof/R18_detached_signer_revocation_truststore_proof/public_keys/attestation_public_old.pem",
+      "public_key_sha256": "7500845f03eb1f488424f4ad689d1fcc922145c4fe095d8f4e29a31d84c9beeb",
+      "status": "active",
+      "valid_from": "2026-03-11T06:55:03+00:00",
+      "valid_until": "2026-03-26T06:55:03+00:00",
+      "revoked_at": null,
+      "historical_verification_allowed_before_revocation": true,
+      "new_signing_allowed_after_revocation": true
+    },
+    {
+      "key_id": "r18-attestation-key-new",
+      "public_key_path": "artifacts/operations/detached_external_signer_revocation_truststore_proof/R18_detached_signer_revocation_truststore_proof/public_keys/attestation_public_new.pem",
+      "public_key_sha256": "48febf40a1de08e74d65e6a12edde1e0b82cfccca46147e47874c0e00d831de3",
+      "status": "active",
+      "valid_from": "2026-03-20T06:55:03+00:00",
+      "valid_until": "2026-04-20T06:55:03+00:00",
+      "revoked_at": null,
+      "historical_verification_allowed_before_revocation": true,
+      "new_signing_allowed_after_revocation": true
+    }
+  ]
+}

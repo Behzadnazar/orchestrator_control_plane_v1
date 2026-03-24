@@ -1,0 +1,20 @@
+{
+  "command": [
+    "python3",
+    "scripts/operational_task_runner.py",
+    "research.collect_notes"
+  ],
+  "command_shell_escaped": "python3 scripts/operational_task_runner.py research.collect_notes",
+  "cwd": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1",
+  "payload": {
+    "notes_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/runs/samewf_run/research/a.md",
+    "topic": "samewf a",
+    "workflow_run_key": "samewf_run"
+  },
+  "service_path": "research.collect_notes",
+  "started_at": "2026-03-24T07:03:22+00:00",
+  "task_id": "task_e6f108897cf0",
+  "task_type": "research.collect_notes",
+  "timeout_sec": 300,
+  "worker": "runtime-worker-51456"
+}

@@ -1,0 +1,22 @@
+{
+  "generated_at_utc": "2026-03-20T11:19:24+00:00",
+  "label": "R3_trust_separation_external_key_proof",
+  "proof_status": "PASS",
+  "artifacts": [
+    {
+      "path": "artifacts/operations/trust_separation_proof/R3_trust_separation_external_key_proof/trust_separation_external_key_proof.json",
+      "size_bytes": 1300,
+      "sha256": "e694e50f3ccba816f09e4a748fad33cbe83d3d1c1e902a9d622c54f52a2c4238"
+    },
+    {
+      "path": "artifacts/operations/trust_separation_proof/R3_trust_separation_external_key_proof/trust_separation_external_key_proof.md",
+      "size_bytes": 629,
+      "sha256": "f9ef170033b60dfbe12de901a54a6f5561d4e558ee8376381fe382f0a4fcb5c8"
+    },
+    {
+      "path": "artifacts/operations/trust_separation_proof/R3_trust_separation_external_key_proof/external_key_request_manifest.json",
+      "size_bytes": 1372,
+      "sha256": "9e7378bfcf0037b48b266f9b9f456495ae8eb0ef8c3e5b51d4c61aff5a5fda25"
+    }
+  ]
+}

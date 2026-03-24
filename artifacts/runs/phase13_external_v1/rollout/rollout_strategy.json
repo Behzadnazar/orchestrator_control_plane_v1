@@ -1,0 +1,22 @@
+{
+  "deployment_strategy": {
+    "mode": "ring_canary",
+    "promotion_rule": "advance only on healthy observability checks",
+    "rings": [
+      "internal",
+      "limited",
+      "broad",
+      "global"
+    ]
+  },
+  "generated_at": "2026-03-24T10:15:35+00:00",
+  "rollback": {
+    "required": true,
+    "rollback_target": "previous_attested_release",
+    "trigger_conditions": [
+      "error_rate_regression",
+      "latency_budget_breach",
+      "manual_stop"
+    ]
+  }
+}

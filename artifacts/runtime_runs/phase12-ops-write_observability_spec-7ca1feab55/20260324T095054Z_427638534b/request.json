@@ -1,0 +1,32 @@
+{
+  "command": [
+    "python3",
+    "scripts/phase12_operational_runner.py",
+    "ops.write_observability_spec"
+  ],
+  "command_shell_escaped": "python3 scripts/phase12_operational_runner.py ops.write_observability_spec",
+  "cwd": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1",
+  "governance_owner_agent": "backend_agent",
+  "governance_paths": [
+    {
+      "field": "pipeline_path",
+      "mode": "read",
+      "path": "artifacts/runs/phase12_prod_v1/cicd/pipeline_spec.yaml"
+    },
+    {
+      "field": "observability_output_path",
+      "mode": "write",
+      "path": "artifacts/runs/phase12_prod_v1/ops/observability_spec.json"
+    }
+  ],
+  "payload": {
+    "observability_output_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/runs/phase12_prod_v1/ops/observability_spec.json",
+    "pipeline_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/runs/phase12_prod_v1/cicd/pipeline_spec.yaml",
+    "service_name": "phase12-governed-service",
+    "workflow_run_key": "phase12_prod_v1"
+  },
+  "service_path": "ops.write_observability_spec",
+  "started_at": "2026-03-24T09:50:54+00:00",
+  "task_id": "phase12-ops-write_observability_spec-7ca1feab55",
+  "task_type": "ops.write_observability_spec"
+}

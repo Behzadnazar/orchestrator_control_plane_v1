@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/scripts/operational_task_runner.py", line 142, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/scripts/operational_task_runner.py", line 131, in main
+    result = handlers[task_type](payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/scripts/operational_task_runner.py", line 104, in handle_backend_fail_test
+    raise RuntimeError(reason)
+RuntimeError: Intentional backend.fail_test execution

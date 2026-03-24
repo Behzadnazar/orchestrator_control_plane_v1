@@ -1,0 +1,23 @@
+{
+  "decision_version": 1,
+  "decision_type": "pre_execution_key_policy_gate",
+  "proof_label": "R13_detached_signer_concurrency_proof",
+  "scenario": "R13_detached_signer_concurrency_proof__future_runtime",
+  "decision_time_utc": "2026-03-21T13:24:33+00:00",
+  "verification_mode": "strict_pre_not_before_fixture",
+  "public_key_path": "artifacts/operations/detached_external_signer_concurrency_proof/R13_detached_signer_concurrency_proof/public_keys/attestation_public_future.pem",
+  "checks": {
+    "public_key_exists": true,
+    "registry_key_within_window": false,
+    "public_key_sha256": "3c51c14f404aeda882eb9395e9c92ec64841c52b693f06ff9bd95f6437621e96"
+  },
+  "registry_entry": {
+    "key_id": "r13-attestation-key-future",
+    "not_before": "2026-03-21T13:24:34+00:00",
+    "not_after": "2026-04-19T13:24:34+00:00"
+  },
+  "derived": {
+    "window_verdict": "not_yet_valid"
+  },
+  "gate_decision_allow": false
+}

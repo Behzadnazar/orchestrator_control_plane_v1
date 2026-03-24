@@ -1,0 +1,75 @@
+{
+  "command": [
+    "python3",
+    "scripts/phase12_operational_runner.py",
+    "release.promote_environment"
+  ],
+  "command_shell_escaped": "python3 scripts/phase12_operational_runner.py release.promote_environment",
+  "cwd": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1",
+  "governance_owner_agent": "devops_agent",
+  "governance_paths": [
+    {
+      "field": "environment_model_path",
+      "mode": "read",
+      "path": "artifacts/runs/phase12_prod_v1/environments/promotion_model.json"
+    },
+    {
+      "field": "pipeline_path",
+      "mode": "read",
+      "path": "artifacts/runs/phase12_prod_v1/cicd/pipeline_spec.yaml"
+    },
+    {
+      "field": "observability_path",
+      "mode": "read",
+      "path": "artifacts/runs/phase12_prod_v1/ops/observability_spec.json"
+    },
+    {
+      "field": "change_control_path",
+      "mode": "read",
+      "path": "artifacts/runs/phase12_prod_v1/ops/change_control.md"
+    },
+    {
+      "field": "sbom_path",
+      "mode": "read",
+      "path": "artifacts/runs/phase12_prod_v1/supply/sbom.json"
+    },
+    {
+      "field": "provenance_path",
+      "mode": "read",
+      "path": "artifacts/runs/phase12_prod_v1/supply/provenance.json"
+    },
+    {
+      "field": "signing_path",
+      "mode": "read",
+      "path": "artifacts/runs/phase12_prod_v1/supply/signing.json"
+    },
+    {
+      "field": "change_review_path",
+      "mode": "read",
+      "path": "artifacts/runs/phase12_prod_v1/architect/change_review.json"
+    },
+    {
+      "field": "deployment_report_path",
+      "mode": "write",
+      "path": "artifacts/runs/phase12_prod_v1/release/deployment_report.json"
+    }
+  ],
+  "payload": {
+    "change_control_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/runs/phase12_prod_v1/ops/change_control.md",
+    "change_review_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/runs/phase12_prod_v1/architect/change_review.json",
+    "deployment_report_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/runs/phase12_prod_v1/release/deployment_report.json",
+    "environment_model_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/runs/phase12_prod_v1/environments/promotion_model.json",
+    "observability_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/runs/phase12_prod_v1/ops/observability_spec.json",
+    "pipeline_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/runs/phase12_prod_v1/cicd/pipeline_spec.yaml",
+    "provenance_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/runs/phase12_prod_v1/supply/provenance.json",
+    "sbom_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/runs/phase12_prod_v1/supply/sbom.json",
+    "signing_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/runs/phase12_prod_v1/supply/signing.json",
+    "strategy": "ring_canary_safe_deployment",
+    "target_environment": "prod",
+    "workflow_run_key": "phase12_prod_v1"
+  },
+  "service_path": "release.promote_environment",
+  "started_at": "2026-03-24T09:50:55+00:00",
+  "task_id": "phase12-release-promote_environment-4888bf3cf4",
+  "task_type": "release.promote_environment"
+}

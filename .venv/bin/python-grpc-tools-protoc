@@ -1,0 +1,6 @@
+#!/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/.venv/bin/python3
+import sys
+from grpc_tools.protoc import entrypoint
+if __name__ == '__main__':
+    sys.argv[0] = sys.argv[0].removesuffix('.exe')
+    sys.exit(entrypoint())

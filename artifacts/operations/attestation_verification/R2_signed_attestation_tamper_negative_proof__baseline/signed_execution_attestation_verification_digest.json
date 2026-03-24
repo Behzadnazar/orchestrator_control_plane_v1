@@ -1,0 +1,16 @@
+{
+  "runtime_label": "R1_signed_execution_attestation_proof__runtime",
+  "verification_status": "PASS",
+  "artifacts": [
+    {
+      "path": "artifacts/operations/attestation_verification/R2_signed_attestation_tamper_negative_proof__baseline/signed_execution_attestation_verification.json",
+      "size_bytes": 1767,
+      "sha256": "5d4bf6368e64c83afccc5af3a0e16dc40e67ef5dd211922391c56568e11e5665"
+    },
+    {
+      "path": "artifacts/operations/attestation_verification/R2_signed_attestation_tamper_negative_proof__baseline/signed_execution_attestation_verification.md",
+      "size_bytes": 483,
+      "sha256": "cd5a8e5f84d3b2500cf518e67194daa2f4d805cb84658d785c43fc8753a329a4"
+    }
+  ]
+}

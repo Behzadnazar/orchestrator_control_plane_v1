@@ -1,0 +1,8 @@
+registry_module=scripts.task_registry
+handlers_module=scripts.task_handlers
+registry_entries=5
+handler_entries=6
+error_count=0
+warning_count=0
+issues=
+NO_ISSUES

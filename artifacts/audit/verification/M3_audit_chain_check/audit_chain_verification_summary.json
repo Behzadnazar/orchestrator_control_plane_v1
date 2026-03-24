@@ -1,0 +1,29 @@
+{
+  "generated_at_utc": "2026-03-19T14:02:10+00:00",
+  "verification_type": "immutable_audit_chain_verification",
+  "index_path": "artifacts/audit/immutable_audit_index.jsonl",
+  "overall_status": "PASS",
+  "total_entries": 1,
+  "ok_entries": 1,
+  "failed_entries": 0,
+  "results": [
+    {
+      "line_number": 1,
+      "milestone": "M1_freeze_gate",
+      "entry_type": "milestone_record",
+      "record_path": "artifacts/audit/milestone_records/M1_freeze_gate/signed_milestone_record.json",
+      "record_exists": true,
+      "recorded_record_sha256": "40d4fda522f46bd5a8fc1a5dc750c225d07a4e369694b61ea59cdc49b645b057",
+      "computed_record_sha256": "40d4fda522f46bd5a8fc1a5dc750c225d07a4e369694b61ea59cdc49b645b057",
+      "record_sha256_matches": true,
+      "recorded_previous_entry_sha256": null,
+      "expected_previous_entry_sha256": null,
+      "previous_link_ok": true,
+      "recorded_entry_sha256": "12c66f871932f35a21389d98925cda33cee6b863efc21c155756ea0200ee585a",
+      "computed_entry_sha256": "12c66f871932f35a21389d98925cda33cee6b863efc21c155756ea0200ee585a",
+      "entry_hash_ok": true,
+      "entry_ok": true,
+      "raw_line_sha256": "9b6e51a65c537fb9ff592a4c4251cd2b06ad84c00696f7c628884d4e1a1322e8"
+    }
+  ]
+}

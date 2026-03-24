@@ -1,0 +1,2 @@
+research handoff completed for topic=control plane routing
+notes_path=/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/research/control-plane-routing.md

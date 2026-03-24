@@ -1,0 +1,74 @@
+{
+  "command": [
+    "python3",
+    "scripts/phase12_operational_runner.py",
+    "architect.review_production_change"
+  ],
+  "command_shell_escaped": "python3 scripts/phase12_operational_runner.py architect.review_production_change",
+  "cwd": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1",
+  "governance_owner_agent": "architect_agent",
+  "governance_paths": [
+    {
+      "field": "intake_path",
+      "mode": "read",
+      "path": "artifacts/runs/phase12_prod_v1/intake/project_intake.md"
+    },
+    {
+      "field": "environment_model_path",
+      "mode": "read",
+      "path": "artifacts/runs/phase12_prod_v1/environments/promotion_model.json"
+    },
+    {
+      "field": "pipeline_path",
+      "mode": "read",
+      "path": "artifacts/runs/phase12_prod_v1/cicd/pipeline_spec.yaml"
+    },
+    {
+      "field": "observability_path",
+      "mode": "read",
+      "path": "artifacts/runs/phase12_prod_v1/ops/observability_spec.json"
+    },
+    {
+      "field": "change_control_path",
+      "mode": "read",
+      "path": "artifacts/runs/phase12_prod_v1/ops/change_control.md"
+    },
+    {
+      "field": "sbom_path",
+      "mode": "read",
+      "path": "artifacts/runs/phase12_prod_v1/supply/sbom.json"
+    },
+    {
+      "field": "provenance_path",
+      "mode": "read",
+      "path": "artifacts/runs/phase12_prod_v1/supply/provenance.json"
+    },
+    {
+      "field": "signing_path",
+      "mode": "read",
+      "path": "artifacts/runs/phase12_prod_v1/supply/signing.json"
+    },
+    {
+      "field": "review_output_path",
+      "mode": "write",
+      "path": "artifacts/runs/phase12_prod_v1/architect/change_review.json"
+    }
+  ],
+  "payload": {
+    "change_control_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/runs/phase12_prod_v1/ops/change_control.md",
+    "environment_model_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/runs/phase12_prod_v1/environments/promotion_model.json",
+    "intake_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/runs/phase12_prod_v1/intake/project_intake.md",
+    "observability_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/runs/phase12_prod_v1/ops/observability_spec.json",
+    "pipeline_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/runs/phase12_prod_v1/cicd/pipeline_spec.yaml",
+    "provenance_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/runs/phase12_prod_v1/supply/provenance.json",
+    "review_output_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/runs/phase12_prod_v1/architect/change_review.json",
+    "review_title": "Phase12 production change review",
+    "sbom_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/runs/phase12_prod_v1/supply/sbom.json",
+    "signing_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/runs/phase12_prod_v1/supply/signing.json",
+    "workflow_run_key": "phase12_prod_v1"
+  },
+  "service_path": "architect.review_production_change",
+  "started_at": "2026-03-24T09:50:55+00:00",
+  "task_id": "phase12-architect-review_production_change-995a714341",
+  "task_type": "architect.review_production_change"
+}

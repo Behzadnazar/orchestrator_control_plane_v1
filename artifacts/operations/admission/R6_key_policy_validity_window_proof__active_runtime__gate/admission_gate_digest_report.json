@@ -1,0 +1,17 @@
+{
+  "generated_at_utc": "2026-03-20T11:33:34+00:00",
+  "label": "R6_key_policy_validity_window_proof__active_runtime__gate",
+  "decision": "ALLOW",
+  "artifacts": [
+    {
+      "path": "artifacts/operations/admission/R6_key_policy_validity_window_proof__active_runtime__gate/admission_gate_decision.json",
+      "size_bytes": 3610,
+      "sha256": "cf2071a278492de9fa3a78e3948ceec76dd9755df38009a0587ebfcd928554cb"
+    },
+    {
+      "path": "artifacts/operations/admission/R6_key_policy_validity_window_proof__active_runtime__gate/admission_gate_decision.md",
+      "size_bytes": 1440,
+      "sha256": "6a51edb3bbe4701d85413d051211add97a261422c910d92b84c336d49c1bae8d"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "ok": false,
+  "action": "sign",
+  "request_id": "request_a",
+  "payload_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/operations/detached_external_signer_audit_ledger_proof/R15_detached_signer_audit_ledger_proof/R15_detached_signer_audit_ledger_proof__ledger_runtime/replay_payload.json",
+  "signature_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/operations/detached_external_signer_audit_ledger_proof/R15_detached_signer_audit_ledger_proof/R15_detached_signer_audit_ledger_proof__ledger_runtime/replay_payload.sig",
+  "policy_reason": "replay_request_id",
+  "signature_exists": false
+}

@@ -1,0 +1,8 @@
+{
+  "ready": true,
+  "service": "detached_external_signer",
+  "service_mode": "normal",
+  "key_id": "r12-attestation-key-recovery",
+  "fd_path": "/proc/self/fd/3",
+  "private_key_path_exists_after_detach": false
+}

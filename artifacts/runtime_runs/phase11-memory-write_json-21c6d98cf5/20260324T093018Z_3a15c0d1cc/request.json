@@ -1,0 +1,30 @@
+{
+  "command": [
+    "python3",
+    "scripts/operational_task_runner.py",
+    "memory.write_json"
+  ],
+  "command_shell_escaped": "python3 scripts/operational_task_runner.py memory.write_json",
+  "cwd": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1",
+  "governance_owner_agent": "memory_agent",
+  "governance_paths": [
+    {
+      "field": "path",
+      "mode": "write",
+      "path": "artifacts/state/phase11/workflow_state.json"
+    }
+  ],
+  "payload": {
+    "json_value": {
+      "state": "backend_generated",
+      "ts": "2026-03-24T09:30:17+00:00",
+      "workflow": "phase11_demo_v1"
+    },
+    "path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/state/phase11/workflow_state.json",
+    "workflow_run_key": "phase11_demo_v1"
+  },
+  "service_path": "memory.write_json",
+  "started_at": "2026-03-24T09:30:18+00:00",
+  "task_id": "phase11-memory-write_json-21c6d98cf5",
+  "task_type": "memory.write_json"
+}

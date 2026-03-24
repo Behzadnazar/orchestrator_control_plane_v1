@@ -1,0 +1,41 @@
+{
+  "approval_a_response": {
+    "ok": true,
+    "approver_id": "approver_a",
+    "signature_exists": true,
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "approval_b_response": {
+    "ok": true,
+    "approver_id": "approver_b",
+    "signature_exists": true,
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "single_response": {
+    "ok": false,
+    "policy_reason": "insufficient_distinct_approvals",
+    "signature_exists": false
+  },
+  "duplicate_response": {
+    "ok": false,
+    "policy_reason": "duplicate_approver_ids",
+    "signature_exists": false
+  },
+  "tampered_response": {
+    "ok": false,
+    "policy_reason": "invalid_signature_approver_a",
+    "signature_exists": false
+  },
+  "dual_response": {
+    "ok": true,
+    "policy_reason": null,
+    "signature_exists": true,
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "generated_at_utc": "2026-03-19T13:33:32+00:00",
+  "milestone": "M1_freeze_gate",
+  "overall_status": "PASS",
+  "gate_statuses": {
+    "baseline_manifest": "PASS",
+    "verification": "PASS",
+    "drift_report": "PASS",
+    "drift_proof": "PASS",
+    "freeze_proof": "PASS"
+  },
+  "evidence_sources": {
+    "baseline_manifest": "artifacts/releases/control-plane-v1-baseline/release_snapshot.json",
+    "verification": "artifacts/releases/latest_verification.json",
+    "drift_report": "artifacts/releases/control-plane-v1-baseline/baseline_verification.json",
+    "drift_proof": "artifacts/releases/negative_proof/latest_negative_proof.json",
+    "freeze_proof": "artifacts/releases/milestones/control-plane-v1-phase-l2-freeze/milestone_manifest.json"
+  },
+  "outputs": {
+    "report_markdown": "artifacts/freeze_gate/M1_freeze_gate/freeze_gate_audit_report.md",
+    "summary_json": "artifacts/freeze_gate/M1_freeze_gate/freeze_gate_summary.json",
+    "bundle_manifest_json": "artifacts/freeze_gate/M1_freeze_gate/evidence_bundle_manifest.json",
+    "bundle_archive_zip": "artifacts/freeze_gate/M1_freeze_gate/M1_freeze_gate_evidence_bundle.zip"
+  }
+}

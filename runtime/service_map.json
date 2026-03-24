@@ -1,0 +1,126 @@
+{
+  "services": {
+    "research.collect_notes": {
+      "command": ["python3", "scripts/operational_task_runner.py", "research.collect_notes"],
+      "allowed_cwds": ["."],
+      "timeout_sec": 300,
+      "env_allowlist": ["PATH", "HOME", "PYTHONPATH"]
+    },
+    "frontend.write_component": {
+      "command": ["python3", "scripts/operational_task_runner.py", "frontend.write_component"],
+      "allowed_cwds": ["."],
+      "timeout_sec": 300,
+      "env_allowlist": ["PATH", "HOME", "PYTHONPATH"]
+    },
+    "backend.write_file": {
+      "command": ["python3", "scripts/operational_task_runner.py", "backend.write_file"],
+      "allowed_cwds": ["."],
+      "timeout_sec": 300,
+      "env_allowlist": ["PATH", "HOME", "PYTHONPATH"]
+    },
+    "memory.write_json": {
+      "command": ["python3", "scripts/operational_task_runner.py", "memory.write_json"],
+      "allowed_cwds": ["."],
+      "timeout_sec": 120,
+      "env_allowlist": ["PATH", "HOME", "PYTHONPATH"]
+    },
+    "memory.read_json": {
+      "command": ["python3", "scripts/operational_task_runner.py", "memory.read_json"],
+      "allowed_cwds": ["."],
+      "timeout_sec": 120,
+      "env_allowlist": ["PATH", "HOME", "PYTHONPATH"]
+    },
+    "debugger.analyze_failure": {
+      "command": ["python3", "scripts/operational_task_runner.py", "debugger.analyze_failure"],
+      "allowed_cwds": ["."],
+      "timeout_sec": 300,
+      "env_allowlist": ["PATH", "HOME", "PYTHONPATH"]
+    },
+    "devops.build_release_bundle": {
+      "command": ["python3", "scripts/operational_task_runner.py", "devops.build_release_bundle"],
+      "allowed_cwds": ["."],
+      "timeout_sec": 300,
+      "env_allowlist": ["PATH", "HOME", "PYTHONPATH"]
+    },
+    "architect.review_constraints": {
+      "command": ["python3", "scripts/operational_task_runner.py", "architect.review_constraints"],
+      "allowed_cwds": ["."],
+      "timeout_sec": 300,
+      "env_allowlist": ["PATH", "HOME", "PYTHONPATH"]
+    },
+    "backend.fail_test": {
+      "command": ["python3", "scripts/operational_task_runner.py", "backend.fail_test"],
+      "allowed_cwds": ["."],
+      "timeout_sec": 120,
+      "env_allowlist": ["PATH", "HOME", "PYTHONPATH"]
+    },
+
+    "intake.define_project": {
+      "command": ["python3", "scripts/phase12_operational_runner.py", "intake.define_project"],
+      "allowed_cwds": ["."],
+      "timeout_sec": 120,
+      "env_allowlist": ["PATH", "HOME", "PYTHONPATH"]
+    },
+    "env.define_promotion_model": {
+      "command": ["python3", "scripts/phase12_operational_runner.py", "env.define_promotion_model"],
+      "allowed_cwds": ["."],
+      "timeout_sec": 120,
+      "env_allowlist": ["PATH", "HOME", "PYTHONPATH"]
+    },
+    "cicd.write_pipeline_spec": {
+      "command": ["python3", "scripts/phase12_operational_runner.py", "cicd.write_pipeline_spec"],
+      "allowed_cwds": ["."],
+      "timeout_sec": 120,
+      "env_allowlist": ["PATH", "HOME", "PYTHONPATH"]
+    },
+    "ops.write_observability_spec": {
+      "command": ["python3", "scripts/phase12_operational_runner.py", "ops.write_observability_spec"],
+      "allowed_cwds": ["."],
+      "timeout_sec": 120,
+      "env_allowlist": ["PATH", "HOME", "PYTHONPATH"]
+    },
+    "ops.write_change_control_spec": {
+      "command": ["python3", "scripts/phase12_operational_runner.py", "ops.write_change_control_spec"],
+      "allowed_cwds": ["."],
+      "timeout_sec": 120,
+      "env_allowlist": ["PATH", "HOME", "PYTHONPATH"]
+    },
+    "devops.generate_supply_chain_bundle": {
+      "command": ["python3", "scripts/phase12_operational_runner.py", "devops.generate_supply_chain_bundle"],
+      "allowed_cwds": ["."],
+      "timeout_sec": 180,
+      "env_allowlist": ["PATH", "HOME", "PYTHONPATH"]
+    },
+    "architect.review_production_change": {
+      "command": ["python3", "scripts/phase12_operational_runner.py", "architect.review_production_change"],
+      "allowed_cwds": ["."],
+      "timeout_sec": 180,
+      "env_allowlist": ["PATH", "HOME", "PYTHONPATH"]
+    },
+    "release.promote_environment": {
+      "command": ["python3", "scripts/phase12_operational_runner.py", "release.promote_environment"],
+      "allowed_cwds": ["."],
+      "timeout_sec": 180,
+      "env_allowlist": ["PATH", "HOME", "PYTHONPATH"]
+    },
+    "debugger.write_postmortem": {
+      "command": ["python3", "scripts/phase12_operational_runner.py", "debugger.write_postmortem"],
+      "allowed_cwds": ["."],
+      "timeout_sec": 120,
+      "env_allowlist": ["PATH", "HOME", "PYTHONPATH"]
+    },
+
+    "orchestrator.cli": {
+      "command": ["python3", "-m", "app.cli"],
+      "allowed_cwds": ["."],
+      "timeout_sec": 900,
+      "env_allowlist": ["PATH", "HOME", "PYTHONPATH"]
+    },
+    "python.pytest": {
+      "command": ["python3", "-m", "pytest"],
+      "allowed_cwds": ["."],
+      "timeout_sec": 1800,
+      "env_allowlist": ["PATH", "HOME", "PYTHONPATH", "PYTEST_ADDOPTS"]
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "report_version": 1,
+  "report_type": "external_key_signed_execution_entry",
+  "generated_at_utc": "2026-03-20T11:27:52+00:00",
+  "runtime_label": "R5_key_rotation_revocation_proof__runtime",
+  "workflow_id": "R5_key_rotation_revocation_proof__workflow",
+  "operation": "release",
+  "gate_decision": "ALLOW",
+  "runtime_status": "ALLOW_EXECUTED",
+  "gate_phase": {
+    "gate_label": "R5_key_rotation_revocation_proof__runtime__gate",
+    "gate_command": [
+      "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/.venv/bin/python3",
+      "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/scripts/control_plane_admission_gate.py",
+      "--label",
+      "R5_key_rotation_revocation_proof__runtime__gate",
+      "--operation",
+      "release",
+      "--workflow-id",
+      "R5_key_rotation_revocation_proof__workflow",
+      "--readiness-label",
+      "Q1_operational_readiness",
+      "--chain-label",
+      "Q1_post_readiness_chain_check",
+      "--milestone",
+      "O3_independent_freeze",
+      "--release-candidate",
+      "RC3",
+      "--require-rc"
+    ],
+    "gate_returncode": 0,
+    "gate_stdout_sha256": "04358754d88718d9eb12e26f0d1c927f396f12fc168d1ce4a85b6d8982e5d0fd",
+    "gate_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gate_decision_path": "artifacts/operations/admission/R5_key_rotation_revocation_proof__runtime__gate/admission_gate_decision.json"
+  },
+  "command_phase": {
+    "executed": true,
+    "wrapped_command_shell": "python3 -c \"import os, sys; from pathlib import Path; p = Path(r'/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/operations/key_rotation_revocation_proof/R5_key_rotation_revocation_proof/rotated_external_key.marker'); flag = os.environ.get('CONTROL_PLANE_TRUST_SEPARATED_SIGNING'); pub = os.environ.get('CONTROL_PLANE_PUBLIC_KEY_PATH'); expected_pub = r'/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/operations/key_rotation_revocation_proof/R5_key_rotation_revocation_proof/attestation_public_v2.pem'; wf = os.environ.get('CONTROL_PLANE_WORKFLOW_ID'); expected_wf = r'R5_key_rotation_revocation_proof__workflow'; ok = (flag == '1' and pub == expected_pub and wf == expected_wf); sys.exit(17) if not ok else p.write_text('ROTATED_KEY_EXECUTION_OK', encoding='utf-8')\"",
+    "returncode": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "receipt_path": "artifacts/operations/external_signed_runtime/R5_key_rotation_revocation_proof__runtime/external_signed_execution_receipt.json",
+  "attestation_path": "artifacts/operations/external_signed_runtime/R5_key_rotation_revocation_proof__runtime/external_signed_execution_attestation.json",
+  "public_key_path": "artifacts/operations/key_rotation_revocation_proof/R5_key_rotation_revocation_proof/attestation_public_v2.pem",
+  "trust_boundary_mode": "external_private_key_signing_public_key_verification",
+  "private_key_material_embedded": false
+}

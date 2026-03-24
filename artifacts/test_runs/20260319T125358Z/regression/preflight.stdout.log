@@ -1,0 +1,6 @@
+[preflight] PASS base dir present: /home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1
+[preflight] PASS venv interpreter present: /home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/.venv/bin/python3
+[preflight] PASS required files present: 10
+[preflight] PASS active interpreter matches venv: /usr/bin/python3.12
+[preflight] PASS pytest import available
+[preflight] FINAL_STATUS=PASSED

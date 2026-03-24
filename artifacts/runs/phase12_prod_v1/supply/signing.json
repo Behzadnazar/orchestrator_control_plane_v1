@@ -1,0 +1,6 @@
+{
+  "generated_at": "2026-03-24T09:51:25+00:00",
+  "release_name": "phase12-prod-release",
+  "signature_policy": "signed-sbom-and-provenance-required",
+  "signing_status": "attested"
+}

@@ -1,0 +1,7 @@
+OFFICIAL WORKER SCRIPTS
+
+worker_loop_final.py
+recover_stale_tasks_final.py
+
+All older worker versions are archived under:
+scripts/archive/

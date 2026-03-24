@@ -1,0 +1,13 @@
+{
+  "suite": "all",
+  "manifest_version": 1,
+  "started_at": "2026-03-19T11:00:12+00:00",
+  "project_root": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1",
+  "official_discovery_command": "python3 -m unittest discover -s tests -t . -p 'test_*.py' -v",
+  "tests_run": 52,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "successful": true,
+  "failure_diagnostics": []
+}

@@ -1,0 +1,60 @@
+{
+  "github": {
+    "owner": "Behzadnazar",
+    "repo": "orchestrator_control_plane_v1",
+    "visibility": "private",
+    "create_repo_if_missing": true,
+    "default_branch": "main",
+    "required_status_checks": [
+      "phase13b / verify-local",
+      "phase13b / build-and-attest",
+      "phase13b / governed-release"
+    ],
+    "required_approving_review_count": 2,
+    "require_code_owner_reviews": true,
+    "dismiss_stale_reviews": true,
+    "require_last_push_approval": true,
+    "enforce_admins": true,
+    "require_signed_commits": true,
+    "codeowners": [],
+    "dev_reviewers": [],
+    "staging_reviewers": [],
+    "production_reviewers": [
+      "Behzadnazar"
+    ],
+    "environment_wait_timers": {
+      "dev": 0,
+      "staging": 5,
+      "production": 10
+    },
+    "release_prefix": "phase13b",
+    "incident_issue_labels": [
+      "incident",
+      "phase13b",
+      "governed-delivery"
+    ]
+  },
+  "release_bundle": {
+    "include_paths": [
+      "config",
+      "scripts",
+      ".github/workflows",
+      "artifacts/phase13_handover",
+      "artifacts/phase13_freeze",
+      "artifacts/runs/phase13_external_v1"
+    ],
+    "exclude_globs": [
+      "**/__pycache__/**",
+      "**/*.pyc",
+      "**/.DS_Store",
+      "**/*.log",
+      "**/.git/**"
+    ]
+  },
+  "azure_oidc": {
+    "enabled": false,
+    "client_id": "",
+    "tenant_id": "",
+    "subscription_id": ""
+  }
+}

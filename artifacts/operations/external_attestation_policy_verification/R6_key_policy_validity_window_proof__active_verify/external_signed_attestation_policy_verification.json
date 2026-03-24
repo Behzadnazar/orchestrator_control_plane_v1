@@ -1,0 +1,50 @@
+{
+  "verification_version": 1,
+  "verification_type": "external_signed_attestation_policy_verification",
+  "runtime_label": "R6_key_policy_validity_window_proof__active_runtime",
+  "verification_time_utc": "2026-03-20T11:33:33+00:00",
+  "verification_status": "PASS",
+  "inputs": {
+    "receipt_path": "artifacts/operations/external_signed_runtime/R6_key_policy_validity_window_proof__active_runtime/external_signed_execution_receipt.json",
+    "attestation_path": "artifacts/operations/external_signed_runtime/R6_key_policy_validity_window_proof__active_runtime/external_signed_execution_attestation.json",
+    "report_path": "artifacts/operations/external_signed_runtime/R6_key_policy_validity_window_proof__active_runtime/external_signed_runtime_report.json",
+    "manifest_path": "artifacts/operations/external_signed_runtime/R6_key_policy_validity_window_proof__active_runtime/normalized_request_manifest.json",
+    "public_key_path": "artifacts/operations/key_rotation_revocation_proof/R5_key_rotation_revocation_proof/attestation_public_v2.pem",
+    "registry_path": "artifacts/operations/key_policy_validity_proof/R6_key_policy_validity_window_proof/attestation_key_policy_registry.json"
+  },
+  "registry_entry": {
+    "key_id": "attestation-key-policy-active",
+    "public_key_path": "artifacts/operations/key_rotation_revocation_proof/R5_key_rotation_revocation_proof/attestation_public_v2.pem",
+    "public_key_sha256": "655e68820ed6d8cd54258927e881e295fb01ae544dc8f7e7afcf405823d9d53d",
+    "status": "active",
+    "revoked": false,
+    "usage": "attestation_signing",
+    "not_before": "2026-03-19T11:33:33+00:00",
+    "not_after": "2026-04-19T11:33:33+00:00"
+  },
+  "checks": {
+    "receipt_exists": true,
+    "attestation_exists": true,
+    "report_exists": true,
+    "manifest_exists": true,
+    "registry_exists": true,
+    "receipt_hash_matches": true,
+    "manifest_hash_matches": true,
+    "public_key_hash_matches": true,
+    "private_key_material_not_embedded": true,
+    "signature_valid": true,
+    "registry_entry_found": true,
+    "registry_key_active": true,
+    "registry_key_not_revoked": true,
+    "registry_key_usage_valid": true,
+    "registry_key_within_window": true,
+    "gate_decision_allow": true,
+    "runtime_status_allow_executed": true,
+    "report_runtime_consistent": true,
+    "receipt_runtime_consistent": true,
+    "manifest_workflow_consistent": true
+  },
+  "derived": {
+    "window_verdict": "within_window"
+  }
+}

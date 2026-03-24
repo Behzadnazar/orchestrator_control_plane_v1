@@ -1,0 +1,37 @@
+TASK_REGISTRY = {
+    "backend.test": {
+        "description": "simple backend success test task",
+        "required_payload_keys": [],
+        "max_attempts": 3,
+    },
+    "backend.fail_test": {
+        "description": "intentional backend failure test task",
+        "required_payload_keys": [],
+        "max_attempts": 3,
+    },
+    "backend.write_file": {
+        "description": "write a text file to disk",
+        "required_payload_keys": ["target_path", "content"],
+        "max_attempts": 3,
+    },
+    "backend.write_project_file": {
+        "description": "write a project file inside the repository",
+        "required_payload_keys": ["target_path", "content"],
+        "max_attempts": 3,
+    },
+    "backend.run_shell_check": {
+        "description": "run a safe shell check command and capture stdout/stderr",
+        "required_payload_keys": ["command"],
+        "max_attempts": 2,
+    },
+    "frontend.write_component": {
+        "description": "write a frontend component file inside the repository",
+        "required_payload_keys": ["target_path", "content"],
+        "max_attempts": 3,
+    },
+    "research.collect_notes": {
+        "description": "store research notes as a markdown file inside the repository",
+        "required_payload_keys": ["target_path", "title", "notes"],
+        "max_attempts": 3,
+    },
+}

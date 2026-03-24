@@ -1,0 +1,21 @@
+{
+  "change_management": {
+    "link_change_ticket": true,
+    "post_incident_review_required": true,
+    "required_for_prod": true
+  },
+  "generated_at": "2026-03-24T10:15:35+00:00",
+  "observability_signals": {
+    "alerts": [
+      "sev1_error_budget_burn",
+      "sev2_canary_failure",
+      "sev2_release_regression"
+    ],
+    "metrics": [
+      "latency_p95",
+      "error_rate",
+      "availability",
+      "deployment_success_rate"
+    ]
+  }
+}

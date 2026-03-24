@@ -1,0 +1,204 @@
+{
+  "actors": {
+    "behzad": {
+      "roles": [
+        "platform_admin",
+        "human_approver",
+        "research_reviewer",
+        "frontend_reviewer",
+        "backend_reviewer",
+        "memory_reviewer",
+        "debugger_reviewer",
+        "devops_reviewer",
+        "architect_reviewer",
+        "release_manager",
+        "security_reviewer",
+        "operations_reviewer"
+      ]
+    },
+    "ci-bot": {
+      "roles": [
+        "automation"
+      ]
+    }
+  },
+  "agents": {
+    "research_agent": {
+      "display_name": "Research Agent",
+      "capabilities": {
+        "task_types": [
+          "research.collect_notes",
+          "intake.define_project"
+        ],
+        "service_paths": [
+          "research.collect_notes",
+          "intake.define_project"
+        ],
+        "tools": [
+          "filesystem.read",
+          "filesystem.write"
+        ],
+        "memory_namespaces": [
+          "artifacts/research_notes/*",
+          "artifacts/runs/*/research/*",
+          "artifacts/runs/*/intake/*",
+          "artifacts/state/research/*",
+          "artifacts/state/phase12/*"
+        ]
+      }
+    },
+    "frontend_agent": {
+      "display_name": "Frontend Agent",
+      "capabilities": {
+        "task_types": [
+          "frontend.write_component"
+        ],
+        "service_paths": [
+          "frontend.write_component"
+        ],
+        "tools": [
+          "filesystem.read",
+          "filesystem.write"
+        ],
+        "memory_namespaces": [
+          "frontend/src/components/*",
+          "artifacts/runs/*/frontend/*",
+          "artifacts/state/frontend/*"
+        ]
+      }
+    },
+    "backend_agent": {
+      "display_name": "Backend Agent",
+      "capabilities": {
+        "task_types": [
+          "backend.write_file",
+          "backend.fail_test",
+          "cicd.write_pipeline_spec",
+          "ops.write_observability_spec",
+          "ops.write_change_control_spec"
+        ],
+        "service_paths": [
+          "backend.write_file",
+          "backend.fail_test",
+          "cicd.write_pipeline_spec",
+          "ops.write_observability_spec",
+          "ops.write_change_control_spec"
+        ],
+        "tools": [
+          "filesystem.read",
+          "filesystem.write"
+        ],
+        "memory_namespaces": [
+          "backend/generated/*",
+          "artifacts/runs/*/backend/*",
+          "artifacts/runs/*/workflows/*",
+          "artifacts/runs/*/cicd/*",
+          "artifacts/runs/*/ops/*",
+          "artifacts/state/backend/*",
+          "artifacts/state/phase12/*"
+        ]
+      }
+    },
+    "memory_agent": {
+      "display_name": "Memory Agent",
+      "capabilities": {
+        "task_types": [
+          "memory.write_json",
+          "memory.read_json",
+          "env.define_promotion_model"
+        ],
+        "service_paths": [
+          "memory.write_json",
+          "memory.read_json",
+          "env.define_promotion_model"
+        ],
+        "tools": [
+          "memory.read",
+          "memory.write"
+        ],
+        "memory_namespaces": [
+          "artifacts/state/*",
+          "artifacts/state/**/*.json",
+          "artifacts/runs/*/environments/*",
+          "artifacts/state/phase12/*"
+        ]
+      }
+    },
+    "debugger_agent": {
+      "display_name": "Debugger Agent",
+      "capabilities": {
+        "task_types": [
+          "debugger.analyze_failure",
+          "debugger.write_postmortem"
+        ],
+        "service_paths": [
+          "debugger.analyze_failure",
+          "debugger.write_postmortem"
+        ],
+        "tools": [
+          "filesystem.read",
+          "filesystem.write",
+          "analysis.root_cause"
+        ],
+        "memory_namespaces": [
+          "artifacts/runs/*/debugger/*",
+          "artifacts/runs/*/postmortem/*",
+          "artifacts/state/debugger/*",
+          "artifacts/state/phase12/*"
+        ]
+      }
+    },
+    "devops_agent": {
+      "display_name": "DevOps Agent",
+      "capabilities": {
+        "task_types": [
+          "devops.build_release_bundle",
+          "devops.generate_supply_chain_bundle",
+          "release.promote_environment"
+        ],
+        "service_paths": [
+          "devops.build_release_bundle",
+          "devops.generate_supply_chain_bundle",
+          "release.promote_environment"
+        ],
+        "tools": [
+          "filesystem.read",
+          "filesystem.write",
+          "release.bundle",
+          "supply_chain.bundle",
+          "deployment.control"
+        ],
+        "memory_namespaces": [
+          "artifacts/runs/*/devops/*",
+          "artifacts/runs/*/supply/*",
+          "artifacts/runs/*/release/*",
+          "artifacts/state/devops/*",
+          "artifacts/state/phase12/*"
+        ]
+      }
+    },
+    "architect_agent": {
+      "display_name": "Architect Agent",
+      "capabilities": {
+        "task_types": [
+          "architect.review_constraints",
+          "architect.review_production_change"
+        ],
+        "service_paths": [
+          "architect.review_constraints",
+          "architect.review_production_change"
+        ],
+        "tools": [
+          "filesystem.read",
+          "filesystem.write",
+          "architecture.review"
+        ],
+        "memory_namespaces": [
+          "artifacts/runs/*/architect/*",
+          "artifacts/state/architect/*",
+          "artifacts/state/phase12/*"
+        ]
+      }
+    }
+  }
+}

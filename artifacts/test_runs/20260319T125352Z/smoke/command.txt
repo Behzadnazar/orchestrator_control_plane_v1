@@ -1,0 +1,1 @@
+/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/.venv/bin/python3 -m pytest --junit-xml /home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/test_runs/20260319T125352Z/smoke/junit.xml -q -m smoke

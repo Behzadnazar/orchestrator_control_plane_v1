@@ -1,0 +1,27 @@
+{
+  "manifest_version": 1,
+  "proof_type": "real_external_signature_verification_tamper_proof",
+  "proof_label": "R9_real_external_signature_verification_tamper_proof",
+  "scenario": "R9_real_external_signature_verification_tamper_proof__expired_runtime",
+  "generated_at_utc": "2026-03-20T12:09:11+00:00",
+  "workflow": {
+    "name": "external_signed_runtime_gate",
+    "mode": "real_external_signature_verification"
+  },
+  "verification_context": {
+    "verification_time_utc": "2026-03-20T12:09:09+00:00",
+    "verification_mode": "base_time"
+  },
+  "task": {
+    "task_id": "R9_real_external_signature_verification_tamper_proof__expired_runtime__task",
+    "task_type": "backend.write_file",
+    "priority": "high",
+    "payload": {
+      "target_path": "proof/R9_real_external_signature_verification_tamper_proof__expired_runtime/output.txt",
+      "content": "executed:R9_real_external_signature_verification_tamper_proof__expired_runtime"
+    }
+  },
+  "attestation": {
+    "public_key_path": "artifacts/operations/real_external_signature_verification_tamper_proof/R9_real_external_signature_verification_tamper_proof/keys/attestation_public_expired.pem"
+  }
+}

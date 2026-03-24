@@ -1,0 +1,35 @@
+{
+  "alerts": [
+    "sev1_error_budget_burn",
+    "sev2_release_regression",
+    "sev2_canary_failure"
+  ],
+  "generated_at": "2026-03-24T09:51:24+00:00",
+  "metrics": [
+    "latency_p95",
+    "error_rate",
+    "availability",
+    "deployment_success_rate"
+  ],
+  "safe_deployment_strategy": {
+    "mode": "ring_canary",
+    "rings": [
+      "internal",
+      "limited",
+      "broad",
+      "global"
+    ]
+  },
+  "service_name": "phase12-governed-service",
+  "validation_gates": {
+    "post_deploy": [
+      "smoke_green",
+      "alerts_clear",
+      "rollback_signal_ready"
+    ],
+    "pre_deploy": [
+      "baseline_available",
+      "no_open_sev0"
+    ]
+  }
+}

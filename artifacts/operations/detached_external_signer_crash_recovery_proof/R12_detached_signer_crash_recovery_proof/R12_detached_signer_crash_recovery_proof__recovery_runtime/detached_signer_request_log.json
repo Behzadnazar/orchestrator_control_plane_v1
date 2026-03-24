@@ -1,0 +1,22 @@
+{
+  "receipt_sign_response": {
+    "ok": true,
+    "action": "sign",
+    "payload_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/operations/detached_external_signer_crash_recovery_proof/R12_detached_signer_crash_recovery_proof/R12_detached_signer_crash_recovery_proof__recovery_runtime/external_signed_execution_receipt_payload.json",
+    "signature_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/operations/detached_external_signer_crash_recovery_proof/R12_detached_signer_crash_recovery_proof/R12_detached_signer_crash_recovery_proof__recovery_runtime/external_signed_execution_receipt.sig",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "signature_exists": true
+  },
+  "attestation_sign_response": {
+    "ok": true,
+    "action": "sign",
+    "payload_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/operations/detached_external_signer_crash_recovery_proof/R12_detached_signer_crash_recovery_proof/R12_detached_signer_crash_recovery_proof__recovery_runtime/external_signed_execution_attestation_payload.json",
+    "signature_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/operations/detached_external_signer_crash_recovery_proof/R12_detached_signer_crash_recovery_proof/R12_detached_signer_crash_recovery_proof__recovery_runtime/external_signed_execution_attestation.sig",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "signature_exists": true
+  }
+}

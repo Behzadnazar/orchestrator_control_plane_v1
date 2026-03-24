@@ -1,0 +1,16 @@
+{
+  "command": [
+    "openssl",
+    "dgst",
+    "-sha256",
+    "-verify",
+    "artifacts/operations/detached_external_signer_policy_proof/R14_detached_signer_policy_enforcement_proof/public_keys/attestation_public_policy.pem",
+    "-signature",
+    "artifacts/operations/detached_external_signer_policy_proof/R14_detached_signer_policy_enforcement_proof/R14_detached_signer_policy_enforcement_proof__policy_runtime/allowed_execution_receipt.sig",
+    "artifacts/operations/detached_external_signer_policy_proof/R14_detached_signer_policy_enforcement_proof/R14_detached_signer_policy_enforcement_proof__policy_runtime/allowed_execution_receipt_tampered_payload.json"
+  ],
+  "returncode": 1,
+  "stdout": "Verification failure\n",
+  "stderr": "40D771A5387B0000:error:02000068:rsa routines:ossl_rsa_verify:bad signature:../crypto/rsa/rsa_sign.c:430:\n40D771A5387B0000:error:1C880004:Provider routines:rsa_verify:RSA lib:../providers/implementations/signature/rsa_sig.c:774:\n",
+  "verified_ok": false
+}

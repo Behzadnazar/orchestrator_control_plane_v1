@@ -1,0 +1,22 @@
+{
+  "attestation_version": 1,
+  "attestation_type": "local_signed_execution_attestation",
+  "generated_at_utc": "2026-03-20T11:09:15+00:00",
+  "runtime_label": "R1_signed_execution_attestation_proof__runtime",
+  "workflow_id": "R1_signed_execution_attestation_proof__workflow",
+  "operation": "release",
+  "gate_label": "R1_signed_execution_attestation_proof__runtime__gate",
+  "gate_decision": "ALLOW",
+  "runtime_status": "ALLOW_EXECUTED",
+  "receipt_path": "artifacts/operations/signed_runtime/R1_signed_execution_attestation_proof__runtime/signed_execution_receipt.json",
+  "receipt_sha256": "805c6326ce510101be2dbc7b5278b4721791d59dce72baa1bbe087129d2386c4",
+  "payload_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "payload_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "payload_returncode": 0,
+  "payload_executed": true,
+  "manifest_sha256": "51c759dd08498286c78ba4d9e17dd6a5cac2e4800118b5f0ccf01fa7e4f7167f",
+  "gate_decision_sha256": "afcc7f9ac8a5342059ef66cf9e38e729b175981ac78a0a803169eafa14dfec5e",
+  "attestation_key_sha256": "ce0d96d29592f4c1501f28c79aa4052c22bb1c28bb23139eac86605263f2a61e",
+  "signature_type": "hmac_sha256_local_attestation_v1",
+  "signature": "7334aaf1e674b62741566c082a2b9475024339ed2bc8d98497297dee70504fc7"
+}

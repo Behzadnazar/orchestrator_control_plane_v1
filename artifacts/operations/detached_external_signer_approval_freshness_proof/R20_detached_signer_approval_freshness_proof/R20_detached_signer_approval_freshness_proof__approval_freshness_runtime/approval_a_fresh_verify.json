@@ -1,0 +1,16 @@
+{
+  "command": [
+    "openssl",
+    "dgst",
+    "-sha256",
+    "-verify",
+    "artifacts/operations/detached_external_signer_approval_freshness_proof/R20_detached_signer_approval_freshness_proof/public_keys/approver_a_public.pem",
+    "-signature",
+    "artifacts/operations/detached_external_signer_approval_freshness_proof/R20_detached_signer_approval_freshness_proof/R20_detached_signer_approval_freshness_proof__approval_freshness_runtime/approval_a_fresh.sig",
+    "artifacts/operations/detached_external_signer_approval_freshness_proof/R20_detached_signer_approval_freshness_proof/R20_detached_signer_approval_freshness_proof__approval_freshness_runtime/approval_a_fresh_token.json"
+  ],
+  "returncode": 0,
+  "stdout": "Verified OK\n",
+  "stderr": "",
+  "verified_ok": true
+}

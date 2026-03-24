@@ -1,0 +1,5 @@
+{
+  "old_key_historical_verification_before_revocation": true,
+  "old_key_historical_verification_after_revocation": true,
+  "new_key_current_verification_after_revocation": true
+}

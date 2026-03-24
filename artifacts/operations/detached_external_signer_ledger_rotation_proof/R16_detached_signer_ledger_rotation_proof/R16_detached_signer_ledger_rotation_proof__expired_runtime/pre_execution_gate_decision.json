@@ -1,0 +1,23 @@
+{
+  "decision_version": 1,
+  "decision_type": "pre_execution_key_policy_gate",
+  "proof_label": "R16_detached_signer_ledger_rotation_proof",
+  "scenario": "R16_detached_signer_ledger_rotation_proof__expired_runtime",
+  "decision_time_utc": "2026-03-20T13:50:11+00:00",
+  "verification_mode": "base_time",
+  "public_key_path": "artifacts/operations/detached_external_signer_ledger_rotation_proof/R16_detached_signer_ledger_rotation_proof/public_keys/attestation_public_expired.pem",
+  "checks": {
+    "public_key_exists": true,
+    "registry_key_within_window": false,
+    "public_key_sha256": "dd53efa02b36ce322e53afade9dd88a01a6b2655ba31611aaba29dc0ad4b80fa"
+  },
+  "registry_entry": {
+    "key_id": "r16-attestation-key-expired",
+    "not_before": "2026-02-18T13:50:11+00:00",
+    "not_after": "2026-03-20T13:50:10+00:00"
+  },
+  "derived": {
+    "window_verdict": "expired"
+  },
+  "gate_decision_allow": false
+}

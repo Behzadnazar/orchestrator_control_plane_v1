@@ -1,0 +1,22 @@
+{
+  "generated_at_utc": "2026-03-20T10:35:04+00:00",
+  "label": "P1_governance_closure",
+  "closure_status": "PASS",
+  "artifacts": [
+    {
+      "path": "artifacts/audit/closure/P1_governance_closure/governance_closure_report.json",
+      "size_bytes": 8091,
+      "sha256": "509ca17a3e7779cf709ea43176d57e6b7483cfbd9a78738e54110f87fb7a4a53"
+    },
+    {
+      "path": "artifacts/audit/closure/P1_governance_closure/governance_closure_report.md",
+      "size_bytes": 4537,
+      "sha256": "504275471d4c2bd442a82d80e0f0277de2731473ea5d96bf555c123fde1c85d6"
+    },
+    {
+      "path": "artifacts/audit/closure/P1_governance_closure/capability_boundary_declaration.json",
+      "size_bytes": 2592,
+      "sha256": "f2373a8d50659463961c74bad4ff9bd4a8c3dfc844be75ebd1043aeb00c0edcc"
+    }
+  ]
+}

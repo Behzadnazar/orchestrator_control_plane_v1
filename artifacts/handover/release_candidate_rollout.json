@@ -1,0 +1,44 @@
+{
+  "document_type": "release-candidate-rollout",
+  "document_version": 1,
+  "project_root": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1",
+  "rollout_status": "ready-for-release-candidate-rollout",
+  "baseline_binding": {
+    "proof_range": "R01-R35",
+    "proof_count": 35,
+    "baseline_sha256": "7a6c585ea82d4db3a9b8160b9d474788563582cd40a04fe9e45c7d3240431890"
+  },
+  "required_inputs": [
+    "proof_registry_baseline_manifest.json",
+    "proof_registry_baseline_manifest.sha256",
+    "integration_handover_package.json",
+    "runtime_control_plane_integration.json",
+    "formal_delivery_bundle.json",
+    "formal_delivery_bundle.sha256",
+    "runtime_operational_integration.json",
+    "OPERATIONAL_INTEGRATION_PLAN.md",
+    "FINAL_SECURITY_HANDOVER_SUMMARY.md",
+    "RC_ROLLOUT_PLAN.md",
+    "RUNTIME_ONBOARDING_HANDOFF.md"
+  ],
+  "rollout_sequence": [
+    "verify baseline manifest and sidecar sha256",
+    "verify integration handover package binding",
+    "verify runtime control-plane integration binding",
+    "verify formal delivery bundle and sidecar sha256",
+    "verify runtime operational integration binding",
+    "review RC rollout plan",
+    "review runtime onboarding handoff",
+    "authorize runtime onboarding only after all checks pass"
+  ],
+  "release_gate_contract": {
+    "baseline_complete_required": true,
+    "baseline_sha_alignment_required": true,
+    "handover_package_required": true,
+    "runtime_package_required": true,
+    "formal_delivery_bundle_required": true,
+    "runtime_operational_package_required": true,
+    "rollout_and_onboarding_docs_required": true,
+    "mismatch_or_missing_artifact_is_fatal": true
+  }
+}

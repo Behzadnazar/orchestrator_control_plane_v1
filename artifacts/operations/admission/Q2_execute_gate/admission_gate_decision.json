@@ -1,0 +1,120 @@
+{
+  "decision_version": 1,
+  "decision_type": "control_plane_admission_gate",
+  "generated_at_utc": "2026-03-20T10:52:45+00:00",
+  "decision": "ALLOW",
+  "fail_closed": true,
+  "operation": "execute",
+  "workflow_id": "workflow_execute_001",
+  "metadata": {
+    "operation": "execute",
+    "workflow_id": "workflow_execute_001",
+    "require_rc": false,
+    "policy": {
+      "require_rc": false,
+      "require_milestone": false
+    },
+    "latest_audit_entry_type": "release_candidate_record",
+    "latest_audit_entry_line": 6
+  },
+  "inputs": {
+    "readiness_report_path": "artifacts/operations/Q1_operational_readiness/operational_readiness_report.json",
+    "chain_summary_path": "artifacts/audit/verification/Q1_post_readiness_chain_check/audit_chain_verification_summary.json",
+    "audit_index_path": "artifacts/audit/immutable_audit_index.jsonl",
+    "milestone_record_path": null,
+    "release_candidate_record_path": null
+  },
+  "checks": [
+    {
+      "name": "operational_readiness_pass",
+      "passed": true,
+      "detail": {
+        "status": "PASS"
+      }
+    },
+    {
+      "name": "operational_mode_controlled_local_ready",
+      "passed": true,
+      "detail": {
+        "readiness": "CONTROLLED_LOCAL_OPERATION_READY"
+      }
+    },
+    {
+      "name": "readiness_checks_all_true",
+      "passed": true,
+      "detail": {
+        "checks": {
+          "closure_report_pass": true,
+          "closure_readiness_declared": true,
+          "latest_chain_pass": true,
+          "latest_chain_failed_entries_zero": true,
+          "latest_matrix_pass": true,
+          "latest_matrix_failed_scenarios_zero": true,
+          "audit_index_has_entries": true,
+          "audit_index_link_mode_v2_only": true,
+          "milestone_records_exist": true,
+          "release_candidate_records_exist": true
+        }
+      }
+    },
+    {
+      "name": "latest_chain_pass",
+      "passed": true,
+      "detail": {
+        "overall_status": "PASS"
+      }
+    },
+    {
+      "name": "latest_chain_failed_entries_zero",
+      "passed": true,
+      "detail": {
+        "failed_entries": 0
+      }
+    },
+    {
+      "name": "audit_index_nonempty",
+      "passed": true,
+      "detail": {
+        "entry_count": 6
+      }
+    },
+    {
+      "name": "latest_audit_entry_present",
+      "passed": true,
+      "detail": {
+        "latest_entry_type": "release_candidate_record",
+        "latest_line": 6
+      }
+    },
+    {
+      "name": "milestone_record_optional_absent",
+      "passed": true,
+      "detail": {
+        "reason": "No milestone supplied"
+      }
+    },
+    {
+      "name": "release_candidate_optional_absent",
+      "passed": true,
+      "detail": {
+        "reason": "No RC required for this operation"
+      }
+    },
+    {
+      "name": "operation_policy_milestone_requirement_satisfied",
+      "passed": true,
+      "detail": {
+        "operation": "execute",
+        "milestone_required": false
+      }
+    },
+    {
+      "name": "operation_policy_rc_requirement_satisfied",
+      "passed": true,
+      "detail": {
+        "operation": "execute",
+        "rc_required": false
+      }
+    }
+  ]
+}

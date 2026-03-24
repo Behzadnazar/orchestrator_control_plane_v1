@@ -1,0 +1,23 @@
+{
+  "decision_version": 1,
+  "decision_type": "pre_execution_key_policy_gate",
+  "proof_label": "R11_2_denied_key_custody_cleanup_proof",
+  "scenario": "R11_2_denied_key_custody_cleanup_proof__active_runtime",
+  "decision_time_utc": "2026-03-20T13:11:55+00:00",
+  "verification_mode": "base_time",
+  "public_key_path": "artifacts/operations/detached_external_signer_interface_proof/R11_2_denied_key_custody_cleanup_proof/public_keys/attestation_public_active.pem",
+  "checks": {
+    "public_key_exists": true,
+    "registry_key_within_window": true,
+    "public_key_sha256": "a2eeda79d38ba8552c5b359dbbeb22ee148cfff51ef335f6e12a2c39b95f4118"
+  },
+  "registry_entry": {
+    "key_id": "r11_2-attestation-key-active",
+    "not_before": "2026-03-19T13:11:55+00:00",
+    "not_after": "2026-04-19T13:11:55+00:00"
+  },
+  "derived": {
+    "window_verdict": "within_window"
+  },
+  "gate_decision_allow": true
+}

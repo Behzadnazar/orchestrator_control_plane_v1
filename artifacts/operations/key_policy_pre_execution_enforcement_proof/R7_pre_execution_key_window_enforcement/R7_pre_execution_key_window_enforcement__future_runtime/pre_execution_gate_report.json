@@ -1,0 +1,20 @@
+{
+  "report_version": 1,
+  "report_type": "pre_execution_gate_report",
+  "proof_label": "R7_pre_execution_key_window_enforcement",
+  "scenario": "R7_pre_execution_key_window_enforcement__future_runtime",
+  "evaluation_time_utc": "2026-03-20T11:42:43+00:00",
+  "status": "PASS",
+  "decision": "ALLOW",
+  "window_verdict": "within_window",
+  "runtime_status_allow_executed": false,
+  "preventive_block_applied": false,
+  "receipt_exists": false,
+  "attestation_exists": false,
+  "runtime_report_exists": false,
+  "notes": [
+    "Key is داخل بازهٔ زمانی معتبر.",
+    "Gate اجازه داده است.",
+    "این proof فقط boundary enforcement را ثابت می‌کند و runtime واقعی را اجرا نمی‌کند."
+  ]
+}

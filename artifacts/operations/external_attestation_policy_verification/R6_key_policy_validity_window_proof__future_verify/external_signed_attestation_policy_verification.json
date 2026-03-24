@@ -1,0 +1,50 @@
+{
+  "verification_version": 1,
+  "verification_type": "external_signed_attestation_policy_verification",
+  "runtime_label": "R6_key_policy_validity_window_proof__future_runtime",
+  "verification_time_utc": "2026-03-20T11:33:33+00:00",
+  "verification_status": "FAIL",
+  "inputs": {
+    "receipt_path": "artifacts/operations/external_signed_runtime/R6_key_policy_validity_window_proof__future_runtime/external_signed_execution_receipt.json",
+    "attestation_path": "artifacts/operations/external_signed_runtime/R6_key_policy_validity_window_proof__future_runtime/external_signed_execution_attestation.json",
+    "report_path": "artifacts/operations/external_signed_runtime/R6_key_policy_validity_window_proof__future_runtime/external_signed_runtime_report.json",
+    "manifest_path": "artifacts/operations/external_signed_runtime/R6_key_policy_validity_window_proof__future_runtime/normalized_request_manifest.json",
+    "public_key_path": "artifacts/operations/key_policy_validity_proof/R6_key_policy_validity_window_proof/attestation_public_future.pem",
+    "registry_path": "artifacts/operations/key_policy_validity_proof/R6_key_policy_validity_window_proof/attestation_key_policy_registry.json"
+  },
+  "registry_entry": {
+    "key_id": "attestation-key-policy-future",
+    "public_key_path": "artifacts/operations/key_policy_validity_proof/R6_key_policy_validity_window_proof/attestation_public_future.pem",
+    "public_key_sha256": "5bfac4631c82bc38b543e19f6f154a386df26409cfb79025b8627eb2a6817a21",
+    "status": "active",
+    "revoked": false,
+    "usage": "attestation_signing",
+    "not_before": "2026-03-20T11:33:34+00:00",
+    "not_after": "2026-04-19T11:33:33+00:00"
+  },
+  "checks": {
+    "receipt_exists": true,
+    "attestation_exists": true,
+    "report_exists": true,
+    "manifest_exists": true,
+    "registry_exists": true,
+    "receipt_hash_matches": true,
+    "manifest_hash_matches": true,
+    "public_key_hash_matches": true,
+    "private_key_material_not_embedded": true,
+    "signature_valid": true,
+    "registry_entry_found": true,
+    "registry_key_active": true,
+    "registry_key_not_revoked": true,
+    "registry_key_usage_valid": true,
+    "registry_key_within_window": false,
+    "gate_decision_allow": true,
+    "runtime_status_allow_executed": true,
+    "report_runtime_consistent": true,
+    "receipt_runtime_consistent": true,
+    "manifest_workflow_consistent": true
+  },
+  "derived": {
+    "window_verdict": "not_yet_valid"
+  }
+}

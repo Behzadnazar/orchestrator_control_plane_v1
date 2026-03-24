@@ -1,0 +1,22 @@
+{
+  "generated_at_utc": "2026-03-20T11:09:15+00:00",
+  "label": "R1_signed_execution_attestation_proof",
+  "proof_status": "PASS",
+  "artifacts": [
+    {
+      "path": "artifacts/operations/security_boundary_proof/R1_signed_execution_attestation_proof/signed_execution_attestation_proof.json",
+      "size_bytes": 1653,
+      "sha256": "39e25a0dffb08a9f81739150e3de1dd0d31b4decee230781446e2dabfd44e6a7"
+    },
+    {
+      "path": "artifacts/operations/security_boundary_proof/R1_signed_execution_attestation_proof/signed_execution_attestation_proof.md",
+      "size_bytes": 656,
+      "sha256": "2f6ebf6f43c60a1a6899db277b969b6e7b162bbcd0da5ab63635a0f68ae06d86"
+    },
+    {
+      "path": "artifacts/operations/security_boundary_proof/R1_signed_execution_attestation_proof/signed_request_manifest.json",
+      "size_bytes": 843,
+      "sha256": "51c759dd08498286c78ba4d9e17dd6a5cac2e4800118b5f0ccf01fa7e4f7167f"
+    }
+  ]
+}

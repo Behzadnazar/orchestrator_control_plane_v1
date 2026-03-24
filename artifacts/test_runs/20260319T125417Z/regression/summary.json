@@ -1,0 +1,19 @@
+{
+  "suite": "regression",
+  "status": "passed",
+  "exit_code": 0,
+  "started_at_utc": "2026-03-19T12:54:17Z",
+  "finished_at_utc": "2026-03-19T12:54:18Z",
+  "duration_seconds": 0.827,
+  "run_dir": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/test_runs/20260319T125417Z/regression",
+  "command": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/.venv/bin/python3 -m pytest --junit-xml /home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/test_runs/20260319T125417Z/regression/junit.xml -q -m regression",
+  "junit_xml": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/test_runs/20260319T125417Z/regression/junit.xml",
+  "tests": 12,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "stdout_log": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/test_runs/20260319T125417Z/regression/pytest.stdout.log",
+  "stderr_log": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/test_runs/20260319T125417Z/regression/pytest.stderr.log",
+  "preflight_stdout_log": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/test_runs/20260319T125417Z/regression/preflight.stdout.log",
+  "preflight_stderr_log": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/test_runs/20260319T125417Z/regression/preflight.stderr.log"
+}

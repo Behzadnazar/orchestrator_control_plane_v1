@@ -1,0 +1,38 @@
+{
+  "command": [
+    "python3",
+    "scripts/phase12_operational_runner.py",
+    "ops.write_change_control_spec"
+  ],
+  "command_shell_escaped": "python3 scripts/phase12_operational_runner.py ops.write_change_control_spec",
+  "cwd": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1",
+  "governance_owner_agent": "backend_agent",
+  "governance_paths": [
+    {
+      "field": "pipeline_path",
+      "mode": "read",
+      "path": "artifacts/runs/phase12_prod_v1/cicd/pipeline_spec.yaml"
+    },
+    {
+      "field": "environment_model_path",
+      "mode": "read",
+      "path": "artifacts/runs/phase12_prod_v1/environments/promotion_model.json"
+    },
+    {
+      "field": "change_control_output_path",
+      "mode": "write",
+      "path": "artifacts/runs/phase12_prod_v1/ops/change_control.md"
+    }
+  ],
+  "payload": {
+    "change_control_output_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/runs/phase12_prod_v1/ops/change_control.md",
+    "change_window": "Sun 01:00-03:00 UTC",
+    "environment_model_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/runs/phase12_prod_v1/environments/promotion_model.json",
+    "pipeline_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/runs/phase12_prod_v1/cicd/pipeline_spec.yaml",
+    "workflow_run_key": "phase12_prod_v1"
+  },
+  "service_path": "ops.write_change_control_spec",
+  "started_at": "2026-03-24T09:50:55+00:00",
+  "task_id": "phase12-ops-write_change_control_spec-cef6eb1e7b",
+  "task_type": "ops.write_change_control_spec"
+}

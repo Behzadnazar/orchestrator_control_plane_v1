@@ -1,0 +1,18 @@
+{
+  "proof_stage": "Phase O.1",
+  "generated_at_utc": "2026-03-20T10:26:46+00:00",
+  "proof_passed": true,
+  "negative_proof_ok": true,
+  "baseline_pass_observed": true,
+  "restore_pass_observed": true,
+  "executed_scenarios": 6,
+  "passed_scenarios": 6,
+  "failed_scenarios": 0,
+  "skipped_scenarios": 0,
+  "scenario_label": "O2_growth_tamper_matrix",
+  "summary_path": "artifacts/audit/tamper_matrix/O2_growth_tamper_matrix/tamper_matrix_summary.json",
+  "report_path": "artifacts/audit/tamper_matrix/O2_growth_tamper_matrix/tamper_matrix_coverage_report.md",
+  "backup_sha256": "c036d78e281bb2eebb93026cf1f9cdafc01d98cd76ca395f4c11bab14a07ba32",
+  "restored_index_sha256": "c036d78e281bb2eebb93026cf1f9cdafc01d98cd76ca395f4c11bab14a07ba32",
+  "contract_rule": "previous_entry_sha256 must equal previous entry's entry_sha256"
+}

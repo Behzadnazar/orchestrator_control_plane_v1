@@ -1,0 +1,10 @@
+{
+  "architecture_design": "architect",
+  "backend_feature": "backend",
+  "ui_task": "frontend",
+  "deployment": "devops",
+  "debug_issue": "debugger",
+  "research_topic": "research",
+  "code_review": "qa",
+  "security_audit": "security"
+}

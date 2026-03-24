@@ -1,0 +1,20 @@
+{
+  "report_version": 1,
+  "report_type": "external_signed_runtime_report",
+  "proof_label": "R8_allow_path_runtime_execution_proof",
+  "scenario": "R8_allow_path_runtime_execution_proof__active_runtime",
+  "status": "PASS",
+  "runtime_status_allow_executed": true,
+  "executed": true,
+  "execution_started_at_utc": "2026-03-20T12:00:52+00:00",
+  "execution_finished_at_utc": "2026-03-20T12:00:53+00:00",
+  "receipt_exists": true,
+  "attestation_exists": true,
+  "gate_decision_allow": true,
+  "window_verdict": "within_window",
+  "notes": [
+    "Gate allow شد.",
+    "Runtime path واقعاً اجرا شد.",
+    "Execution receipt و attestation و runtime report تولید شدند."
+  ]
+}

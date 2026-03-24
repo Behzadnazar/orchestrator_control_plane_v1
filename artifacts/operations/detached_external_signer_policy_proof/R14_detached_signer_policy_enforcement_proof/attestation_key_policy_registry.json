@@ -1,0 +1,28 @@
+{
+  "registry_version": 1,
+  "registry_type": "detached_external_signer_policy_registry",
+  "generated_at_utc": "2026-03-20T13:32:26+00:00",
+  "entries": [
+    {
+      "key_id": "r14-attestation-key-policy",
+      "public_key_path": "artifacts/operations/detached_external_signer_policy_proof/R14_detached_signer_policy_enforcement_proof/public_keys/attestation_public_policy.pem",
+      "public_key_sha256": "6506f036e15228c1e259517dbc40b99e3fc61da3a83447444253aefccdddbe83",
+      "not_before": "2026-03-19T13:32:24+00:00",
+      "not_after": "2026-04-19T13:32:24+00:00"
+    },
+    {
+      "key_id": "r14-attestation-key-expired",
+      "public_key_path": "artifacts/operations/detached_external_signer_policy_proof/R14_detached_signer_policy_enforcement_proof/public_keys/attestation_public_expired.pem",
+      "public_key_sha256": "eefd5524870cd8f4716a920e08f5d71fb16e1418dd79717a46fd5915a9204b65",
+      "not_before": "2026-02-18T13:32:24+00:00",
+      "not_after": "2026-03-20T13:32:23+00:00"
+    },
+    {
+      "key_id": "r14-attestation-key-future",
+      "public_key_path": "artifacts/operations/detached_external_signer_policy_proof/R14_detached_signer_policy_enforcement_proof/public_keys/attestation_public_future.pem",
+      "public_key_sha256": "1c406f6ae0190538a1fc5ab57eb28c2c5c02ecc73cd300e0f4759ffe9256bcd0",
+      "not_before": "2026-03-21T13:32:24+00:00",
+      "not_after": "2026-04-19T13:32:24+00:00"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "proof_label": "R11_detached_external_signer_interface_proof",
+  "proof_status": "FAIL",
+  "base_verification_time_utc": "2026-03-20T12:44:46+00:00",
+  "future_fixture_time_utc": "2026-03-21T12:44:45+00:00",
+  "summary_json_path": "artifacts/operations/detached_external_signer_interface_proof/R11_detached_external_signer_interface_proof/detached_external_signer_interface_proof.json",
+  "summary_md_path": "artifacts/operations/detached_external_signer_interface_proof/R11_detached_external_signer_interface_proof/detached_external_signer_interface_proof.md",
+  "detached_signer_interface_active": true,
+  "artifact_boundary_private_key_free": true,
+  "runtime_boundary_private_key_free": true,
+  "detached_signer_custody_private_key_free_after_detach": false,
+  "denied_paths_blocked": true
+}

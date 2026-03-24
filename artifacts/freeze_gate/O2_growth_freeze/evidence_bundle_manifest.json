@@ -1,0 +1,55 @@
+{
+  "generated_at_utc": "2026-03-19T13:33:32+00:00",
+  "milestone": "O2_growth_freeze",
+  "project_root": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1",
+  "overall_status": "PASS",
+  "gate_statuses": {
+    "baseline_manifest": "PASS",
+    "verification": "PASS",
+    "drift_report": "PASS",
+    "drift_proof": "PASS",
+    "freeze_proof": "PASS"
+  },
+  "items": [
+    {
+      "label": "baseline_manifest",
+      "status": "COPIED",
+      "source_path": "artifacts/releases/control-plane-v1-baseline/release_snapshot.json",
+      "bundle_path": "artifacts/freeze_gate/O2_growth_freeze/evidence_bundle/baseline_manifest__release_snapshot.json",
+      "sha256": "accea1d597a9e8ad5ebc59e12a9e299153a9a51efd0d2bae05a1248bdc698ce0",
+      "size_bytes": 8173
+    },
+    {
+      "label": "verification",
+      "status": "COPIED",
+      "source_path": "artifacts/releases/latest_verification.json",
+      "bundle_path": "artifacts/freeze_gate/O2_growth_freeze/evidence_bundle/verification__latest_verification.json",
+      "sha256": "11f2db0ec23cc9668c7efcca04d45d6034cb581aef51dd8e519c83857456f2be",
+      "size_bytes": 603
+    },
+    {
+      "label": "drift_report",
+      "status": "COPIED",
+      "source_path": "artifacts/releases/control-plane-v1-baseline/baseline_verification.json",
+      "bundle_path": "artifacts/freeze_gate/O2_growth_freeze/evidence_bundle/drift_report__baseline_verification.json",
+      "sha256": "11f2db0ec23cc9668c7efcca04d45d6034cb581aef51dd8e519c83857456f2be",
+      "size_bytes": 603
+    },
+    {
+      "label": "drift_proof",
+      "status": "COPIED",
+      "source_path": "artifacts/releases/negative_proof/latest_negative_proof.json",
+      "bundle_path": "artifacts/freeze_gate/O2_growth_freeze/evidence_bundle/drift_proof__latest_negative_proof.json",
+      "sha256": "b1ce2745e9c5a5d73f3c6f8cd58601fff6b87dda032def78a83bcde7efa823f0",
+      "size_bytes": 1095
+    },
+    {
+      "label": "freeze_proof",
+      "status": "COPIED",
+      "source_path": "artifacts/releases/milestones/control-plane-v1-phase-l2-freeze/milestone_manifest.json",
+      "bundle_path": "artifacts/freeze_gate/O2_growth_freeze/evidence_bundle/freeze_proof__milestone_manifest.json",
+      "sha256": "00b51558df0c5b366127c6e5e33211504b30474656ebc41d893eccd7db792ea2",
+      "size_bytes": 6021
+    }
+  ]
+}

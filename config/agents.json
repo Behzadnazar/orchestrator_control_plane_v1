@@ -1,0 +1,58 @@
+[
+  {
+    "agent_id": "architect-01",
+    "agent_type": "architect",
+    "capabilities": ["architecture_design", "system_design", "adr"],
+    "allowed_tools": ["read_file", "write_file", "git", "bash"],
+    "status": "Idle"
+  },
+  {
+    "agent_id": "backend-01",
+    "agent_type": "backend",
+    "capabilities": ["backend_feature", "api", "database"],
+    "allowed_tools": ["read_file", "write_file", "git", "bash", "pytest"],
+    "status": "Idle"
+  },
+  {
+    "agent_id": "frontend-01",
+    "agent_type": "frontend",
+    "capabilities": ["ui_task", "frontend_feature", "component_work"],
+    "allowed_tools": ["read_file", "write_file", "git", "bash"],
+    "status": "Idle"
+  },
+  {
+    "agent_id": "devops-01",
+    "agent_type": "devops",
+    "capabilities": ["deployment", "infra", "ci_cd"],
+    "allowed_tools": ["read_file", "write_file", "git", "bash", "docker", "terraform", "kubectl"],
+    "status": "Idle"
+  },
+  {
+    "agent_id": "debugger-01",
+    "agent_type": "debugger",
+    "capabilities": ["debug_issue", "incident", "trace"],
+    "allowed_tools": ["read_file", "write_file", "git", "bash", "pytest"],
+    "status": "Idle"
+  },
+  {
+    "agent_id": "research-01",
+    "agent_type": "research",
+    "capabilities": ["research_topic", "documentation", "analysis"],
+    "allowed_tools": ["read_file", "write_file"],
+    "status": "Idle"
+  },
+  {
+    "agent_id": "qa-01",
+    "agent_type": "qa",
+    "capabilities": ["code_review", "test_validation", "quality_gate"],
+    "allowed_tools": ["read_file", "write_file", "bash", "pytest"],
+    "status": "Idle"
+  },
+  {
+    "agent_id": "security-01",
+    "agent_type": "security",
+    "capabilities": ["security_audit", "policy_check", "secret_scan"],
+    "allowed_tools": ["read_file", "write_file", "bash"],
+    "status": "Idle"
+  }
+]

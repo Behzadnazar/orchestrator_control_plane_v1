@@ -1,0 +1,10 @@
+{
+  "ready": true,
+  "service": "detached_external_signer",
+  "key_id": "r18-attestation-key-old",
+  "key_epoch": "old_epoch",
+  "fd_path": "/proc/self/fd/3",
+  "private_key_path_exists_after_detach": false,
+  "revoked_flag_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/state/detached_external_signer_revocation_truststore/R18_detached_signer_revocation_truststore_proof/old_key.revoked",
+  "public_key_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/operations/detached_external_signer_revocation_truststore_proof/R18_detached_signer_revocation_truststore_proof/public_keys/attestation_public_old.pem"
+}

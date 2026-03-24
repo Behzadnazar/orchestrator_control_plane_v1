@@ -1,0 +1,17 @@
+{
+  "chain_valid": false,
+  "continuity_valid": true,
+  "snapshot_valid": false,
+  "retention_valid": false,
+  "cross_key_epoch_valid": false,
+  "segment_count": 2,
+  "entry_count": 4,
+  "last_entry_hash": "83c5802cce94bcaca4598e75971c6aea56e6e41a2239fcfb21363db153a31956",
+  "problems": [
+    "previous_epoch_last_hash_mismatch_2",
+    "entry_epoch_mismatch_segment_2_entry_3",
+    "entry_epoch_mismatch_segment_2_entry_4",
+    "snapshot_invalid",
+    "retention_manifest_invalid"
+  ]
+}

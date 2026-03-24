@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+package controlplane.v1;
+
+message AgentRegistration {
+  string agent_id = 1;
+  string agent_type = 2;
+  repeated string capabilities = 3;
+  repeated string allowed_tools = 4;
+  string status = 5;
+}
+
+message TaskRequest {
+  string task_id = 1;
+  string task_type = 2;
+  string title = 3;
+  string priority = 4;
+  string payload_json = 5;
+  string done_criteria_json = 6;
+}
+
+message TaskReply {
+  string task_id = 1;
+  string status = 2;
+  string assigned_agent_id = 3;
+  string message = 4;
+}
+
+message ApprovalRequest {
+  string task_id = 1;
+  string approver = 2;
+  string decision = 3;
+  string reason = 4;
+}
+
+message SimpleReply {
+  bool ok = 1;
+  string message = 2;
+}
+
+message TaskQuery {
+  string task_id = 1;
+}
+
+message TaskStatusReply {
+  string task_id = 1;
+  string status = 2;
+  string assigned_agent_id = 3;
+  string last_error = 4;
+}
+
+service ControlPlaneService {
+  rpc RegisterAgent(AgentRegistration) returns (SimpleReply);
+  rpc SubmitTask(TaskRequest) returns (TaskReply);
+  rpc ApproveTask(ApprovalRequest) returns (SimpleReply);
+  rpc GetTaskStatus(TaskQuery) returns (TaskStatusReply);
+}

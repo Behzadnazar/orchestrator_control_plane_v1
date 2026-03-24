@@ -1,0 +1,9 @@
+suite=all
+manifest_version=1
+tests_run=52
+failures=0
+errors=0
+skipped=0
+successful=True
+official_discovery_command=python3 -m unittest discover -s tests -t . -p 'test_*.py' -v
+failure_categories=

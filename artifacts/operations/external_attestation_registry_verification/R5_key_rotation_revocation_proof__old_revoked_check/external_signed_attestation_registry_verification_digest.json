@@ -1,0 +1,16 @@
+{
+  "runtime_label": "R3_trust_separation_external_key_proof__runtime",
+  "verification_status": "FAIL",
+  "artifacts": [
+    {
+      "path": "artifacts/operations/external_attestation_registry_verification/R5_key_rotation_revocation_proof__old_revoked_check/external_signed_attestation_registry_verification.json",
+      "size_bytes": 1996,
+      "sha256": "bdb3fc73152864c20549f8235f7b97335d3488bddb20b5fe402034e6dd059ef9"
+    },
+    {
+      "path": "artifacts/operations/external_attestation_registry_verification/R5_key_rotation_revocation_proof__old_revoked_check/external_signed_attestation_registry_verification.md",
+      "size_bytes": 530,
+      "sha256": "4992834be6da31dffe9caa8c0232f20bdc0e8aace02cf3dd93c157f4c5b1ed71"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "package_type": "integration-handover-package",
+  "package_version": 1,
+  "project_root": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1",
+  "baseline_manifest": {
+    "path": "artifacts/handover/proof_registry_baseline_manifest.json",
+    "sha256": "7a6c585ea82d4db3a9b8160b9d474788563582cd40a04fe9e45c7d3240431890",
+    "proof_range": "R01-R35",
+    "proof_count": 35
+  },
+  "integration_scope": {
+    "status": "ready-for-handover",
+    "proof_range": [
+      "R01",
+      "R02",
+      "R03",
+      "R04",
+      "R05",
+      "R06",
+      "R07",
+      "R08",
+      "R09",
+      "R10",
+      "R11",
+      "R12",
+      "R13",
+      "R14",
+      "R15",
+      "R16",
+      "R17",
+      "R18",
+      "R19",
+      "R20",
+      "R21",
+      "R22",
+      "R23",
+      "R24",
+      "R25",
+      "R26",
+      "R27",
+      "R28",
+      "R29",
+      "R30",
+      "R31",
+      "R32",
+      "R33",
+      "R34",
+      "R35"
+    ],
+    "first_proof": "R01",
+    "last_proof": "R35"
+  },
+  "implementation_surfaces": [
+    "app/security/",
+    "tests/proofs/",
+    "scripts/",
+    "artifacts/handover/"
+  ],
+  "primary_outputs": [
+    "proof registry baseline manifest",
+    "formal proof registry entries R01-R35",
+    "handover-ready integration package"
+  ],
+  "integration_contract": {
+    "baseline_required": true,
+    "all_proofs_complete_required": true,
+    "hash_sidecar_required": true,
+    "proof_manifest_mismatch_is_fatal": true
+  },
+  "recommended_handover_sequence": [
+    "verify baseline manifest and sha256",
+    "review proof registry coverage R01-R35",
+    "review security implementation surfaces under app/security",
+    "run proof test suite under tests/proofs",
+    "integrate control-plane components against the proven baseline"
+  ],
+  "top_level_summary": {
+    "complete_proofs": 35,
+    "sample_titles": [
+      "Security Boundary Hardening + Signed Execution Attestation",
+      "Multi-Stage Delegation Chain Proof + Scoped Re-Delegation Denial",
+      "Release Gate Proof"
+    ]
+  }
+}

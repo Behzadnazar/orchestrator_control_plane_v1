@@ -1,0 +1,9 @@
+{
+  "proof_label": "R7_1_future_key_fixture_repair",
+  "proof_status": "PASS",
+  "base_verification_time_utc": "2026-03-20T11:46:05+00:00",
+  "future_fixture_verification_time_utc": "2026-03-20T11:33:33+00:00",
+  "summary_json_path": "artifacts/operations/key_policy_pre_execution_enforcement_proof/R7_1_future_key_fixture_repair/key_policy_pre_execution_enforcement_proof.json",
+  "summary_md_path": "artifacts/operations/key_policy_pre_execution_enforcement_proof/R7_1_future_key_fixture_repair/key_policy_pre_execution_enforcement_proof.md",
+  "denied_paths_blocked": true
+}

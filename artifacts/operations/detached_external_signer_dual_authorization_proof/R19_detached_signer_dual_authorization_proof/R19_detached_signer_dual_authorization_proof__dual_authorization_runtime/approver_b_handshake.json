@@ -1,0 +1,8 @@
+{
+  "ready": true,
+  "service": "approver",
+  "approver_id": "approver_b",
+  "key_id": "r19-approver-b-key",
+  "public_key_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/operations/detached_external_signer_dual_authorization_proof/R19_detached_signer_dual_authorization_proof/public_keys/approver_b_public.pem",
+  "private_key_path_exists_after_detach": false
+}

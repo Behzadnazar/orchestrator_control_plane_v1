@@ -1,0 +1,50 @@
+{
+  "record_version": 2,
+  "record_type": "release_candidate_record",
+  "signature_type": "sha256_canonical_record",
+  "generated_at_utc": "2026-03-20T10:30:21+00:00",
+  "milestone": "O3_independent_freeze",
+  "release_candidate": "RC3",
+  "promotion_status": "PASS",
+  "promotion_allowed": true,
+  "promotion_gate_checks": {
+    "freeze_gate_pass": true,
+    "all_freeze_gate_statuses_pass": true,
+    "bundle_manifest_pass": true,
+    "signed_milestone_record_pass": true,
+    "digest_report_has_record_sha256": true,
+    "audit_chain_verification_pass": true,
+    "audit_chain_has_no_failed_entries": true
+  },
+  "evidence_paths": {
+    "freeze_gate_summary_path": "artifacts/freeze_gate/O3_independent_freeze/freeze_gate_summary.json",
+    "freeze_gate_report_path": "artifacts/freeze_gate/O3_independent_freeze/freeze_gate_audit_report.md",
+    "freeze_bundle_manifest_path": "artifacts/freeze_gate/O3_independent_freeze/evidence_bundle_manifest.json",
+    "freeze_bundle_zip_path": "artifacts/freeze_gate/O3_independent_freeze/O3_independent_freeze_evidence_bundle.zip",
+    "signed_milestone_record_path": "artifacts/audit/milestone_records/O3_independent_freeze/signed_milestone_record.json",
+    "signed_milestone_digest_report_path": "artifacts/audit/milestone_records/O3_independent_freeze/signed_milestone_digest_report.json",
+    "audit_chain_summary_path": "artifacts/audit/verification/O3_chain_after_independent_milestone/audit_chain_verification_summary.json",
+    "audit_chain_report_path": "artifacts/audit/verification/O3_chain_after_independent_milestone/audit_chain_verification_report.md"
+  },
+  "source_summaries": {
+    "freeze_gate_overall_status": "PASS",
+    "freeze_gate_statuses": {
+      "baseline_manifest": "PASS",
+      "verification": "PASS",
+      "drift_report": "PASS",
+      "drift_proof": "PASS",
+      "freeze_proof": "PASS"
+    },
+    "signed_milestone_overall_status": "PASS",
+    "audit_chain_overall_status": "PASS",
+    "audit_chain_total_entries": 5,
+    "audit_chain_failed_entries": 0
+  },
+  "audit_chain_contract": {
+    "link_field": "previous_entry_sha256",
+    "link_target": "previous.entry_sha256",
+    "contract_version": 2
+  },
+  "canonical_payload_sha256": "567c6865c2e80dd2c0497d74459aaa6d6f295efb9208b1f81c3b3eed7ec18f8a",
+  "canonical_payload_preview": "{\"audit_chain_contract\":{\"contract_version\":2,\"link_field\":\"previous_entry_sha256\",\"link_target\":\"previous.entry_sha256\"},\"evidence_paths\":{\"audit_chain_report_path\":\"artifacts/audit/verification/O3_chain_after_independent_milestone/audit_chain_verification_report.md\",\"audit_chain_summary_path\":\"artifacts/audit/verification/O3_chain_after_independent_milestone/audit_chain_verification_summary.json\",\"freeze_bundle_manifest_path\":\"artifacts/freeze_gate/O3_independent_freeze/evidence_bundle_manifest.json\",\"freeze_bundle_zip_path\":\"artifacts/freeze_gate/O3_independent_freeze/O3_independent_freeze_evidence_bundle.zip\",\"freeze_gate_report_path\":\"artifacts/freeze_gate/O3_independent_freeze/freeze_gate_audit_report.md\",\"freeze_gate_summary_path\":\"artifacts/freeze_gate/O3_independent_freeze/freeze_gate_summary.json\",\"signed_milestone_digest_report_path\":\"artifacts/audit/milestone_records/O3_independent_freeze/signed_milestone_digest_report.json\",\"signed_milestone_record_path\":\"artifacts/audit/milestone_records/O3_independent_freeze/signed_milestone_record.json\"},\"generated_at_utc\":\"2026-03-20T10:30:21+00:00\",\"milestone\":\"O3_independent_freeze\",\"promotion_allowed\":true,\"promotion_gate_checks\":{\"all_freeze_gate_statuses_pass\":true,\"audit_chain_has_no_failed_entries\":true,\"audit_chain_verification_pass\":true,\"bundle_manifest_pass\":true,\"digest_report_has_record_sha256\":true,\"freeze_gate_pass\":true,\"signed_milestone_record_pass\":true},\"promotion_status\":\"PASS\",\"record_type\":\"release_candidate_record\",\"record_version\":2,\"release_candidate\":\"RC3\",\"signature_type\":\"sha256_canonical_record\",\"source_summaries\":{\"audit_chain_failed_entries\":0,\"audit_chain_overall_status\":\"PASS\",\"audit_chain_total_entries\":5,\"freeze_gate_overall_status\":\"PASS\",\"freeze_gate_statuses\":{\"baseline_manifest\":\"PASS\",\"drift_proof\":\"PASS\",\"drift_report\":\"PASS\",\"freeze_proof\":\"PASS\",\"verification\":\"PASS\"},\"signed_milestone_overall_status\":\"PASS\"}}"
+}

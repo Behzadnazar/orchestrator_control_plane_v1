@@ -1,0 +1,10 @@
+{
+  "operation": "release",
+  "workflow_id": "R1_signed_execution_attestation_proof__workflow",
+  "readiness_label": "Q1_operational_readiness",
+  "chain_label": "Q1_post_readiness_chain_check",
+  "milestone": "O3_independent_freeze",
+  "release_candidate": "RC3",
+  "require_rc": true,
+  "command": "python3 -c \"import os, sys; from pathlib import Path; p = Path(r'/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/operations/security_boundary_proof/R1_signed_execution_attestation_proof/signed_execution.marker'); flag = os.environ.get('CONTROL_PLANE_SIGNED_EXECUTION'); wf = os.environ.get('CONTROL_PLANE_WORKFLOW_ID'); expected = r'R1_signed_execution_attestation_proof__workflow'; ok = (flag == '1' and wf == expected); sys.exit(11) if not ok else p.write_text('SIGNED_EXECUTION_OK', encoding='utf-8')\""
+}

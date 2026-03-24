@@ -1,0 +1,20 @@
+{
+  "command": [
+    "python3",
+    "scripts/operational_task_runner.py",
+    "backend.write_file"
+  ],
+  "command_shell_escaped": "python3 scripts/operational_task_runner.py backend.write_file",
+  "cwd": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1",
+  "payload": {
+    "content": "wrong dep source\n",
+    "path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/runs/wrong_frontend_dep/workflows/source.txt",
+    "workflow_run_key": "wrong_frontend_dep"
+  },
+  "service_path": "backend.write_file",
+  "started_at": "2026-03-24T07:04:34+00:00",
+  "task_id": "task_0af872b7ce01",
+  "task_type": "backend.write_file",
+  "timeout_sec": 300,
+  "worker": "runtime-worker-51493"
+}

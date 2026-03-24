@@ -1,0 +1,23 @@
+{
+  "decision_version": 1,
+  "decision_type": "pre_execution_key_policy_gate",
+  "proof_label": "R11_2_denied_key_custody_cleanup_proof",
+  "scenario": "R11_2_denied_key_custody_cleanup_proof__future_runtime",
+  "decision_time_utc": "2026-03-21T13:11:54+00:00",
+  "verification_mode": "strict_pre_not_before_fixture",
+  "public_key_path": "artifacts/operations/detached_external_signer_interface_proof/R11_2_denied_key_custody_cleanup_proof/public_keys/attestation_public_future.pem",
+  "checks": {
+    "public_key_exists": true,
+    "registry_key_within_window": false,
+    "public_key_sha256": "f0c23fc239a63b4c55733e79535573a0e0e8c738cd73cee748c150621b06985b"
+  },
+  "registry_entry": {
+    "key_id": "r11_2-attestation-key-future",
+    "not_before": "2026-03-21T13:11:55+00:00",
+    "not_after": "2026-04-19T13:11:55+00:00"
+  },
+  "derived": {
+    "window_verdict": "not_yet_valid"
+  },
+  "gate_decision_allow": false
+}

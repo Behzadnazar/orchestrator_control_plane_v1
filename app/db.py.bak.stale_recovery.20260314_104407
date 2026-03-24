@@ -1,0 +1,828 @@
+from __future__ import annotations
+import json
+import sqlite3
+import uuid
+from datetime import datetime, timezone, timedelta
+from typing import Any, Iterable, Optional
+
+from .config import DB_PATH
+from .models import PRIORITY_SCORE, LifecycleState
+
+def new_id() -> str:
+    return str(uuid.uuid4())
+
+def utc_now() -> str:
+    return datetime.now(timezone.utc).isoformat()
+
+def connect() -> sqlite3.Connection:
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+    conn.execute("PRAGMA journal_mode=WAL;")
+    conn.execute("PRAGMA foreign_keys=ON;")
+    return conn
+
+def init_db() -> None:
+    with connect() as conn:
+        conn.executescript(
+            """
+            CREATE TABLE IF NOT EXISTS agents (
+                agent_id TEXT PRIMARY KEY,
+                agent_type TEXT NOT NULL,
+                capabilities_json TEXT NOT NULL,
+                allowed_tools_json TEXT NOT NULL,
+                status TEXT NOT NULL,
+                last_activity TEXT,
+                current_task_id TEXT,
+                created_at TEXT NOT NULL,
+                updated_at TEXT NOT NULL
+            );
+
+            CREATE TABLE IF NOT EXISTS tasks (
+                task_id TEXT PRIMARY KEY,
+                parent_task_id TEXT,
+                task_type TEXT NOT NULL,
+                title TEXT NOT NULL,
+                priority TEXT NOT NULL,
+                status TEXT NOT NULL,
+                payload_json TEXT NOT NULL,
+                done_criteria_json TEXT NOT NULL,
+                assigned_agent_id TEXT,
+                attempt_no INTEGER NOT NULL DEFAULT 0,
+                max_retries INTEGER NOT NULL DEFAULT 2,
+                requires_human INTEGER NOT NULL DEFAULT 0,
+                review_status TEXT,
+                last_error TEXT,
+                created_at TEXT NOT NULL,
+                updated_at TEXT NOT NULL
+            );
+
+            CREATE TABLE IF NOT EXISTS events (
+                event_id TEXT PRIMARY KEY,
+                entity_type TEXT NOT NULL,
+                entity_id TEXT NOT NULL,
+                event_type TEXT NOT NULL,
+                data_json TEXT NOT NULL,
+                created_at TEXT NOT NULL
+            );
+
+            CREATE TABLE IF NOT EXISTS approvals (
+                approval_id TEXT PRIMARY KEY,
+                task_id TEXT NOT NULL,
+                operation TEXT NOT NULL,
+                approver TEXT,
+                decision TEXT NOT NULL,
+                reason TEXT,
+                created_at TEXT NOT NULL
+            );
+
+            CREATE TABLE IF NOT EXISTS file_locks (
+                lock_id TEXT PRIMARY KEY,
+                file_path TEXT NOT NULL UNIQUE,
+                owner_task_id TEXT NOT NULL,
+                owner_agent_id TEXT NOT NULL,
+                created_at TEXT NOT NULL
+            );
+
+            CREATE TABLE IF NOT EXISTS heartbeats (
+                worker_id TEXT PRIMARY KEY,
+                worker_type TEXT NOT NULL,
+                status TEXT NOT NULL,
+                last_seen TEXT NOT NULL,
+                details_json TEXT NOT NULL
+            );
+
+            CREATE TABLE IF NOT EXISTS worker_leases (
+                lease_id TEXT PRIMARY KEY,
+                worker_id TEXT NOT NULL,
+                task_id TEXT NOT NULL UNIQUE,
+                status TEXT NOT NULL,
+                acquired_at TEXT NOT NULL,
+                expires_at TEXT NOT NULL,
+                details_json TEXT NOT NULL
+            );
+
+            CREATE TABLE IF NOT EXISTS metrics (
+                metric_key TEXT PRIMARY KEY,
+                metric_value REAL NOT NULL,
+                updated_at TEXT NOT NULL
+            );
+
+            CREATE TABLE IF NOT EXISTS task_queue (
+                queue_item_id TEXT PRIMARY KEY,
+                task_id TEXT NOT NULL UNIQUE,
+                task_type TEXT NOT NULL,
+                priority TEXT NOT NULL,
+                status TEXT NOT NULL,
+                claimed_by_worker TEXT,
+                claimed_at TEXT,
+                created_at TEXT NOT NULL,
+                updated_at TEXT NOT NULL
+            );
+
+            CREATE TABLE IF NOT EXISTS dead_letter_queue (
+                dlq_item_id TEXT PRIMARY KEY,
+                task_id TEXT NOT NULL UNIQUE,
+                task_type TEXT NOT NULL,
+                priority TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                source_queue_item_id TEXT,
+                created_at TEXT NOT NULL
+            );
+            """
+        )
+
+def append_event(entity_type: str, entity_id: str, event_type: str, data: dict[str, Any]) -> None:
+    with connect() as conn:
+        conn.execute(
+            """
+            INSERT INTO events (event_id, entity_type, entity_id, event_type, data_json, created_at)
+            VALUES (?, ?, ?, ?, ?, ?)
+            """,
+            (str(uuid.uuid4()), entity_type, entity_id, event_type, json.dumps(data, ensure_ascii=False), utc_now()),
+        )
+
+def upsert_agent(agent: dict[str, Any]) -> None:
+    now = utc_now()
+    with connect() as conn:
+        conn.execute(
+            """
+            INSERT INTO agents (
+                agent_id, agent_type, capabilities_json, allowed_tools_json, status,
+                last_activity, current_task_id, created_at, updated_at
+            )
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ON CONFLICT(agent_id) DO UPDATE SET
+                agent_type=excluded.agent_type,
+                capabilities_json=excluded.capabilities_json,
+                allowed_tools_json=excluded.allowed_tools_json,
+                status=excluded.status,
+                last_activity=excluded.last_activity,
+                current_task_id=excluded.current_task_id,
+                updated_at=excluded.updated_at
+            """,
+            (
+                agent["agent_id"],
+                agent["agent_type"],
+                json.dumps(agent["capabilities"], ensure_ascii=False),
+                json.dumps(agent["allowed_tools"], ensure_ascii=False),
+                agent["status"],
+                agent.get("last_activity"),
+                agent.get("current_task_id"),
+                now,
+                now,
+            ),
+        )
+
+def get_agent(agent_id: str) -> Optional[dict[str, Any]]:
+    with connect() as conn:
+        row = conn.execute("SELECT * FROM agents WHERE agent_id=?", (agent_id,)).fetchone()
+        return row_to_agent(row) if row else None
+
+def row_to_agent(row: sqlite3.Row) -> dict[str, Any]:
+    return {
+        "agent_id": row["agent_id"],
+        "agent_type": row["agent_type"],
+        "capabilities": json.loads(row["capabilities_json"]),
+        "allowed_tools": json.loads(row["allowed_tools_json"]),
+        "status": row["status"],
+        "last_activity": row["last_activity"],
+        "current_task_id": row["current_task_id"],
+        "created_at": row["created_at"],
+        "updated_at": row["updated_at"],
+    }
+
+def list_agents() -> list[dict[str, Any]]:
+    with connect() as conn:
+        rows = conn.execute("SELECT * FROM agents ORDER BY agent_type, agent_id").fetchall()
+        return [row_to_agent(r) for r in rows]
+
+def update_agent_status(agent_id: str, status: str, current_task_id: str | None = None) -> None:
+    with connect() as conn:
+        conn.execute(
+            "UPDATE agents SET status=?, current_task_id=?, last_activity=?, updated_at=? WHERE agent_id=?",
+            (status, current_task_id, utc_now(), utc_now(), agent_id),
+        )
+
+def create_task(
+    task_type: str,
+    title: str,
+    priority: str,
+    payload: dict[str, Any],
+    done_criteria: list[dict[str, Any]],
+    max_retries: int = 2,
+    parent_task_id: str | None = None,
+    attempt_no: int = 0,
+    requires_human: bool = False,
+) -> str:
+    task_id = str(uuid.uuid4())
+    now = utc_now()
+    with connect() as conn:
+        conn.execute(
+            """
+            INSERT INTO tasks (
+                task_id, parent_task_id, task_type, title, priority, status, payload_json,
+                done_criteria_json, assigned_agent_id, attempt_no, max_retries, requires_human,
+                review_status, last_error, created_at, updated_at
+            )
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """,
+            (
+                task_id,
+                parent_task_id,
+                task_type,
+                title,
+                priority,
+                LifecycleState.IDLE.value,
+                json.dumps(payload, ensure_ascii=False),
+                json.dumps(done_criteria, ensure_ascii=False),
+                None,
+                attempt_no,
+                max_retries,
+                1 if requires_human else 0,
+                None,
+                None,
+                now,
+                now,
+            ),
+        )
+    return task_id
+
+def get_task(task_id: str) -> Optional[dict[str, Any]]:
+    with connect() as conn:
+        row = conn.execute("SELECT * FROM tasks WHERE task_id=?", (task_id,)).fetchone()
+        return row_to_task(row) if row else None
+
+def row_to_task(row: sqlite3.Row) -> dict[str, Any]:
+    return {
+        "task_id": row["task_id"],
+        "parent_task_id": row["parent_task_id"],
+        "task_type": row["task_type"],
+        "title": row["title"],
+        "priority": row["priority"],
+        "status": row["status"],
+        "payload": json.loads(row["payload_json"]),
+        "done_criteria": json.loads(row["done_criteria_json"]),
+        "assigned_agent_id": row["assigned_agent_id"],
+        "attempt_no": row["attempt_no"],
+        "max_retries": row["max_retries"],
+        "requires_human": bool(row["requires_human"]),
+        "review_status": row["review_status"],
+        "last_error": row["last_error"],
+        "created_at": row["created_at"],
+        "updated_at": row["updated_at"],
+    }
+
+def list_tasks() -> list[dict[str, Any]]:
+    with connect() as conn:
+        rows = conn.execute("SELECT * FROM tasks ORDER BY created_at DESC").fetchall()
+        return [row_to_task(r) for r in rows]
+
+def update_task(
+    task_id: str,
+    *,
+    status: str | None = None,
+    assigned_agent_id: str | None = None,
+    review_status: str | None = None,
+    last_error: str | None = None,
+) -> None:
+    with connect() as conn:
+        current = get_task(task_id)
+        if not current:
+            raise ValueError(f"task not found: {task_id}")
+        conn.execute(
+            """
+            UPDATE tasks
+            SET status=?, assigned_agent_id=?, review_status=?, last_error=?, updated_at=?
+            WHERE task_id=?
+            """,
+            (
+                status if status is not None else current["status"],
+                assigned_agent_id if assigned_agent_id is not None else current["assigned_agent_id"],
+                review_status if review_status is not None else current["review_status"],
+                last_error if last_error is not None else current["last_error"],
+                utc_now(),
+                task_id,
+            ),
+        )
+
+def next_runnable_task() -> Optional[dict[str, Any]]:
+    with connect() as conn:
+        rows = conn.execute("SELECT * FROM tasks WHERE status=?", (LifecycleState.IDLE.value,)).fetchall()
+        tasks = [row_to_task(r) for r in rows]
+        if not tasks:
+            return None
+        tasks.sort(key=lambda t: (-PRIORITY_SCORE.get(t["priority"], 0), t["created_at"]))
+        return tasks[0]
+
+def create_approval(task_id: str, operation: str, approver: str, decision: str, reason: str | None) -> None:
+    with connect() as conn:
+        conn.execute(
+            """
+            INSERT INTO approvals (approval_id, task_id, operation, approver, decision, reason, created_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?)
+            """,
+            (str(uuid.uuid4()), task_id, operation, approver, decision, reason, utc_now()),
+        )
+
+def latest_approval(task_id: str, operation: str = "review") -> Optional[dict[str, Any]]:
+    with connect() as conn:
+        row = conn.execute(
+            """
+            SELECT * FROM approvals
+            WHERE task_id=? AND operation=?
+            ORDER BY created_at DESC
+            LIMIT 1
+            """,
+            (task_id, operation),
+        ).fetchone()
+        return dict(row) if row else None
+
+def acquire_file_locks(task_id: str, agent_id: str, file_paths: Iterable[str]) -> tuple[bool, list[str]]:
+    conflicts: list[str] = []
+    normalized = [p.strip() for p in file_paths if p and p.strip()]
+    with connect() as conn:
+        for path in normalized:
+            existing = conn.execute("SELECT * FROM file_locks WHERE file_path=?", (path,)).fetchone()
+            if existing and existing["owner_task_id"] != task_id:
+                conflicts.append(path)
+        if conflicts:
+            return False, conflicts
+        for path in normalized:
+            conn.execute(
+                """
+                INSERT OR REPLACE INTO file_locks (lock_id, file_path, owner_task_id, owner_agent_id, created_at)
+                VALUES (?, ?, ?, ?, ?)
+                """,
+                (str(uuid.uuid4()), path, task_id, agent_id, utc_now()),
+            )
+    return True, []
+
+def release_file_locks(task_id: str) -> None:
+    with connect() as conn:
+        conn.execute("DELETE FROM file_locks WHERE owner_task_id=?", (task_id,))
+
+
+def upsert_heartbeat(worker_id: str, worker_type: str, status: str, details: dict[str, Any]) -> None:
+    now = utc_now()
+    with connect() as conn:
+        conn.execute(
+            """
+            INSERT INTO heartbeats (worker_id, worker_type, status, last_seen, details_json)
+            VALUES (?, ?, ?, ?, ?)
+            ON CONFLICT(worker_id) DO UPDATE SET
+                worker_type=excluded.worker_type,
+                status=excluded.status,
+                last_seen=excluded.last_seen,
+                details_json=excluded.details_json
+            """,
+            (worker_id, worker_type, status, now, json.dumps(details, ensure_ascii=False)),
+        )
+
+def list_heartbeats() -> list[dict[str, Any]]:
+    with connect() as conn:
+        rows = conn.execute("SELECT * FROM heartbeats ORDER BY last_seen DESC").fetchall()
+        return [
+            {
+                "worker_id": r["worker_id"],
+                "worker_type": r["worker_type"],
+                "status": r["status"],
+                "last_seen": r["last_seen"],
+                "details": json.loads(r["details_json"]),
+            }
+            for r in rows
+        ]
+
+def clear_heartbeats() -> int:
+    with connect() as conn:
+        cur = conn.execute("DELETE FROM heartbeats")
+        return cur.rowcount
+
+
+def upsert_metric(metric_key: str, metric_value: float) -> None:
+    now = utc_now()
+    with connect() as conn:
+        conn.execute(
+            """
+            INSERT INTO metrics (metric_key, metric_value, updated_at)
+            VALUES (?, ?, ?)
+            ON CONFLICT(metric_key) DO UPDATE SET
+                metric_value=excluded.metric_value,
+                updated_at=excluded.updated_at
+            """,
+            (metric_key, metric_value, now),
+        )
+
+def list_metrics() -> list[dict[str, Any]]:
+    with connect() as conn:
+        rows = conn.execute("SELECT * FROM metrics ORDER BY metric_key ASC").fetchall()
+        return [
+            {
+                "metric_key": r["metric_key"],
+                "metric_value": r["metric_value"],
+                "updated_at": r["updated_at"],
+            }
+            for r in rows
+        ]
+
+def acquire_worker_lease(worker_id: str, task_id: str, ttl_seconds: int, details: dict[str, Any]) -> str:
+    lease_id = new_id()
+    now = utc_now()
+    expires_at = (datetime.now(timezone.utc) + timedelta(seconds=ttl_seconds)).isoformat()
+    with connect() as conn:
+        existing = conn.execute(
+            "SELECT lease_id, status FROM worker_leases WHERE task_id=?",
+            (task_id,),
+        ).fetchone()
+
+        if existing:
+            if existing["status"] == "active":
+                raise sqlite3.IntegrityError(f"active lease already exists for task_id={task_id}")
+
+            conn.execute(
+                """
+                UPDATE worker_leases
+                SET lease_id=?, worker_id=?, status=?, acquired_at=?, expires_at=?, details_json=?
+                WHERE task_id=?
+                """,
+                (
+                    lease_id,
+                    worker_id,
+                    "active",
+                    now,
+                    expires_at,
+                    json.dumps(details, ensure_ascii=False),
+                    task_id,
+                ),
+            )
+        else:
+            conn.execute(
+                """
+                INSERT INTO worker_leases (lease_id, worker_id, task_id, status, acquired_at, expires_at, details_json)
+                VALUES (?, ?, ?, ?, ?, ?, ?)
+                """,
+                (lease_id, worker_id, task_id, "active", now, expires_at, json.dumps(details, ensure_ascii=False)),
+            )
+    return lease_id
+
+def renew_worker_lease(task_id: str, ttl_seconds: int, details: dict[str, Any]) -> None:
+    expires_at = (datetime.now(timezone.utc) + timedelta(seconds=ttl_seconds)).isoformat()
+    with connect() as conn:
+        conn.execute(
+            """
+            UPDATE worker_leases
+            SET expires_at=?, details_json=?
+            WHERE task_id=? AND status='active'
+            """,
+            (expires_at, json.dumps(details, ensure_ascii=False), task_id),
+        )
+
+def release_worker_lease(task_id: str, status: str = "released") -> int:
+    with connect() as conn:
+        cur = conn.execute(
+            """
+            UPDATE worker_leases
+            SET status=?
+            WHERE task_id=? AND status='active'
+            """,
+            (status, task_id),
+        )
+        return cur.rowcount
+
+def list_worker_leases() -> list[dict[str, Any]]:
+    with connect() as conn:
+        rows = conn.execute("SELECT * FROM worker_leases ORDER BY acquired_at DESC").fetchall()
+        return [
+            {
+                "lease_id": r["lease_id"],
+                "worker_id": r["worker_id"],
+                "task_id": r["task_id"],
+                "status": r["status"],
+                "acquired_at": r["acquired_at"],
+                "expires_at": r["expires_at"],
+                "details": json.loads(r["details_json"]),
+            }
+            for r in rows
+        ]
+
+
+PRIORITY_ORDER = {
+    "critical": 4,
+    "high": 3,
+    "normal": 2,
+    "low": 1,
+}
+
+def enqueue_task(task_id: str, task_type: str, priority: str) -> str:
+    queue_item_id = new_id()
+    now = utc_now()
+    with connect() as conn:
+        existing = conn.execute(
+            "SELECT queue_item_id FROM task_queue WHERE task_id=?",
+            (task_id,),
+        ).fetchone()
+        if existing:
+            return existing["queue_item_id"]
+
+        conn.execute(
+            """
+            INSERT INTO task_queue (
+                queue_item_id, task_id, task_type, priority, status,
+                claimed_by_worker, claimed_at, created_at, updated_at
+            )
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """,
+            (queue_item_id, task_id, task_type, priority, "queued", None, None, now, now),
+        )
+    return queue_item_id
+
+def claim_next_task(worker_id: str) -> dict[str, Any] | None:
+    with connect() as conn:
+        rows = conn.execute("""
+            SELECT queue_item_id, task_id, task_type, priority, status, claimed_by_worker,
+                   claimed_at, created_at, updated_at
+            FROM task_queue
+            WHERE status='queued'
+            ORDER BY
+                CASE priority
+                    WHEN 'critical' THEN 4
+                    WHEN 'high' THEN 3
+                    WHEN 'normal' THEN 2
+                    WHEN 'low' THEN 1
+                    ELSE 0
+                END DESC,
+                created_at ASC
+        """).fetchall()
+
+        if not rows:
+            return None
+
+        row = rows[0]
+        now = utc_now()
+        conn.execute("""
+            UPDATE task_queue
+            SET status='claimed',
+                claimed_by_worker=?,
+                claimed_at=?,
+                updated_at=?
+            WHERE queue_item_id=?
+            """, (worker_id, now, now, row["queue_item_id"]))
+
+        task = conn.execute("""
+            SELECT *
+            FROM tasks
+            WHERE task_id=?
+            """, (row["task_id"],)).fetchone()
+
+        if not task:
+            return None
+
+        return dict(task)
+
+def complete_queue_item(task_id: str, final_status: str) -> int:
+    with connect() as conn:
+        cur = conn.execute("""
+            UPDATE task_queue
+            SET status=?,
+                updated_at=?
+            WHERE task_id=?
+            """, (final_status, utc_now(), task_id))
+        return cur.rowcount
+
+def list_queue() -> list[dict[str, Any]]:
+    with connect() as conn:
+        rows = conn.execute("""
+            SELECT queue_item_id, task_id, task_type, priority, status,
+                   claimed_by_worker, claimed_at, created_at, updated_at
+            FROM task_queue
+            ORDER BY created_at DESC
+        """).fetchall()
+        return [dict(r) for r in rows]
+
+
+def move_queue_item_to_dlq(task_id: str, reason: str) -> str:
+    dlq_item_id = new_id()
+    now = utc_now()
+    with connect() as conn:
+        row = conn.execute(
+            """
+            SELECT queue_item_id, task_id, task_type, priority
+            FROM task_queue
+            WHERE task_id=?
+            """,
+            (task_id,),
+        ).fetchone()
+
+        if not row:
+            raise ValueError(f"queue item not found for task_id={task_id}")
+
+        existing = conn.execute(
+            "SELECT dlq_item_id FROM dead_letter_queue WHERE task_id=?",
+            (task_id,),
+        ).fetchone()
+        if existing:
+            return existing["dlq_item_id"]
+
+        conn.execute(
+            """
+            INSERT INTO dead_letter_queue (
+                dlq_item_id, task_id, task_type, priority, reason, source_queue_item_id, created_at
+            )
+            VALUES (?, ?, ?, ?, ?, ?, ?)
+            """,
+            (
+                dlq_item_id,
+                row["task_id"],
+                row["task_type"],
+                row["priority"],
+                reason,
+                row["queue_item_id"],
+                now,
+            ),
+        )
+        conn.execute(
+            """
+            UPDATE task_queue
+            SET status='dead_letter',
+                updated_at=?
+            WHERE task_id=?
+            """,
+            (now, task_id),
+        )
+    return dlq_item_id
+
+def requeue_task(task_id: str) -> int:
+    now = utc_now()
+    with connect() as conn:
+        task_row = conn.execute(
+            "SELECT task_id FROM tasks WHERE task_id=?",
+            (task_id,),
+        ).fetchone()
+        if not task_row:
+            return 0
+
+        cur = conn.execute(
+            """
+            UPDATE task_queue
+            SET status='queued',
+                claimed_by_worker=NULL,
+                claimed_at=NULL,
+                updated_at=?
+            WHERE task_id=?
+            """,
+            (now, task_id),
+        )
+
+        conn.execute(
+            """
+            UPDATE tasks
+            SET status='Idle',
+                assigned_agent_id=NULL,
+                review_status=NULL,
+                last_error=NULL,
+                updated_at=?
+            WHERE task_id=?
+            """,
+            (now, task_id),
+        )
+
+        conn.execute(
+            "DELETE FROM dead_letter_queue WHERE task_id=?",
+            (task_id,),
+        )
+
+    append_event(
+        "task",
+        task_id,
+        "TaskRequeued",
+        {
+            "task_id": task_id,
+        },
+    )
+
+    return cur.rowcount
+def list_dead_letter_queue() -> list[dict[str, Any]]:
+    with connect() as conn:
+        rows = conn.execute(
+            """
+            SELECT dlq_item_id, task_id, task_type, priority, reason, source_queue_item_id, created_at
+            FROM dead_letter_queue
+            ORDER BY created_at DESC
+            """
+        ).fetchall()
+        return [dict(r) for r in rows]
+
+def recover_stale_claims(timeout_seconds: int) -> dict[str, Any]:
+    now_dt = datetime.now(timezone.utc)
+    now = now_dt.isoformat()
+
+    with connect() as conn:
+        rows = conn.execute(
+            """
+            SELECT queue_item_id, task_id, claimed_by_worker, claimed_at
+            FROM task_queue
+            WHERE status='claimed' AND claimed_at IS NOT NULL
+            """
+        ).fetchall()
+
+        stale_task_ids: list[str] = []
+        for r in rows:
+            claimed_at = datetime.fromisoformat(r["claimed_at"])
+            age = (now_dt - claimed_at).total_seconds()
+            if age >= timeout_seconds:
+                stale_task_ids.append(r["task_id"])
+
+        requeued = 0
+        for task_id in stale_task_ids:
+            cur = conn.execute(
+                """
+                UPDATE task_queue
+                SET status='queued',
+                    claimed_by_worker=NULL,
+                    claimed_at=NULL,
+                    updated_at=?
+                WHERE task_id=? AND status='claimed'
+                """,
+                (now, task_id),
+            )
+            requeued += cur.rowcount
+
+        return {
+            "stale_task_ids": stale_task_ids,
+            "requeued": requeued,
+        }
+
+def claim_next_task_for_agent(worker_id: str, agent_type: str) -> dict[str, Any] | None:
+    # lazy import to avoid circular import issues during module load
+    from . import router
+
+    with connect() as conn:
+        rows = conn.execute("""
+            SELECT q.queue_item_id, q.task_id, q.task_type, q.priority, q.status,
+                   q.claimed_by_worker, q.claimed_at, q.created_at, q.updated_at,
+                   t.payload_json, t.status AS task_status
+            FROM task_queue q
+            JOIN tasks t ON t.task_id = q.task_id
+            WHERE q.status='queued' AND t.status='Idle'
+            ORDER BY
+                CASE q.priority
+                    WHEN 'critical' THEN 4
+                    WHEN 'high' THEN 3
+                    WHEN 'normal' THEN 2
+                    WHEN 'low' THEN 1
+                    ELSE 0
+                END DESC,
+                q.created_at ASC
+        """).fetchall()
+
+        selected_task = None
+        selected_queue_item_id = None
+
+        for row in rows:
+            task = conn.execute(
+                "SELECT * FROM tasks WHERE task_id=?",
+                (row["task_id"],),
+            ).fetchone()
+            if not task:
+                continue
+
+            task_dict = dict(task)
+            try:
+                routed = router.route_task(task_dict)
+            except Exception as e:
+                # do not hard-fail the whole worker loop because of one unroutable task
+                append_event(
+                    "task",
+                    row["task_id"],
+                    "TaskRoutingSkipped",
+                    {
+                        "worker_id": worker_id,
+                        "agent_type": agent_type,
+                        "error": str(e),
+                    },
+                )
+                continue
+
+            if routed["agent_type"] == agent_type:
+                selected_task = task_dict
+                selected_queue_item_id = row["queue_item_id"]
+                break
+
+        if not selected_task or not selected_queue_item_id:
+            return None
+
+        now = utc_now()
+        cur = conn.execute(
+            """
+            UPDATE task_queue
+            SET status='claimed',
+                claimed_by_worker=?,
+                claimed_at=?,
+                updated_at=?
+            WHERE queue_item_id=? AND status='queued'
+            """,
+            (worker_id, now, now, selected_queue_item_id),
+        )
+        if cur.rowcount != 1:
+            return None
+
+        return selected_task

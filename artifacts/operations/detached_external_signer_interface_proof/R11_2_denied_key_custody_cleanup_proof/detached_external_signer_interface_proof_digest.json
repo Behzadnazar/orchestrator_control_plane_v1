@@ -1,0 +1,14 @@
+{
+  "proof_label": "R11_2_denied_key_custody_cleanup_proof",
+  "proof_status": "PASS",
+  "base_verification_time_utc": "2026-03-20T13:11:55+00:00",
+  "future_fixture_time_utc": "2026-03-21T13:11:54+00:00",
+  "summary_json_path": "artifacts/operations/detached_external_signer_interface_proof/R11_2_denied_key_custody_cleanup_proof/detached_external_signer_interface_proof.json",
+  "summary_md_path": "artifacts/operations/detached_external_signer_interface_proof/R11_2_denied_key_custody_cleanup_proof/detached_external_signer_interface_proof.md",
+  "detached_signer_interface_active": true,
+  "denied_key_cleanup_complete": true,
+  "artifact_boundary_private_key_free": true,
+  "runtime_boundary_private_key_free": true,
+  "detached_signer_custody_private_key_free_after_proof": true,
+  "denied_paths_blocked": true
+}

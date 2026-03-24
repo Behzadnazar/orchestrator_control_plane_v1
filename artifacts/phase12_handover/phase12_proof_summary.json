@@ -1,0 +1,229 @@
+{
+  "generated_at": "2026-03-24T09:51:26+00:00",
+  "passed": 24,
+  "phase12_status": [
+    {
+      "attempt_count": 1,
+      "last_error": null,
+      "rowid": 106,
+      "status": "succeeded",
+      "task_id": "phase12-intake-define_project-f81784941c",
+      "task_type": "intake.define_project"
+    },
+    {
+      "attempt_count": 1,
+      "last_error": null,
+      "rowid": 107,
+      "status": "succeeded",
+      "task_id": "phase12-env-define_promotion_model-56def323e8",
+      "task_type": "env.define_promotion_model"
+    },
+    {
+      "attempt_count": 1,
+      "last_error": null,
+      "rowid": 108,
+      "status": "succeeded",
+      "task_id": "phase12-cicd-write_pipeline_spec-dfd99451b0",
+      "task_type": "cicd.write_pipeline_spec"
+    },
+    {
+      "attempt_count": 1,
+      "last_error": null,
+      "rowid": 109,
+      "status": "succeeded",
+      "task_id": "phase12-ops-write_observability_spec-bdc9f1eb44",
+      "task_type": "ops.write_observability_spec"
+    },
+    {
+      "attempt_count": 1,
+      "last_error": null,
+      "rowid": 110,
+      "status": "succeeded",
+      "task_id": "phase12-ops-write_change_control_spec-de4c6b13a3",
+      "task_type": "ops.write_change_control_spec"
+    },
+    {
+      "attempt_count": 1,
+      "last_error": null,
+      "rowid": 111,
+      "status": "succeeded",
+      "task_id": "phase12-devops-generate_supply_chain_bundle-a0596d8e73",
+      "task_type": "devops.generate_supply_chain_bundle"
+    },
+    {
+      "attempt_count": 1,
+      "last_error": null,
+      "rowid": 112,
+      "status": "succeeded",
+      "task_id": "phase12-architect-review_production_change-4465eccbb9",
+      "task_type": "architect.review_production_change"
+    },
+    {
+      "attempt_count": 1,
+      "last_error": null,
+      "rowid": 113,
+      "status": "succeeded",
+      "task_id": "phase12-release-promote_environment-7861bee7a9",
+      "task_type": "release.promote_environment"
+    },
+    {
+      "attempt_count": 1,
+      "last_error": null,
+      "rowid": 114,
+      "status": "succeeded",
+      "task_id": "phase12-debugger-write_postmortem-a7be2c796f",
+      "task_type": "debugger.write_postmortem"
+    }
+  ],
+  "proofs": [
+    {
+      "actual": "succeeded",
+      "expected": "succeeded",
+      "ok": true,
+      "proof_id": "P_status_intake.define_project"
+    },
+    {
+      "actual": "succeeded",
+      "expected": "succeeded",
+      "ok": true,
+      "proof_id": "P_status_env.define_promotion_model"
+    },
+    {
+      "actual": "succeeded",
+      "expected": "succeeded",
+      "ok": true,
+      "proof_id": "P_status_cicd.write_pipeline_spec"
+    },
+    {
+      "actual": "succeeded",
+      "expected": "succeeded",
+      "ok": true,
+      "proof_id": "P_status_ops.write_observability_spec"
+    },
+    {
+      "actual": "succeeded",
+      "expected": "succeeded",
+      "ok": true,
+      "proof_id": "P_status_ops.write_change_control_spec"
+    },
+    {
+      "actual": "succeeded",
+      "expected": "succeeded",
+      "ok": true,
+      "proof_id": "P_status_devops.generate_supply_chain_bundle"
+    },
+    {
+      "actual": "succeeded",
+      "expected": "succeeded",
+      "ok": true,
+      "proof_id": "P_status_architect.review_production_change"
+    },
+    {
+      "actual": "succeeded",
+      "expected": "succeeded",
+      "ok": true,
+      "proof_id": "P_status_release.promote_environment"
+    },
+    {
+      "actual": "succeeded",
+      "expected": "succeeded",
+      "ok": true,
+      "proof_id": "P_status_debugger.write_postmortem"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "ok": true,
+      "proof_id": "intake_exists"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "ok": true,
+      "proof_id": "env_model_exists"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "ok": true,
+      "proof_id": "pipeline_exists"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "ok": true,
+      "proof_id": "observability_exists"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "ok": true,
+      "proof_id": "change_control_exists"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "ok": true,
+      "proof_id": "sbom_exists"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "ok": true,
+      "proof_id": "provenance_exists"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "ok": true,
+      "proof_id": "signing_exists"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "ok": true,
+      "proof_id": "change_review_exists"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "ok": true,
+      "proof_id": "deployment_report_exists"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "ok": true,
+      "proof_id": "postmortem_exists"
+    },
+    {
+      "actual": true,
+      "detail": "{\n  \"ok\": false,\n  \"error_type\": \"ApprovalGateError\",\n  \"error\": \"actor not authorized for approval: actor=ci-bot, roles=['automation'], required=['devops_reviewer', 'human_approver', 'operations_reviewer', 'platform_admin', 'release_manager']\",\n  \"ts\": \"2026-03-24T09:51:26+00:00\"\n}",
+      "expected": true,
+      "ok": true,
+      "proof_id": "P_unauthorized_approval_denied"
+    },
+    {
+      "actual": 3,
+      "detail": "{\"ok\": false, \"task_type\": \"env.define_promotion_model\", \"error\": \"governance denied execution\", \"reasons\": [\"path escapes project root: /tmp/phase12-evil.json\"], \"ts\": \"2026-03-24T09:51:26+00:00\"}",
+      "expected": 3,
+      "ok": true,
+      "proof_id": "P_path_escape_denied"
+    },
+    {
+      "actual": "prod",
+      "expected": "prod",
+      "ok": true,
+      "proof_id": "P_prod_target_environment"
+    },
+    {
+      "actual": "ring_canary",
+      "expected": "ring_canary",
+      "ok": true,
+      "proof_id": "P_safe_deployment_mode"
+    }
+  ],
+  "total": 24,
+  "workflow_run_id": "wfr-phase12-2455937c",
+  "workflow_run_key": "phase12_prod_v1"
+}

@@ -1,0 +1,8 @@
+{
+  "receipt_sign_response": {
+    "ok": false,
+    "transport_error": "eof_no_response",
+    "returncode": 91,
+    "signature_exists": false
+  }
+}

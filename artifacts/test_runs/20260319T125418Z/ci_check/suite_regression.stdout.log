@@ -1,0 +1,18 @@
+===== PREFLIGHT STDOUT =====
+[preflight] PASS base dir present: /home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1
+[preflight] PASS venv interpreter present: /home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/.venv/bin/python3
+[preflight] PASS required files present: 10
+[preflight] PASS active interpreter matches venv: /usr/bin/python3.12
+[preflight] PASS pytest import available
+[preflight] FINAL_STATUS=PASSED
+[run_tests] PREFLIGHT_PASSED
+[run_tests] suite=regression
+[run_tests] cwd=/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1
+[run_tests] run_dir=/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/test_runs/20260319T125430Z/regression
+[run_tests] command=/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/.venv/bin/python3 -m pytest --junit-xml /home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/test_runs/20260319T125430Z/regression/junit.xml -q -m regression
+===== PYTEST STDOUT =====
+..                                                             [100%]
+[run_tests] latest_pointer=/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/test_runs/latest/regression.txt
+[run_tests] index_path=/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/test_runs/index.json
+[run_tests] pruned=20260319T125346Z
+[run_tests] PASSED suite=regression

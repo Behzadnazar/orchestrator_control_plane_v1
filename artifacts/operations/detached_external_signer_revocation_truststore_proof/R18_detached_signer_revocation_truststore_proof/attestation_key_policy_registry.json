@@ -1,0 +1,35 @@
+{
+  "registry_version": 1,
+  "registry_type": "detached_external_signer_revocation_truststore_registry",
+  "generated_at_utc": "2026-03-21T06:55:06+00:00",
+  "entries": [
+    {
+      "key_id": "r18-attestation-key-old",
+      "public_key_path": "artifacts/operations/detached_external_signer_revocation_truststore_proof/R18_detached_signer_revocation_truststore_proof/public_keys/attestation_public_old.pem",
+      "public_key_sha256": "7500845f03eb1f488424f4ad689d1fcc922145c4fe095d8f4e29a31d84c9beeb",
+      "not_before": "2026-03-11T06:55:03+00:00",
+      "not_after": "2026-03-26T06:55:03+00:00"
+    },
+    {
+      "key_id": "r18-attestation-key-new",
+      "public_key_path": "artifacts/operations/detached_external_signer_revocation_truststore_proof/R18_detached_signer_revocation_truststore_proof/public_keys/attestation_public_new.pem",
+      "public_key_sha256": "48febf40a1de08e74d65e6a12edde1e0b82cfccca46147e47874c0e00d831de3",
+      "not_before": "2026-03-20T06:55:03+00:00",
+      "not_after": "2026-04-20T06:55:03+00:00"
+    },
+    {
+      "key_id": "r18-attestation-key-expired",
+      "public_key_path": "artifacts/operations/detached_external_signer_revocation_truststore_proof/R18_detached_signer_revocation_truststore_proof/public_keys/attestation_public_expired.pem",
+      "public_key_sha256": "614d1fdc53cd7cb56156d457b5f6d86ccfa7fa75f2dc69263cf8299c2fe31fba",
+      "not_before": "2026-02-19T06:55:03+00:00",
+      "not_after": "2026-03-21T06:55:02+00:00"
+    },
+    {
+      "key_id": "r18-attestation-key-future",
+      "public_key_path": "artifacts/operations/detached_external_signer_revocation_truststore_proof/R18_detached_signer_revocation_truststore_proof/public_keys/attestation_public_future.pem",
+      "public_key_sha256": "c8f05a96b25e1b9ea53922072d7dd4203ada96a2eba8d0c5cd41454f5c43de53",
+      "not_before": "2026-03-22T06:55:03+00:00",
+      "not_after": "2026-04-20T06:55:03+00:00"
+    }
+  ]
+}

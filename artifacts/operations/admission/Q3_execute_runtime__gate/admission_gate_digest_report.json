@@ -1,0 +1,17 @@
+{
+  "generated_at_utc": "2026-03-20T10:55:36+00:00",
+  "label": "Q3_execute_runtime__gate",
+  "decision": "ALLOW",
+  "artifacts": [
+    {
+      "path": "artifacts/operations/admission/Q3_execute_runtime__gate/admission_gate_decision.json",
+      "size_bytes": 3138,
+      "sha256": "e29e16c705d244f819dc945e3cbf864847aa4dba1358cebcd46e9f018947e1e7"
+    },
+    {
+      "path": "artifacts/operations/admission/Q3_execute_runtime__gate/admission_gate_decision.md",
+      "size_bytes": 1181,
+      "sha256": "e2df043f282ffc66febee31ba057f791113e352a1e7c2544aa1c4c84dc725db4"
+    }
+  ]
+}

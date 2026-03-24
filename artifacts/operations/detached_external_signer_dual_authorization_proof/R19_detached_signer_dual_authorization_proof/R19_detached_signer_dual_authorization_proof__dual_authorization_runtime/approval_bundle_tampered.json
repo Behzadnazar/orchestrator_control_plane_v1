@@ -1,0 +1,12 @@
+[
+  {
+    "approver_id": "approver_a",
+    "token_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/operations/detached_external_signer_dual_authorization_proof/R19_detached_signer_dual_authorization_proof/R19_detached_signer_dual_authorization_proof__dual_authorization_runtime/approval_a_tampered_token.json",
+    "signature_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/operations/detached_external_signer_dual_authorization_proof/R19_detached_signer_dual_authorization_proof/R19_detached_signer_dual_authorization_proof__dual_authorization_runtime/approval_a.sig"
+  },
+  {
+    "approver_id": "approver_b",
+    "token_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/operations/detached_external_signer_dual_authorization_proof/R19_detached_signer_dual_authorization_proof/R19_detached_signer_dual_authorization_proof__dual_authorization_runtime/approval_b_token.json",
+    "signature_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/operations/detached_external_signer_dual_authorization_proof/R19_detached_signer_dual_authorization_proof/R19_detached_signer_dual_authorization_proof__dual_authorization_runtime/approval_b.sig"
+  }
+]

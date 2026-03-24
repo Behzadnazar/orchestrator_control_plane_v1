@@ -1,0 +1,19 @@
+{
+  "suite": "e2e",
+  "status": "passed",
+  "exit_code": 0,
+  "started_at_utc": "2026-03-19T12:53:52Z",
+  "finished_at_utc": "2026-03-19T12:53:58Z",
+  "duration_seconds": 5.19,
+  "run_dir": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/test_runs/20260319T125352Z/e2e",
+  "command": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/.venv/bin/python3 -m pytest --junit-xml /home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/test_runs/20260319T125352Z/e2e/junit.xml -q -m e2e",
+  "junit_xml": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/test_runs/20260319T125352Z/e2e/junit.xml",
+  "tests": 2,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "stdout_log": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/test_runs/20260319T125352Z/e2e/pytest.stdout.log",
+  "stderr_log": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/test_runs/20260319T125352Z/e2e/pytest.stderr.log",
+  "preflight_stdout_log": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/test_runs/20260319T125352Z/e2e/preflight.stdout.log",
+  "preflight_stderr_log": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/test_runs/20260319T125352Z/e2e/preflight.stderr.log"
+}

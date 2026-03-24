@@ -1,0 +1,82 @@
+from __future__ import annotations
+
+import argparse
+import signal
+import threading
+
+from . import db
+from .dispatcher import Dispatcher
+from .orchestrator import Orchestrator
+
+
+STOP_EVENT = threading.Event()
+
+
+def _handle_signal(signum, frame) -> None:
+    STOP_EVENT.set()
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Agent worker")
+    parser.add_argument("--worker-id", required=True)
+    parser.add_argument("--worker-type", required=True)
+    parser.add_argument("--lease-ttl", type=int, default=15)
+    args = parser.parse_args()
+
+    signal.signal(signal.SIGINT, _handle_signal)
+    signal.signal(signal.SIGTERM, _handle_signal)
+
+    db.init_db()
+    dispatcher = Dispatcher()
+    orch = Orchestrator()
+
+    while not STOP_EVENT.is_set():
+        db.upsert_heartbeat(
+            worker_id=args.worker_id,
+            worker_type=args.worker_type,
+            status="running",
+            details={"mode": "agent_worker"},
+        )
+
+        task = dispatcher.claim_work(args.worker_id, args.worker_type)
+        if not task:
+            STOP_EVENT.wait(2)
+            continue
+
+        lease_id = db.acquire_worker_lease(
+            worker_id=args.worker_id,
+            task_id=task["task_id"],
+            ttl_seconds=args.lease_ttl,
+            details={"worker_type": args.worker_type, "source": "agent_worker"},
+        )
+        print(f"WORK_CLAIMED worker={args.worker_id} task_id={task['task_id']} lease_id={lease_id}")
+
+        try:
+            result = orch.process_specific_task(task["task_id"])
+            lower = result.lower()
+            if "completed" in lower:
+                dispatcher.finalize_claim(task["task_id"], "completed")
+            elif "failed permanently" in lower or "tool denied" in lower or "ownership denied" in lower:
+                dispatcher.send_to_dlq(task["task_id"], result)
+            elif "failed" in lower:
+                dispatcher.finalize_claim(task["task_id"], "failed")
+            else:
+                dispatcher.finalize_claim(task["task_id"], "processed")
+            print(result)
+        except Exception as e:
+            dispatcher.send_to_dlq(task["task_id"], f"worker exception: {e}")
+            print(f"WORK_FAILED task_id={task['task_id']} error={e}")
+        finally:
+            db.release_worker_lease(task["task_id"], status="released")
+
+    db.upsert_heartbeat(
+        worker_id=args.worker_id,
+        worker_type=args.worker_type,
+        status="stopped",
+        details={"mode": "agent_worker", "shutdown": "clean"},
+    )
+    print(f"AGENT_WORKER_STOPPED worker_id={args.worker_id}")
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,291 @@
+{
+  "task_policies": {
+    "research.collect_notes": {
+      "owner_agent": "research_agent",
+      "approver_roles": ["platform_admin", "human_approver", "research_reviewer"],
+      "allowed_service_paths": ["research.collect_notes"],
+      "allowed_tools": ["filesystem.read", "filesystem.write"],
+      "required_fields": ["topic"],
+      "required_input_paths": [],
+      "optional_input_paths": [],
+      "required_output_paths": ["notes_output_path"],
+      "optional_output_paths": [],
+      "allowed_read_globs": ["artifacts/state/*", "artifacts/state/**/*.json"],
+      "allowed_write_globs": ["artifacts/research_notes/*", "artifacts/runs/*/research/*", "artifacts/state/research/*"],
+      "workflow_contract": {
+        "allowed_workflow_run_keys": ["phase11_demo_v1"]
+      }
+    },
+    "frontend.write_component": {
+      "owner_agent": "frontend_agent",
+      "approver_roles": ["platform_admin", "human_approver", "frontend_reviewer"],
+      "allowed_service_paths": ["frontend.write_component"],
+      "allowed_tools": ["filesystem.read", "filesystem.write"],
+      "required_fields": ["component_name"],
+      "required_input_paths": ["source_notes_path"],
+      "optional_input_paths": [],
+      "required_output_paths": ["component_path"],
+      "optional_output_paths": [],
+      "allowed_read_globs": ["artifacts/runs/*/research/*", "artifacts/research_notes/*", "artifacts/state/frontend/*"],
+      "allowed_write_globs": ["frontend/src/components/*", "artifacts/runs/*/frontend/*", "artifacts/state/frontend/*"],
+      "workflow_contract": {
+        "allowed_workflow_run_keys": ["phase11_demo_v1"]
+      }
+    },
+    "backend.write_file": {
+      "owner_agent": "backend_agent",
+      "approver_roles": ["platform_admin", "human_approver", "backend_reviewer"],
+      "allowed_service_paths": ["backend.write_file"],
+      "allowed_tools": ["filesystem.read", "filesystem.write"],
+      "required_fields": ["path", "content"],
+      "required_input_paths": [],
+      "optional_input_paths": ["component_path"],
+      "required_output_paths": ["path"],
+      "optional_output_paths": [],
+      "allowed_read_globs": ["artifacts/runs/*/frontend/*", "artifacts/runs/*/research/*", "artifacts/state/backend/*"],
+      "allowed_write_globs": ["backend/generated/*", "artifacts/runs/*/backend/*", "artifacts/runs/*/workflows/*", "artifacts/state/backend/*"],
+      "workflow_contract": {
+        "allowed_workflow_run_keys": ["phase11_demo_v1"]
+      }
+    },
+    "memory.write_json": {
+      "owner_agent": "memory_agent",
+      "approver_roles": ["platform_admin", "human_approver", "memory_reviewer"],
+      "allowed_service_paths": ["memory.write_json"],
+      "allowed_tools": ["memory.write"],
+      "required_fields": ["path", "json_value"],
+      "required_input_paths": [],
+      "optional_input_paths": [],
+      "required_output_paths": ["path"],
+      "optional_output_paths": [],
+      "allowed_read_globs": [],
+      "allowed_write_globs": ["artifacts/state/*", "artifacts/state/**/*.json"],
+      "workflow_contract": {
+        "allowed_workflow_run_keys": ["phase11_demo_v1"]
+      }
+    },
+    "memory.read_json": {
+      "owner_agent": "memory_agent",
+      "approver_roles": ["platform_admin", "human_approver", "memory_reviewer"],
+      "allowed_service_paths": ["memory.read_json"],
+      "allowed_tools": ["memory.read"],
+      "required_fields": ["path"],
+      "required_input_paths": ["path"],
+      "optional_input_paths": [],
+      "required_output_paths": [],
+      "optional_output_paths": [],
+      "allowed_read_globs": ["artifacts/state/*", "artifacts/state/**/*.json"],
+      "allowed_write_globs": [],
+      "workflow_contract": {
+        "allowed_workflow_run_keys": ["phase11_demo_v1"]
+      }
+    },
+    "debugger.analyze_failure": {
+      "owner_agent": "debugger_agent",
+      "approver_roles": ["platform_admin", "human_approver", "debugger_reviewer"],
+      "allowed_service_paths": ["debugger.analyze_failure"],
+      "allowed_tools": ["filesystem.read", "filesystem.write", "analysis.root_cause"],
+      "required_fields": ["incident_title"],
+      "required_input_paths": ["error_source_path"],
+      "optional_input_paths": [],
+      "required_output_paths": ["rca_output_path"],
+      "optional_output_paths": [],
+      "allowed_read_globs": ["artifacts/runs/*/backend/*", "artifacts/runs/*/workflows/*", "artifacts/state/*"],
+      "allowed_write_globs": ["artifacts/runs/*/debugger/*", "artifacts/state/debugger/*"],
+      "workflow_contract": {
+        "allowed_workflow_run_keys": ["phase11_demo_v1"]
+      }
+    },
+    "devops.build_release_bundle": {
+      "owner_agent": "devops_agent",
+      "approver_roles": ["platform_admin", "human_approver", "devops_reviewer"],
+      "allowed_service_paths": ["devops.build_release_bundle"],
+      "allowed_tools": ["filesystem.read", "filesystem.write", "release.bundle"],
+      "required_fields": ["release_name"],
+      "required_input_paths": ["notes_path", "component_path", "backend_bundle_path", "rca_path"],
+      "optional_input_paths": [],
+      "required_output_paths": ["manifest_output_path"],
+      "optional_output_paths": ["bundle_output_path"],
+      "allowed_read_globs": ["artifacts/runs/*/research/*", "artifacts/runs/*/frontend/*", "artifacts/runs/*/backend/*", "artifacts/runs/*/debugger/*", "artifacts/runs/*/workflows/*"],
+      "allowed_write_globs": ["artifacts/runs/*/devops/*", "artifacts/state/devops/*"],
+      "workflow_contract": {
+        "allowed_workflow_run_keys": ["phase11_demo_v1"]
+      }
+    },
+    "architect.review_constraints": {
+      "owner_agent": "architect_agent",
+      "approver_roles": ["platform_admin", "human_approver", "architect_reviewer"],
+      "allowed_service_paths": ["architect.review_constraints"],
+      "allowed_tools": ["filesystem.read", "filesystem.write", "architecture.review"],
+      "required_fields": ["review_title"],
+      "required_input_paths": ["notes_path", "component_path", "backend_bundle_path", "release_manifest_path"],
+      "optional_input_paths": ["rca_path"],
+      "required_output_paths": ["review_output_path"],
+      "optional_output_paths": [],
+      "allowed_read_globs": ["artifacts/runs/*/research/*", "artifacts/runs/*/frontend/*", "artifacts/runs/*/backend/*", "artifacts/runs/*/debugger/*", "artifacts/runs/*/devops/*", "artifacts/runs/*/workflows/*"],
+      "allowed_write_globs": ["artifacts/runs/*/architect/*", "artifacts/state/architect/*"],
+      "workflow_contract": {
+        "allowed_workflow_run_keys": ["phase11_demo_v1"]
+      }
+    },
+    "backend.fail_test": {
+      "owner_agent": "backend_agent",
+      "approver_roles": ["platform_admin", "human_approver", "backend_reviewer"],
+      "allowed_service_paths": ["backend.fail_test"],
+      "allowed_tools": ["filesystem.read"],
+      "required_fields": [],
+      "required_input_paths": [],
+      "optional_input_paths": [],
+      "required_output_paths": [],
+      "optional_output_paths": [],
+      "allowed_read_globs": ["artifacts/state/backend/*"],
+      "allowed_write_globs": [],
+      "workflow_contract": {}
+    },
+
+    "intake.define_project": {
+      "owner_agent": "research_agent",
+      "approver_roles": ["platform_admin", "human_approver", "research_reviewer"],
+      "allowed_service_paths": ["intake.define_project"],
+      "allowed_tools": ["filesystem.read", "filesystem.write"],
+      "required_fields": ["project_name", "business_goal"],
+      "required_input_paths": [],
+      "optional_input_paths": [],
+      "required_output_paths": ["intake_output_path"],
+      "optional_output_paths": [],
+      "allowed_read_globs": ["artifacts/state/*", "artifacts/state/**/*.json"],
+      "allowed_write_globs": ["artifacts/runs/*/intake/*", "artifacts/state/phase12/*"],
+      "workflow_contract": {
+        "allowed_workflow_run_keys": ["phase12_prod_v1"]
+      }
+    },
+    "env.define_promotion_model": {
+      "owner_agent": "memory_agent",
+      "approver_roles": ["platform_admin", "human_approver", "memory_reviewer", "operations_reviewer"],
+      "allowed_service_paths": ["env.define_promotion_model"],
+      "allowed_tools": ["memory.write"],
+      "required_fields": ["path", "model_name"],
+      "required_input_paths": [],
+      "optional_input_paths": [],
+      "required_output_paths": ["path"],
+      "optional_output_paths": [],
+      "allowed_read_globs": [],
+      "allowed_write_globs": ["artifacts/runs/*/environments/*", "artifacts/state/phase12/*", "artifacts/state/*", "artifacts/state/**/*.json"],
+      "workflow_contract": {
+        "allowed_workflow_run_keys": ["phase12_prod_v1"]
+      }
+    },
+    "cicd.write_pipeline_spec": {
+      "owner_agent": "backend_agent",
+      "approver_roles": ["platform_admin", "human_approver", "backend_reviewer", "devops_reviewer"],
+      "allowed_service_paths": ["cicd.write_pipeline_spec"],
+      "allowed_tools": ["filesystem.read", "filesystem.write"],
+      "required_fields": ["pipeline_name"],
+      "required_input_paths": ["intake_path", "environment_model_path"],
+      "optional_input_paths": [],
+      "required_output_paths": ["pipeline_output_path"],
+      "optional_output_paths": [],
+      "allowed_read_globs": ["artifacts/runs/*/intake/*", "artifacts/runs/*/environments/*", "artifacts/state/phase12/*"],
+      "allowed_write_globs": ["artifacts/runs/*/cicd/*", "artifacts/state/phase12/*"],
+      "workflow_contract": {
+        "allowed_workflow_run_keys": ["phase12_prod_v1"]
+      }
+    },
+    "ops.write_observability_spec": {
+      "owner_agent": "backend_agent",
+      "approver_roles": ["platform_admin", "human_approver", "backend_reviewer", "operations_reviewer"],
+      "allowed_service_paths": ["ops.write_observability_spec"],
+      "allowed_tools": ["filesystem.read", "filesystem.write"],
+      "required_fields": ["service_name"],
+      "required_input_paths": ["pipeline_path"],
+      "optional_input_paths": [],
+      "required_output_paths": ["observability_output_path"],
+      "optional_output_paths": [],
+      "allowed_read_globs": ["artifacts/runs/*/cicd/*", "artifacts/runs/*/intake/*"],
+      "allowed_write_globs": ["artifacts/runs/*/ops/*", "artifacts/state/phase12/*"],
+      "workflow_contract": {
+        "allowed_workflow_run_keys": ["phase12_prod_v1"]
+      }
+    },
+    "ops.write_change_control_spec": {
+      "owner_agent": "backend_agent",
+      "approver_roles": ["platform_admin", "human_approver", "backend_reviewer", "security_reviewer", "operations_reviewer"],
+      "allowed_service_paths": ["ops.write_change_control_spec"],
+      "allowed_tools": ["filesystem.read", "filesystem.write"],
+      "required_fields": ["change_window"],
+      "required_input_paths": ["pipeline_path", "environment_model_path"],
+      "optional_input_paths": [],
+      "required_output_paths": ["change_control_output_path"],
+      "optional_output_paths": [],
+      "allowed_read_globs": ["artifacts/runs/*/cicd/*", "artifacts/runs/*/environments/*"],
+      "allowed_write_globs": ["artifacts/runs/*/ops/*", "artifacts/state/phase12/*"],
+      "workflow_contract": {
+        "allowed_workflow_run_keys": ["phase12_prod_v1"]
+      }
+    },
+    "devops.generate_supply_chain_bundle": {
+      "owner_agent": "devops_agent",
+      "approver_roles": ["platform_admin", "human_approver", "devops_reviewer", "security_reviewer"],
+      "allowed_service_paths": ["devops.generate_supply_chain_bundle"],
+      "allowed_tools": ["filesystem.read", "filesystem.write", "supply_chain.bundle"],
+      "required_fields": ["release_name"],
+      "required_input_paths": ["intake_path", "pipeline_path", "observability_path", "change_control_path"],
+      "optional_input_paths": [],
+      "required_output_paths": ["sbom_output_path", "provenance_output_path", "signing_output_path"],
+      "optional_output_paths": [],
+      "allowed_read_globs": ["artifacts/runs/*/intake/*", "artifacts/runs/*/cicd/*", "artifacts/runs/*/ops/*"],
+      "allowed_write_globs": ["artifacts/runs/*/supply/*", "artifacts/state/phase12/*"],
+      "workflow_contract": {
+        "allowed_workflow_run_keys": ["phase12_prod_v1"]
+      }
+    },
+    "architect.review_production_change": {
+      "owner_agent": "architect_agent",
+      "approver_roles": ["platform_admin", "human_approver", "architect_reviewer"],
+      "allowed_service_paths": ["architect.review_production_change"],
+      "allowed_tools": ["filesystem.read", "filesystem.write", "architecture.review"],
+      "required_fields": ["review_title"],
+      "required_input_paths": ["intake_path", "environment_model_path", "pipeline_path", "observability_path", "change_control_path", "sbom_path", "provenance_path", "signing_path"],
+      "optional_input_paths": [],
+      "required_output_paths": ["review_output_path"],
+      "optional_output_paths": [],
+      "allowed_read_globs": ["artifacts/runs/*/intake/*", "artifacts/runs/*/environments/*", "artifacts/runs/*/cicd/*", "artifacts/runs/*/ops/*", "artifacts/runs/*/supply/*"],
+      "allowed_write_globs": ["artifacts/runs/*/architect/*", "artifacts/state/phase12/*"],
+      "workflow_contract": {
+        "allowed_workflow_run_keys": ["phase12_prod_v1"]
+      }
+    },
+    "release.promote_environment": {
+      "owner_agent": "devops_agent",
+      "approver_roles": ["platform_admin", "human_approver", "devops_reviewer", "release_manager", "operations_reviewer"],
+      "allowed_service_paths": ["release.promote_environment"],
+      "allowed_tools": ["filesystem.read", "filesystem.write", "deployment.control"],
+      "required_fields": ["target_environment", "strategy"],
+      "required_input_paths": ["environment_model_path", "pipeline_path", "observability_path", "change_control_path", "sbom_path", "provenance_path", "signing_path", "change_review_path"],
+      "optional_input_paths": [],
+      "required_output_paths": ["deployment_report_path"],
+      "optional_output_paths": [],
+      "allowed_read_globs": ["artifacts/runs/*/environments/*", "artifacts/runs/*/cicd/*", "artifacts/runs/*/ops/*", "artifacts/runs/*/supply/*", "artifacts/runs/*/architect/*"],
+      "allowed_write_globs": ["artifacts/runs/*/release/*", "artifacts/state/phase12/*"],
+      "workflow_contract": {
+        "allowed_workflow_run_keys": ["phase12_prod_v1"]
+      }
+    },
+    "debugger.write_postmortem": {
+      "owner_agent": "debugger_agent",
+      "approver_roles": ["platform_admin", "human_approver", "debugger_reviewer", "operations_reviewer"],
+      "allowed_service_paths": ["debugger.write_postmortem"],
+      "allowed_tools": ["filesystem.read", "filesystem.write", "analysis.root_cause"],
+      "required_fields": ["incident_title"],
+      "required_input_paths": ["deployment_report_path", "change_review_path"],
+      "optional_input_paths": [],
+      "required_output_paths": ["postmortem_output_path"],
+      "optional_output_paths": [],
+      "allowed_read_globs": ["artifacts/runs/*/release/*", "artifacts/runs/*/architect/*"],
+      "allowed_write_globs": ["artifacts/runs/*/postmortem/*", "artifacts/state/phase12/*"],
+      "workflow_contract": {
+        "allowed_workflow_run_keys": ["phase12_prod_v1"]
+      }
+    }
+  }
+}

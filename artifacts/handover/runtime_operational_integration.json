@@ -1,0 +1,87 @@
+{
+  "document_type": "runtime-operational-integration",
+  "document_version": 1,
+  "project_root": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1",
+  "activation_status": "ready-for-operational-runtime-integration",
+  "baseline_binding": {
+    "proof_range": "R01-R35",
+    "proof_count": 35,
+    "baseline_sha256": "7a6c585ea82d4db3a9b8160b9d474788563582cd40a04fe9e45c7d3240431890"
+  },
+  "required_runtime_surfaces": [
+    "app/security/",
+    "tests/proofs/",
+    "scripts/",
+    "artifacts/handover/"
+  ],
+  "runtime_surface_inventory": {
+    "app_security": {
+      "path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/app/security",
+      "exists": true,
+      "entry_count": 22,
+      "sample_entries": [
+        "__pycache__",
+        "ack_redelivery_visibility.py",
+        "append_only_event_log.py",
+        "atomic_multi_ledger_commit.py",
+        "checkpoint_snapshot.py",
+        "concurrent_atomic_commit.py",
+        "concurrent_crash_restart_race.py",
+        "crash_recovery.py",
+        "delegation_chain.py",
+        "delegation_consumption.py"
+      ]
+    },
+    "tests_proofs": {
+      "path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/tests/proofs",
+      "exists": true,
+      "entry_count": 21,
+      "sample_entries": [
+        "__pycache__",
+        "test_formal_delivery_bundle.py",
+        "test_integration_handover_package.py",
+        "test_operational_runtime_integration.py",
+        "test_r21_multi_stage_delegation_chain.py",
+        "test_r22_delegation_consumption_binding.py",
+        "test_r23_consumption_execution_binding.py",
+        "test_r24_execution_outcome_sealing.py",
+        "test_r25_crash_recovery_persistent_seal.py",
+        "test_r26_atomic_multi_ledger_commit.py"
+      ]
+    },
+    "scripts": {
+      "path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/scripts",
+      "exists": true,
+      "entry_count": 95,
+      "sample_entries": [
+        "OFFICIAL_SCRIPTS.txt",
+        "__init__.py",
+        "__pycache__",
+        "archive",
+        "artifact_index.py",
+        "artifact_paths.py",
+        "audit_contracts.py",
+        "build_formal_delivery_bundle.py",
+        "build_freeze_gate_audit_report.py",
+        "build_governance_closure_report.py"
+      ]
+    }
+  },
+  "operational_runtime_sequence": [
+    "verify baseline manifest and sha256 sidecar",
+    "verify integration handover package",
+    "verify runtime control plane integration package",
+    "verify formal delivery bundle",
+    "verify app/security and tests/proofs runtime surfaces",
+    "treat runtime onboarding as blocked on any mismatch",
+    "handoff runtime activation only after all checks pass"
+  ],
+  "operational_gate_contract": {
+    "baseline_match_required": true,
+    "integration_package_match_required": true,
+    "runtime_package_match_required": true,
+    "formal_bundle_match_required": true,
+    "project_surfaces_present_required": true,
+    "missing_or_mismatched_input_is_fatal": true
+  }
+}

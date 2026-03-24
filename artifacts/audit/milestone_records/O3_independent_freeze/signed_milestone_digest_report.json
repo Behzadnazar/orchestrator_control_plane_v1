@@ -1,0 +1,39 @@
+{
+  "generated_at_utc": "2026-03-20T10:30:10+00:00",
+  "milestone": "O3_independent_freeze",
+  "record_path": "artifacts/audit/milestone_records/O3_independent_freeze/signed_milestone_record.json",
+  "record_sha256": "efc0ad96005cdb35e0fbd4b5fa70bacae6a04630ca37671f38495589f9e95553",
+  "audit_index_path": "artifacts/audit/immutable_audit_index.jsonl",
+  "latest_index_entry_sha256": "fb88bea11982596ec2bd84da385ed177d1ee656f86ba0ba4fc31741f43b95b51",
+  "artifacts": [
+    {
+      "logical_name": "O3_independent_freeze_evidence_bundle.zip",
+      "path": "artifacts/freeze_gate/O3_independent_freeze/O3_independent_freeze_evidence_bundle.zip",
+      "size_bytes": 4437,
+      "sha256": "7d6d50fb62cf1842b31188ded201c13670e2a6f9e12d821ec8dc2f45fe1fb63b"
+    },
+    {
+      "logical_name": "evidence_bundle_manifest.json",
+      "path": "artifacts/freeze_gate/O3_independent_freeze/evidence_bundle_manifest.json",
+      "size_bytes": 2231,
+      "sha256": "71e036bb5d39194c70a0af91ce2b68ef435a1c7700306ad25d8156eebfc3bd8a"
+    },
+    {
+      "logical_name": "freeze_gate_audit_report.md",
+      "path": "artifacts/freeze_gate/O3_independent_freeze/freeze_gate_audit_report.md",
+      "size_bytes": 6597,
+      "sha256": "483e43c6078cd25fdca4a9a089cb240757594422243cb536ee3b9e4d4563e447"
+    },
+    {
+      "logical_name": "freeze_gate_summary.json",
+      "path": "artifacts/freeze_gate/O3_independent_freeze/freeze_gate_summary.json",
+      "size_bytes": 1231,
+      "sha256": "5b4a12d3d7f5c8d06d4f7f5a13548eb16643770fdfbd3d9b543b86ae484e1ad1"
+    }
+  ],
+  "audit_chain_contract": {
+    "link_field": "previous_entry_sha256",
+    "link_target": "previous.entry_sha256",
+    "contract_version": 2
+  }
+}

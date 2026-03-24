@@ -1,0 +1,18 @@
+{
+  "receipt_version": 1,
+  "receipt_type": "external_signed_execution_receipt",
+  "generated_at_utc": "2026-03-20T11:27:52+00:00",
+  "runtime_label": "R5_key_rotation_revocation_proof__runtime",
+  "workflow_id": "R5_key_rotation_revocation_proof__workflow",
+  "operation": "release",
+  "gate_label": "R5_key_rotation_revocation_proof__runtime__gate",
+  "gate_decision": "ALLOW",
+  "runtime_status": "ALLOW_EXECUTED",
+  "manifest_path": "artifacts/operations/external_signed_runtime/R5_key_rotation_revocation_proof__runtime/normalized_request_manifest.json",
+  "manifest_sha256": "69449fa60caa68f7230e04bd1f0fe08215e3a68f83fe8b9aac1c6548e086c052",
+  "gate_decision_path": "artifacts/operations/admission/R5_key_rotation_revocation_proof__runtime__gate/admission_gate_decision.json",
+  "gate_decision_sha256": "19f3c099e1065cb64d2161f9c0e25aa92146dffd45ad32835d305f42c75b7dea",
+  "command_executed": true,
+  "command_returncode": 0,
+  "command_sha256": "6d8b158770caa1b0fa9dd3485e0701313a45e3b4d0cee3df572a1948821da016"
+}

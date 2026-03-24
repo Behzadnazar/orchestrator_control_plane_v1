@@ -1,0 +1,11 @@
+{
+  "chain_valid": true,
+  "continuity_valid": true,
+  "snapshot_valid": true,
+  "retention_valid": true,
+  "cross_key_epoch_valid": true,
+  "segment_count": 2,
+  "entry_count": 4,
+  "last_entry_hash": "83c5802cce94bcaca4598e75971c6aea56e6e41a2239fcfb21363db153a31956",
+  "problems": []
+}

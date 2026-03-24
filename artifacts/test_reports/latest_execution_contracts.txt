@@ -1,0 +1,8 @@
+phase=J.4
+successful=True
+payload_ok=True
+payload_missing_task_type_code=MISSING_TASK_TYPE
+handler_result_invalid_code=HANDLER_RESULT_INVALID
+subprocess_ok=True
+subprocess_fail_code=SUBPROCESS_FAILED
+subprocess_fail_returncode=7

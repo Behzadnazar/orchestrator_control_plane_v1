@@ -1,0 +1,43 @@
+{
+  "generated_at_utc": "2026-03-20T11:19:24+00:00",
+  "label": "R3_trust_separation_external_key_proof__runtime",
+  "gate_decision": "ALLOW",
+  "runtime_status": "ALLOW_EXECUTED",
+  "artifacts": [
+    {
+      "path": "artifacts/operations/external_signed_runtime/R3_trust_separation_external_key_proof__runtime/normalized_request_manifest.json",
+      "size_bytes": 1232,
+      "sha256": "254f16cd2e58fc81ff25be32326f1d688b21b0803a877f7ec0bc701e7d9a49b4"
+    },
+    {
+      "path": "artifacts/operations/external_signed_runtime/R3_trust_separation_external_key_proof__runtime/external_signed_execution_receipt.json",
+      "size_bytes": 1052,
+      "sha256": "ed4df316ef0dec96cecdab6c461d935675f1cde11ec1957ab640ac70943f53b5"
+    },
+    {
+      "path": "artifacts/operations/external_signed_runtime/R3_trust_separation_external_key_proof__runtime/external_signed_execution_attestation.json",
+      "size_bytes": 2003,
+      "sha256": "bf7bec698bf6a171c30fc360194ba5188032c8ece8d29b2d5c33a333d072c978"
+    },
+    {
+      "path": "artifacts/operations/external_signed_runtime/R3_trust_separation_external_key_proof__runtime/external_signed_runtime_report.json",
+      "size_bytes": 3066,
+      "sha256": "fcee10fe8fffa13ca94399bbc67f652c1fb80d9487c2a1c8f6aaa4529a6832d6"
+    },
+    {
+      "path": "artifacts/operations/external_signed_runtime/R3_trust_separation_external_key_proof__runtime/external_signed_runtime_report.md",
+      "size_bytes": 1023,
+      "sha256": "3cab912e03b6483d34e5085f60c5cc78151b859ceb29289fc26416f51df6585a"
+    },
+    {
+      "path": "artifacts/operations/external_signed_runtime/R3_trust_separation_external_key_proof__runtime/payload.stdout.txt",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "artifacts/operations/external_signed_runtime/R3_trust_separation_external_key_proof__runtime/payload.stderr.txt",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

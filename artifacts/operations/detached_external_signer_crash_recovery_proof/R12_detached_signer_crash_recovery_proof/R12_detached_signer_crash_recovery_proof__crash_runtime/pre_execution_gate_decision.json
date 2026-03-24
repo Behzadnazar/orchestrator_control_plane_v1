@@ -1,0 +1,23 @@
+{
+  "decision_version": 1,
+  "decision_type": "pre_execution_key_policy_gate",
+  "proof_label": "R12_detached_signer_crash_recovery_proof",
+  "scenario": "R12_detached_signer_crash_recovery_proof__crash_runtime",
+  "decision_time_utc": "2026-03-20T13:19:00+00:00",
+  "verification_mode": "crash_probe_time",
+  "public_key_path": "artifacts/operations/detached_external_signer_crash_recovery_proof/R12_detached_signer_crash_recovery_proof/public_keys/attestation_public_crash.pem",
+  "checks": {
+    "public_key_exists": true,
+    "registry_key_within_window": true,
+    "public_key_sha256": "8593e27f12d47352c57892f0a15bf5e54c6b0c3a118f242d8a3e4ee4e1ce3ecb"
+  },
+  "registry_entry": {
+    "key_id": "r12-attestation-key-crash",
+    "not_before": "2026-03-19T13:18:58+00:00",
+    "not_after": "2026-04-19T13:18:58+00:00"
+  },
+  "derived": {
+    "window_verdict": "within_window"
+  },
+  "gate_decision_allow": true
+}

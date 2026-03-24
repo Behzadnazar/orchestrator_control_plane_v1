@@ -1,0 +1,158 @@
+import json
+import subprocess
+from pathlib import Path
+
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+
+
+def parse_payload(payload: str | None) -> dict:
+    if not payload:
+        return {}
+    return json.loads(payload)
+
+
+def ensure_relative_project_path(target_path: str) -> Path:
+    p = Path(target_path)
+    if p.is_absolute():
+        raise RuntimeError("absolute paths are not allowed")
+
+    normalized = (PROJECT_ROOT / p).resolve()
+    try:
+        normalized.relative_to(PROJECT_ROOT)
+    except ValueError as exc:
+        raise RuntimeError("target_path escapes project root") from exc
+
+    return normalized
+
+
+def handle_backend_test(payload: str | None) -> dict:
+    data = parse_payload(payload)
+    return {
+        "ok": True,
+        "handler": "handle_backend_test",
+        "received_payload": data,
+    }
+
+
+def handle_backend_fail_test(payload: str | None) -> dict:
+    raise RuntimeError("intentional backend fail_test")
+
+
+def handle_backend_write_file(payload: str | None) -> dict:
+    data = parse_payload(payload)
+
+    target_path = data["target_path"]
+    content = data["content"]
+
+    p = Path(target_path)
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_text(content, encoding="utf-8")
+
+    return {
+        "ok": True,
+        "handler": "handle_backend_write_file",
+        "target_path": str(p),
+        "bytes_written": len(content.encode("utf-8")),
+    }
+
+
+def handle_backend_write_project_file(payload: str | None) -> dict:
+    data = parse_payload(payload)
+
+    target_path = data["target_path"]
+    content = data["content"]
+
+    p = ensure_relative_project_path(target_path)
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_text(content, encoding="utf-8")
+
+    return {
+        "ok": True,
+        "handler": "handle_backend_write_project_file",
+        "target_path": str(p.relative_to(PROJECT_ROOT)),
+        "bytes_written": len(content.encode("utf-8")),
+    }
+
+
+def handle_backend_run_shell_check(payload: str | None) -> dict:
+    data = parse_payload(payload)
+
+    command = data["command"]
+    if not isinstance(command, list) or not command:
+        raise RuntimeError("command must be a non-empty list")
+
+    result = subprocess.run(
+        command,
+        cwd=str(PROJECT_ROOT),
+        capture_output=True,
+        text=True,
+        timeout=20,
+        check=False,
+    )
+
+    return {
+        "ok": result.returncode == 0,
+        "handler": "handle_backend_run_shell_check",
+        "command": command,
+        "returncode": result.returncode,
+        "stdout": result.stdout,
+        "stderr": result.stderr,
+    }
+
+
+def handle_frontend_write_component(payload: str | None) -> dict:
+    data = parse_payload(payload)
+
+    target_path = data["target_path"]
+    content = data["content"]
+
+    p = ensure_relative_project_path(target_path)
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_text(content, encoding="utf-8")
+
+    return {
+        "ok": True,
+        "handler": "handle_frontend_write_component",
+        "target_path": str(p.relative_to(PROJECT_ROOT)),
+        "bytes_written": len(content.encode("utf-8")),
+    }
+
+
+def handle_research_collect_notes(payload: str | None) -> dict:
+    data = parse_payload(payload)
+
+    target_path = data["target_path"]
+    title = data["title"]
+    notes = data["notes"]
+
+    if not isinstance(notes, list) or not notes:
+        raise RuntimeError("notes must be a non-empty list")
+
+    p = ensure_relative_project_path(target_path)
+    p.parent.mkdir(parents=True, exist_ok=True)
+
+    lines = [f"# {title}", ""]
+    for item in notes:
+        lines.append(f"- {item}")
+
+    content = "\n".join(lines) + "\n"
+    p.write_text(content, encoding="utf-8")
+
+    return {
+        "ok": True,
+        "handler": "handle_research_collect_notes",
+        "target_path": str(p.relative_to(PROJECT_ROOT)),
+        "notes_count": len(notes),
+        "bytes_written": len(content.encode("utf-8")),
+    }
+
+
+HANDLERS = {
+    "backend.test": handle_backend_test,
+    "backend.fail_test": handle_backend_fail_test,
+    "backend.write_file": handle_backend_write_file,
+    "backend.write_project_file": handle_backend_write_project_file,
+    "backend.run_shell_check": handle_backend_run_shell_check,
+    "frontend.write_component": handle_frontend_write_component,
+    "research.collect_notes": handle_research_collect_notes,
+}

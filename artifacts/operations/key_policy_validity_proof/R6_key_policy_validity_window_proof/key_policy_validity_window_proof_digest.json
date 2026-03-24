@@ -1,0 +1,22 @@
+{
+  "generated_at_utc": "2026-03-20T11:33:34+00:00",
+  "label": "R6_key_policy_validity_window_proof",
+  "proof_status": "PASS",
+  "artifacts": [
+    {
+      "path": "artifacts/operations/key_policy_validity_proof/R6_key_policy_validity_window_proof/key_policy_validity_window_proof.json",
+      "size_bytes": 2077,
+      "sha256": "11962de35c8e6b805cf6aa7b312c768610d89d68dbe2eb8ba0a44458005e4c9d"
+    },
+    {
+      "path": "artifacts/operations/key_policy_validity_proof/R6_key_policy_validity_window_proof/key_policy_validity_window_proof.md",
+      "size_bytes": 589,
+      "sha256": "874272e608cc5a88afc822ef55c341f29fd6e358c954f3b3fb290ef0bf5d3107"
+    },
+    {
+      "path": "artifacts/operations/key_policy_validity_proof/R6_key_policy_validity_window_proof/attestation_key_policy_registry.json",
+      "size_bytes": 1594,
+      "sha256": "593f891259a22bb1df07b60889d34f81c064b00716ee81bbd9ffd35191c0ab0e"
+    }
+  ]
+}

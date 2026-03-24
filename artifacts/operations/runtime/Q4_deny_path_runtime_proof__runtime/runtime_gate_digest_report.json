@@ -1,0 +1,28 @@
+{
+  "generated_at_utc": "2026-03-20T10:58:28+00:00",
+  "label": "Q4_deny_path_runtime_proof__runtime",
+  "gate_decision": "DENY",
+  "runtime_status": "DENY_BLOCKED",
+  "artifacts": [
+    {
+      "path": "artifacts/operations/runtime/Q4_deny_path_runtime_proof__runtime/runtime_gate_report.json",
+      "size_bytes": 1774,
+      "sha256": "0297ccaf75018f7dd5327900e44c3508354582f2b5a001085670ad5d4c0700f1"
+    },
+    {
+      "path": "artifacts/operations/runtime/Q4_deny_path_runtime_proof__runtime/runtime_gate_report.md",
+      "size_bytes": 990,
+      "sha256": "432ab8cfa1b5604d9bf73e732b877bdd1b219f84656ba1d614b1133b3c5ede1a"
+    },
+    {
+      "path": "artifacts/operations/runtime/Q4_deny_path_runtime_proof__runtime/payload.stdout.txt",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "artifacts/operations/runtime/Q4_deny_path_runtime_proof__runtime/payload.stderr.txt",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

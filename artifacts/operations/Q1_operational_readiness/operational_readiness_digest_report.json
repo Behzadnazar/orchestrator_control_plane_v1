@@ -1,0 +1,17 @@
+{
+  "generated_at_utc": "2026-03-20T10:38:29+00:00",
+  "label": "Q1_operational_readiness",
+  "status": "PASS",
+  "artifacts": [
+    {
+      "path": "artifacts/operations/Q1_operational_readiness/operational_readiness_report.json",
+      "size_bytes": 2362,
+      "sha256": "32b523a1aca6054301c39b996789c9a3fef655b6e1f7393fdbb4dd8955028955"
+    },
+    {
+      "path": "artifacts/operations/Q1_operational_readiness/operational_readiness_report.md",
+      "size_bytes": 2383,
+      "sha256": "96b47371a67238f0c9b03e0bd158209c0183eb1187e09d8575e630b545fdea66"
+    }
+  ]
+}

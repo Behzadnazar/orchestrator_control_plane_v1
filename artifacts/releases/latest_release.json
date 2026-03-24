@@ -1,0 +1,238 @@
+{
+  "release_version": "control-plane-v1-baseline",
+  "release_stage": "Phase K.1",
+  "generated_at_utc": "2026-03-19T12:54:31Z",
+  "project_root": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1",
+  "artifact_root": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/test_runs",
+  "baseline_status": "green",
+  "entry_points": {
+    "preflight": "python3 -m scripts.preflight_check",
+    "run_all": "python3 -m scripts.run_tests --suite all",
+    "run_smoke": "python3 -m scripts.run_tests --suite smoke",
+    "run_e2e": "python3 -m scripts.run_tests --suite e2e",
+    "run_regression": "python3 -m scripts.run_tests --suite regression",
+    "ci_check": "python3 -m scripts.ci_check",
+    "show_summary": "python3 -m scripts.show_artifact_summary"
+  },
+  "make_targets": [
+    "make preflight",
+    "make test",
+    "make test-smoke",
+    "make test-e2e",
+    "make test-regression",
+    "make ci-check",
+    "make show-summary"
+  ],
+  "suite_summary": {
+    "e2e": {
+      "run_count": 3,
+      "passed_count": 3,
+      "failed_count": 0,
+      "preflight_failed_count": 0,
+      "latest_timestamp": "20260319T125425Z",
+      "latest_run_dir": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/test_runs/20260319T125425Z/e2e",
+      "latest_status": "passed",
+      "latest_exit_code": 0,
+      "latest_duration_seconds": 5.243,
+      "latest_tests": 2,
+      "latest_failures": 0,
+      "latest_errors": 0,
+      "latest_skipped": 0,
+      "total_artifact_files": 21,
+      "total_artifact_size_bytes": 7928
+    },
+    "smoke": {
+      "run_count": 3,
+      "passed_count": 3,
+      "failed_count": 0,
+      "preflight_failed_count": 0,
+      "latest_timestamp": "20260319T125425Z",
+      "latest_run_dir": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/test_runs/20260319T125425Z/smoke",
+      "latest_status": "passed",
+      "latest_exit_code": 0,
+      "latest_duration_seconds": 0.274,
+      "latest_tests": 1,
+      "latest_failures": 0,
+      "latest_errors": 0,
+      "latest_skipped": 0,
+      "total_artifact_files": 21,
+      "total_artifact_size_bytes": 7530
+    },
+    "regression": {
+      "run_count": 3,
+      "passed_count": 3,
+      "failed_count": 0,
+      "preflight_failed_count": 0,
+      "latest_timestamp": "20260319T125430Z",
+      "latest_run_dir": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/test_runs/20260319T125430Z/regression",
+      "latest_status": "passed",
+      "latest_exit_code": 0,
+      "latest_duration_seconds": 0.84,
+      "latest_tests": 12,
+      "latest_failures": 0,
+      "latest_errors": 0,
+      "latest_skipped": 0,
+      "total_artifact_files": 21,
+      "total_artifact_size_bytes": 8213
+    },
+    "all": {
+      "run_count": 2,
+      "passed_count": 2,
+      "failed_count": 0,
+      "preflight_failed_count": 0,
+      "latest_timestamp": "20260319T125418Z",
+      "latest_run_dir": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/test_runs/20260319T125418Z/all",
+      "latest_status": "passed",
+      "latest_exit_code": 0,
+      "latest_duration_seconds": 6.622,
+      "latest_tests": 62,
+      "latest_failures": 0,
+      "latest_errors": 0,
+      "latest_skipped": 0,
+      "total_artifact_files": 14,
+      "total_artifact_size_bytes": 20328
+    },
+    "ci_check": {
+      "run_count": 1,
+      "passed_count": 1,
+      "failed_count": 0,
+      "preflight_failed_count": 0,
+      "latest_timestamp": "20260319T125418Z",
+      "latest_run_dir": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/test_runs/20260319T125418Z/ci_check",
+      "latest_status": "passed",
+      "latest_exit_code": 0,
+      "latest_duration_seconds": 13.199,
+      "latest_tests": 0,
+      "latest_failures": 0,
+      "latest_errors": 0,
+      "latest_skipped": 0,
+      "total_artifact_files": 11,
+      "total_artifact_size_bytes": 9841
+    }
+  },
+  "status_summary": {
+    "total_runs": 12,
+    "passed_runs": 12,
+    "failed_runs": 0,
+    "preflight_failed_runs": 0
+  },
+  "latest_pointers": {
+    "all": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/test_runs/20260319T125418Z/all",
+    "ci_check": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/test_runs/20260319T125418Z/ci_check",
+    "e2e": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/test_runs/20260319T125425Z/e2e",
+    "regression": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/test_runs/20260319T125430Z/regression",
+    "smoke": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/test_runs/20260319T125425Z/smoke"
+  },
+  "artifact_contract": {
+    "per_run_files": [
+      "command.txt",
+      "preflight.stdout.log",
+      "preflight.stderr.log",
+      "pytest.stdout.log",
+      "pytest.stderr.log",
+      "summary.json",
+      "junit.xml"
+    ],
+    "index_file": "artifacts/test_runs/index.json",
+    "latest_pointer_dir": "artifacts/test_runs/latest",
+    "retention_policy": "retain latest 8 timestamp directories"
+  },
+  "key_files": [
+    {
+      "path": "pytest.ini",
+      "exists": true,
+      "size_bytes": 352,
+      "sha256": "aa11c35422a8164894de99fb4ccdb3e3d8fc0df5d7244392b2c07005dedaed9c"
+    },
+    {
+      "path": "Makefile",
+      "exists": true,
+      "size_bytes": 2459,
+      "sha256": "1e29056b7b83d838e56cb3e5f57ea3410cb090fc7b083e6ef78fd3da20df2702"
+    },
+    {
+      "path": "README_TESTS.md",
+      "exists": true,
+      "size_bytes": 687,
+      "sha256": "36ce9f7060f6dc03ad376b0016251af1c573c824946ca4dc45fcd2e0c1d0fb9f"
+    },
+    {
+      "path": "worker_loop_final.py",
+      "exists": true,
+      "size_bytes": 13662,
+      "sha256": "b45b372a124516bfa10c5958ea0dcde2b146a86cd8ac3566269b287c25137744"
+    },
+    {
+      "path": "app/db.py",
+      "exists": true,
+      "size_bytes": 42713,
+      "sha256": "897bc143d598cc708e12e50d9473cad2dc17184feab50d81c1b51e41a3dbaa5d"
+    },
+    {
+      "path": "app/services/control_plane_service.py",
+      "exists": true,
+      "size_bytes": 8096,
+      "sha256": "76666098f0a70cb014d1d1b8bbc398a451c565c7cea97a6bf6a777a4d53924fb"
+    },
+    {
+      "path": "scripts/__init__.py",
+      "exists": true,
+      "size_bytes": 49,
+      "sha256": "2f17fa8ca2b874dfd8c0d35410b83d74a05e6bde0ba469dbc70f7f0d8db08e00"
+    },
+    {
+      "path": "scripts/preflight_check.py",
+      "exists": true,
+      "size_bytes": 2648,
+      "sha256": "787120f8ed5d90c156f7a2a6c1fafe4c54318f679360f5d353311eff39413ee4"
+    },
+    {
+      "path": "scripts/run_tests.py",
+      "exists": true,
+      "size_bytes": 6783,
+      "sha256": "3febabebf468e87d4bb634ac8493a5aa6adab4d8b239c0d2006f3dbcac0d6d63"
+    },
+    {
+      "path": "scripts/ci_check.py",
+      "exists": true,
+      "size_bytes": 6489,
+      "sha256": "04ccaf13c9f71fcb4576a14c06ecdfb9352bc7e628267f1ea23309d143df4b29"
+    },
+    {
+      "path": "scripts/artifact_paths.py",
+      "exists": true,
+      "size_bytes": 565,
+      "sha256": "636678d1fff70f6800e8e81774144ac8b5a6805b21d4a6ad7d9822921c1c779a"
+    },
+    {
+      "path": "scripts/artifact_index.py",
+      "exists": true,
+      "size_bytes": 9033,
+      "sha256": "9a5ce46075951a7bba8e8a4e94352e192356bad76e2fa2f166de2b5f99788daf"
+    },
+    {
+      "path": "scripts/show_artifact_summary.py",
+      "exists": true,
+      "size_bytes": 1920,
+      "sha256": "2908703ddf0ae3534be57d9edc35d801ed67ce66399c59e8715a3e8bcd0c5503"
+    },
+    {
+      "path": "tests/test_smoke.py",
+      "exists": true,
+      "size_bytes": 457,
+      "sha256": "e1371ec26c4301d912933827fcccc0ef989dcd69028b68a71313874b0a46dfd3"
+    },
+    {
+      "path": "tests/test_workflow_e2e.py",
+      "exists": true,
+      "size_bytes": 2583,
+      "sha256": "7434de6fd03bb66c261f2bc18bb14cef18ab6c4a435ac392486602b5b42332c5"
+    },
+    {
+      "path": "tests/test_regression_matrix.py",
+      "exists": true,
+      "size_bytes": 12769,
+      "sha256": "c5054c054bdbca7fc1efe7a304fe5772f3fadc75506e65f07d0e85c3e40f67a1"
+    }
+  ]
+}

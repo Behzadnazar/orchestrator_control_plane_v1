@@ -1,0 +1,41 @@
+{
+  "verification_version": 1,
+  "verification_type": "external_signed_attestation_registry_verification",
+  "runtime_label": "R3_trust_separation_external_key_proof__runtime",
+  "verification_status": "FAIL",
+  "inputs": {
+    "receipt_path": "artifacts/operations/external_signed_runtime/R3_trust_separation_external_key_proof__runtime/external_signed_execution_receipt.json",
+    "attestation_path": "artifacts/operations/external_signed_runtime/R3_trust_separation_external_key_proof__runtime/external_signed_execution_attestation.json",
+    "report_path": "artifacts/operations/external_signed_runtime/R3_trust_separation_external_key_proof__runtime/external_signed_runtime_report.json",
+    "manifest_path": "artifacts/operations/external_signed_runtime/R3_trust_separation_external_key_proof__runtime/normalized_request_manifest.json",
+    "public_key_path": "artifacts/keys/attestation/attestation_public.pem",
+    "registry_path": "artifacts/operations/key_rotation_revocation_proof/R5_key_rotation_revocation_proof/attestation_key_registry.json"
+  },
+  "registry_entry": {
+    "key_id": "attestation-key-v1-revoked",
+    "public_key_path": "artifacts/keys/attestation/attestation_public.pem",
+    "public_key_sha256": "36c5ae24d7aa6de693ef43505042fb8f1cd6887970713b36f3641f670bb0d111",
+    "status": "revoked",
+    "revoked": true
+  },
+  "checks": {
+    "receipt_exists": true,
+    "attestation_exists": true,
+    "report_exists": true,
+    "manifest_exists": true,
+    "registry_exists": true,
+    "receipt_hash_matches": true,
+    "manifest_hash_matches": true,
+    "public_key_hash_matches": true,
+    "private_key_material_not_embedded": true,
+    "signature_valid": true,
+    "registry_entry_found": true,
+    "registry_key_active": false,
+    "registry_key_not_revoked": false,
+    "gate_decision_allow": true,
+    "runtime_status_allow_executed": true,
+    "report_runtime_consistent": true,
+    "receipt_runtime_consistent": true,
+    "manifest_workflow_consistent": true
+  }
+}

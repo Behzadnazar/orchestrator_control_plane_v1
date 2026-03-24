@@ -1,0 +1,28 @@
+{
+  "registry_version": 1,
+  "registry_type": "external_key_custody_registry",
+  "generated_at_utc": "2026-03-20T12:28:59+00:00",
+  "entries": [
+    {
+      "key_id": "r10-attestation-key-active",
+      "public_key_path": "artifacts/operations/external_key_custody_no_private_key_boundary_proof/R10_external_key_custody_no_private_key_boundary_proof/public_keys/attestation_public_active.pem",
+      "public_key_sha256": "545dbee3f7805f5009581459e7985dba6e071c6fee851a87eaf66deb6f41406a",
+      "not_before": "2026-03-19T12:28:58+00:00",
+      "not_after": "2026-04-19T12:28:58+00:00"
+    },
+    {
+      "key_id": "r10-attestation-key-expired",
+      "public_key_path": "artifacts/operations/external_key_custody_no_private_key_boundary_proof/R10_external_key_custody_no_private_key_boundary_proof/public_keys/attestation_public_expired.pem",
+      "public_key_sha256": "3d9d36d4df43ca4c8aa20d343ad59445abc17eaf11306dda0961422c79c17a0f",
+      "not_before": "2026-02-18T12:28:58+00:00",
+      "not_after": "2026-03-20T12:28:57+00:00"
+    },
+    {
+      "key_id": "r10-attestation-key-future",
+      "public_key_path": "artifacts/operations/external_key_custody_no_private_key_boundary_proof/R10_external_key_custody_no_private_key_boundary_proof/public_keys/attestation_public_future.pem",
+      "public_key_sha256": "13a757d97b13e94e3627a1a101eba1776e42a7d8d720ffb0d8db05dca5cea888",
+      "not_before": "2026-03-21T12:28:58+00:00",
+      "not_after": "2026-04-19T12:28:58+00:00"
+    }
+  ]
+}

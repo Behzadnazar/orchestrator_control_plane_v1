@@ -1,0 +1,9 @@
+{
+  "agent_id": "backend-01",
+  "agent_type": "backend",
+  "status": "Idle",
+  "capabilities": [
+    "backend_feature",
+    "backend"
+  ]
+}

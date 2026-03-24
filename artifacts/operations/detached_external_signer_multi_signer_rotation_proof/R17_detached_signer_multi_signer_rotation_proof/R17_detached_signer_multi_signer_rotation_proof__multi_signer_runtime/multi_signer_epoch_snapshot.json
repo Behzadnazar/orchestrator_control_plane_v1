@@ -1,0 +1,8 @@
+{
+  "snapshot_version": 1,
+  "current_key_epoch": "new_epoch",
+  "key_id": "r17-attestation-key-new",
+  "segments_count": 2,
+  "entry_count": 4,
+  "last_entry_hash": "83c5802cce94bcaca4598e75971c6aea56e6e41a2239fcfb21363db153a31956"
+}

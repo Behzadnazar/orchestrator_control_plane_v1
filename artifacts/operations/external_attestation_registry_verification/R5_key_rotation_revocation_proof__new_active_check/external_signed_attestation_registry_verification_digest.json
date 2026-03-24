@@ -1,0 +1,16 @@
+{
+  "runtime_label": "R5_key_rotation_revocation_proof__runtime",
+  "verification_status": "PASS",
+  "artifacts": [
+    {
+      "path": "artifacts/operations/external_attestation_registry_verification/R5_key_rotation_revocation_proof__new_active_check/external_signed_attestation_registry_verification.json",
+      "size_bytes": 2083,
+      "sha256": "5af33373db7852712c91d9f8de15cf1aa429b2f12a419d5502fa907b31afcd48"
+    },
+    {
+      "path": "artifacts/operations/external_attestation_registry_verification/R5_key_rotation_revocation_proof__new_active_check/external_signed_attestation_registry_verification.md",
+      "size_bytes": 521,
+      "sha256": "ddf4add4a1f8fb8b55ac1a383091b9cdf6323f018c4eb8f7935346fddde34e38"
+    }
+  ]
+}

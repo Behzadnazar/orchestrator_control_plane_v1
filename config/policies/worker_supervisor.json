@@ -1,0 +1,32 @@
+{
+  "supervisor_version": "phase_g_test_v1",
+  "monitor_loop": {
+    "poll_interval_seconds": 2,
+    "graceful_stop_timeout_seconds": 10,
+    "lockfile_name": "supervisor.lock",
+    "pidfile_name": "supervisor.pid",
+    "restart_backoff_seconds": 3,
+    "restart_window_seconds": 30,
+    "max_restarts_in_window": 3
+  },
+  "workers": {
+    "backend-worker-v2": {
+      "enabled": true,
+      "autorestart": true,
+      "maintenance": true,
+      "once_idle_exit": false
+    },
+    "frontend-worker-v1": {
+      "enabled": true,
+      "autorestart": true,
+      "maintenance": false,
+      "once_idle_exit": false
+    },
+    "research-worker-v1": {
+      "enabled": true,
+      "autorestart": true,
+      "maintenance": false,
+      "once_idle_exit": false
+    }
+  }
+}

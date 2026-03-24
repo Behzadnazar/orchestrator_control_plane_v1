@@ -1,0 +1,16 @@
+{
+  "command": [
+    "openssl",
+    "dgst",
+    "-sha256",
+    "-verify",
+    "artifacts/operations/detached_external_signer_dual_authorization_proof/R19_detached_signer_dual_authorization_proof/public_keys/approver_b_public.pem",
+    "-signature",
+    "artifacts/operations/detached_external_signer_dual_authorization_proof/R19_detached_signer_dual_authorization_proof/R19_detached_signer_dual_authorization_proof__dual_authorization_runtime/approval_b.sig",
+    "artifacts/operations/detached_external_signer_dual_authorization_proof/R19_detached_signer_dual_authorization_proof/R19_detached_signer_dual_authorization_proof__dual_authorization_runtime/approval_b_token.json"
+  ],
+  "returncode": 0,
+  "stdout": "Verified OK\n",
+  "stderr": "",
+  "verified_ok": true
+}

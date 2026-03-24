@@ -1,0 +1,16 @@
+{
+  "runtime_label": "R3_trust_separation_external_key_proof__runtime",
+  "verification_status": "FAIL",
+  "artifacts": [
+    {
+      "path": "artifacts/operations/external_attestation_verification/R4_external_attestation_forgery_rejection_proof__wrong_key/external_signed_attestation_verification.json",
+      "size_bytes": 1430,
+      "sha256": "83550869867d5e1b44529333e26687edd3f61b471cf7d5c115ae299dd449cef0"
+    },
+    {
+      "path": "artifacts/operations/external_attestation_verification/R4_external_attestation_forgery_rejection_proof__wrong_key/external_signed_attestation_verification.md",
+      "size_bytes": 779,
+      "sha256": "56e05914915a9b4b93384b16413571336c1f07b70c463d241c10646a9dd55827"
+    }
+  ]
+}

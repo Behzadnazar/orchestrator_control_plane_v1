@@ -1,0 +1,89 @@
+{
+  "supervisor_version": "phase_f_v1",
+  "updated_at": "2026-03-17T14:04:47",
+  "workers": {
+    "backend-worker-v2": {
+      "worker_id": "backend-worker-v2",
+      "pid": null,
+      "process_state": "stopped",
+      "desired_state": "stopped",
+      "last_stop_intent": "manual",
+      "started_at": "2026-03-17T13:25:24",
+      "last_seen_at": "2026-03-17T14:04:47",
+      "maintenance": true,
+      "once_idle_exit": false,
+      "autorestart": true,
+      "log_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/logs/workers/backend-worker-v2.log",
+      "pid_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/run/worker-pids/backend-worker-v2.pid",
+      "restart_count": 0,
+      "restart_history": [],
+      "process_identity": {},
+      "crash_loop_protection": {
+        "state": "clear",
+        "reason": ""
+      },
+      "note": "worker already not running"
+    },
+    "frontend-worker-v1": {
+      "worker_id": "frontend-worker-v1",
+      "pid": null,
+      "process_state": "stopped",
+      "desired_state": "stopped",
+      "last_stop_intent": "manual",
+      "started_at": "2026-03-17T13:25:12",
+      "last_seen_at": "2026-03-17T14:04:47",
+      "maintenance": false,
+      "once_idle_exit": false,
+      "autorestart": true,
+      "log_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/logs/workers/frontend-worker-v1.log",
+      "pid_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/run/worker-pids/frontend-worker-v1.pid",
+      "restart_count": 3,
+      "restart_history": [
+        "2026-03-17T13:24:56",
+        "2026-03-17T13:25:03",
+        "2026-03-17T13:25:10"
+      ],
+      "process_identity": {},
+      "crash_loop_protection": {
+        "state": "blocked",
+        "reason": "restart limit exceeded: 3 restarts in 30s window"
+      },
+      "note": "worker already not running"
+    },
+    "research-worker-v1": {
+      "worker_id": "research-worker-v1",
+      "pid": null,
+      "process_state": "stopped",
+      "desired_state": "stopped",
+      "last_stop_intent": "manual",
+      "started_at": "2026-03-17T13:25:24",
+      "last_seen_at": "2026-03-17T14:04:47",
+      "maintenance": false,
+      "once_idle_exit": false,
+      "autorestart": true,
+      "log_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/logs/workers/research-worker-v1.log",
+      "pid_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/run/worker-pids/research-worker-v1.pid",
+      "restart_count": 0,
+      "restart_history": [],
+      "process_identity": {},
+      "crash_loop_protection": {
+        "state": "clear",
+        "reason": ""
+      },
+      "note": "worker already not running"
+    }
+  },
+  "supervisor": {
+    "pid": 47656,
+    "state": "stopped",
+    "lockfile": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/run/supervisor/supervisor.lock",
+    "pidfile": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/run/supervisor/supervisor.pid",
+    "poll_interval_seconds": 2,
+    "graceful_stop_timeout_seconds": 10,
+    "restart_backoff_seconds": 3,
+    "restart_window_seconds": 30,
+    "max_restarts_in_window": 3,
+    "last_seen_at": "2026-03-17T13:25:26",
+    "note": "supervisor loop stopped by command"
+  }
+}

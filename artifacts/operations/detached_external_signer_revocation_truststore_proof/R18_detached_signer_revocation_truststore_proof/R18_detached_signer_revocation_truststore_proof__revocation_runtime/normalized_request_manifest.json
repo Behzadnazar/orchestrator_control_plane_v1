@@ -1,0 +1,19 @@
+{
+  "manifest_version": 1,
+  "proof_type": "detached_external_signer_revocation_truststore_proof",
+  "proof_label": "R18_detached_signer_revocation_truststore_proof",
+  "scenario": "R18_detached_signer_revocation_truststore_proof__revocation_runtime",
+  "generated_at_utc": "2026-03-21T06:55:06+00:00",
+  "workflow": {
+    "name": "external_signed_runtime_gate",
+    "mode": "revocation_truststore_historical_boundaries"
+  },
+  "verification_context": {
+    "verification_time_utc": "2026-03-21T06:55:03+00:00",
+    "verification_mode": "base_time"
+  },
+  "attestation": {
+    "old_public_key_path": "artifacts/operations/detached_external_signer_revocation_truststore_proof/R18_detached_signer_revocation_truststore_proof/public_keys/attestation_public_old.pem",
+    "new_public_key_path": "artifacts/operations/detached_external_signer_revocation_truststore_proof/R18_detached_signer_revocation_truststore_proof/public_keys/attestation_public_new.pem"
+  }
+}

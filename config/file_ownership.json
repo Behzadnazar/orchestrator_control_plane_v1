@@ -1,0 +1,10 @@
+{
+  "architect": ["architecture/", "docs/adr/", "design/"],
+  "backend": ["backend/", "apps/api/", "services/", "db/"],
+  "frontend": ["frontend/", "apps/web/", "ui/"],
+  "devops": ["infra/", "deploy/", "docker/", ".github/"],
+  "debugger": ["debug/", "reports/"],
+  "research": ["research/", "docs/research/"],
+  "qa": ["tests/", "qa/", "reports/"],
+  "security": ["security/", "policies/", "scans/"]
+}

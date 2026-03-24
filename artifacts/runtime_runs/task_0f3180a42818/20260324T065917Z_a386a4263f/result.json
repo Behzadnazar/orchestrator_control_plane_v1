@@ -1,0 +1,16 @@
+{
+  "artifact_dir": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/runtime_runs/task_0f3180a42818/20260324T065917Z_a386a4263f",
+  "duration_ms": 0,
+  "error_summary": "RuntimeIntegrationError: Unknown service_path: backend.write_file",
+  "exit_code": 1,
+  "finished_at": "2026-03-24T06:59:17+00:00",
+  "service_path": "backend.write_file",
+  "stderr_path": null,
+  "stderr_tail": "RuntimeIntegrationError: Unknown service_path: backend.write_file",
+  "stdout_path": null,
+  "stdout_tail": "",
+  "task_id": "task_0f3180a42818",
+  "task_type": "backend.write_file",
+  "timed_out": false,
+  "worker": "runtime-worker-51342"
+}

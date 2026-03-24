@@ -1,0 +1,35 @@
+{
+  "decision_version": 1,
+  "decision_type": "pre_execution_revocation_truststore_gate",
+  "proof_label": "R18_detached_signer_revocation_truststore_proof",
+  "scenario": "R18_detached_signer_revocation_truststore_proof__revocation_runtime",
+  "decision_time_utc": "2026-03-21T06:55:03+00:00",
+  "verification_mode": "base_time",
+  "checks": {
+    "old_public_key_exists": true,
+    "new_public_key_exists": true,
+    "old_public_key_sha256": "7500845f03eb1f488424f4ad689d1fcc922145c4fe095d8f4e29a31d84c9beeb",
+    "new_public_key_sha256": "48febf40a1de08e74d65e6a12edde1e0b82cfccca46147e47874c0e00d831de3",
+    "old_key_within_window": true,
+    "new_key_within_window": true
+  },
+  "registry_entries": {
+    "old": {
+      "key_id": "r18-attestation-key-old",
+      "not_before": "2026-03-11T06:55:03+00:00",
+      "not_after": "2026-03-26T06:55:03+00:00",
+      "public_key_path": "artifacts/operations/detached_external_signer_revocation_truststore_proof/R18_detached_signer_revocation_truststore_proof/public_keys/attestation_public_old.pem"
+    },
+    "new": {
+      "key_id": "r18-attestation-key-new",
+      "not_before": "2026-03-20T06:55:03+00:00",
+      "not_after": "2026-04-20T06:55:03+00:00",
+      "public_key_path": "artifacts/operations/detached_external_signer_revocation_truststore_proof/R18_detached_signer_revocation_truststore_proof/public_keys/attestation_public_new.pem"
+    }
+  },
+  "derived": {
+    "old_window_verdict": "within_window",
+    "new_window_verdict": "within_window"
+  },
+  "gate_decision_allow": true
+}

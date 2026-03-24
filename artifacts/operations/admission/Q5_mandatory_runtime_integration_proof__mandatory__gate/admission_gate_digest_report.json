@@ -1,0 +1,17 @@
+{
+  "generated_at_utc": "2026-03-20T11:03:45+00:00",
+  "label": "Q5_mandatory_runtime_integration_proof__mandatory__gate",
+  "decision": "ALLOW",
+  "artifacts": [
+    {
+      "path": "artifacts/operations/admission/Q5_mandatory_runtime_integration_proof__mandatory__gate/admission_gate_decision.json",
+      "size_bytes": 3602,
+      "sha256": "5857371d01bbd796ed00493e3d2523b8a04a5efede8c465a57ff751fa3647cd9"
+    },
+    {
+      "path": "artifacts/operations/admission/Q5_mandatory_runtime_integration_proof__mandatory__gate/admission_gate_decision.md",
+      "size_bytes": 1434,
+      "sha256": "f35d6e36c2ab5a9cabf5feca6a79f1d67e4a06f78ac9bbf84edaa4b8b626ef40"
+    }
+  ]
+}

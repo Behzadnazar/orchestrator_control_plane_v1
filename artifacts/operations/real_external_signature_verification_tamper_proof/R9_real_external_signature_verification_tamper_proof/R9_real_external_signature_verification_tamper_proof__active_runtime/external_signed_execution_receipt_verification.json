@@ -1,0 +1,16 @@
+{
+  "command": [
+    "openssl",
+    "dgst",
+    "-sha256",
+    "-verify",
+    "artifacts/operations/real_external_signature_verification_tamper_proof/R9_real_external_signature_verification_tamper_proof/keys/attestation_public_active.pem",
+    "-signature",
+    "artifacts/operations/real_external_signature_verification_tamper_proof/R9_real_external_signature_verification_tamper_proof/R9_real_external_signature_verification_tamper_proof__active_runtime/external_signed_execution_receipt.sig",
+    "artifacts/operations/real_external_signature_verification_tamper_proof/R9_real_external_signature_verification_tamper_proof/R9_real_external_signature_verification_tamper_proof__active_runtime/external_signed_execution_receipt_payload.json"
+  ],
+  "returncode": 0,
+  "stdout": "Verified OK\n",
+  "stderr": "",
+  "verified_ok": true
+}

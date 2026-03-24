@@ -1,0 +1,22 @@
+{
+  "filesystem": {
+    "architect": {"read": ["*"], "write": ["architecture/", "docs/adr/", "design/"]},
+    "backend": {"read": ["*"], "write": ["backend/", "apps/api/", "services/", "db/"]},
+    "frontend": {"read": ["*"], "write": ["frontend/", "apps/web/", "ui/"]},
+    "devops": {"read": ["*"], "write": ["infra/", "deploy/", "docker/", ".github/"]},
+    "debugger": {"read": ["*"], "write": ["debug/", "reports/"]},
+    "research": {"read": ["*"], "write": ["research/", "docs/research/"]},
+    "qa": {"read": ["*"], "write": ["tests/", "qa/", "reports/"]},
+    "security": {"read": ["*"], "write": ["security/", "policies/", "scans/"]}
+  },
+  "vector_memory": {
+    "all": {"read": true, "write": true}
+  },
+  "knowledge_graph": {
+    "all": {"read": true, "write": false}
+  },
+  "task_database": {
+    "all": {"read": true, "write": false},
+    "orchestrator": {"read": true, "write": true}
+  }
+}

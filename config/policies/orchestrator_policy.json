@@ -1,0 +1,94 @@
+{
+  "policy_version": "phase_d1_v1",
+  "global": {
+    "worker_loop": {
+      "sleep_seconds": 2,
+      "idle_heartbeat_seconds": 4,
+      "task_heartbeat_min_interval_seconds": 5
+    },
+    "limits": {
+      "claim_timeout_seconds": 15,
+      "heartbeat_timeout_seconds": 10,
+      "max_runtime_seconds": 20
+    },
+    "recovery_policy": {
+      "claim_timeout": "requeue",
+      "heartbeat_timeout": "requeue",
+      "runtime_timeout": "requeue",
+      "admission_denied": "dead_letter"
+    },
+    "admission": {
+      "deny_unknown_task_type": true,
+      "deny_no_capable_worker": true,
+      "require_owner_role_match": true,
+      "require_worker_tools_cover_task_tools": true
+    }
+  },
+  "tasks": {
+    "backend.test": {
+      "limits": {
+        "claim_timeout_seconds": 15,
+        "heartbeat_timeout_seconds": 10,
+        "max_runtime_seconds": 20
+      },
+      "recovery_policy": {
+        "claim_timeout": "requeue",
+        "heartbeat_timeout": "requeue",
+        "runtime_timeout": "requeue",
+        "admission_denied": "dead_letter"
+      }
+    },
+    "backend.fail_test": {
+      "limits": {
+        "claim_timeout_seconds": 15,
+        "heartbeat_timeout_seconds": 10,
+        "max_runtime_seconds": 20
+      },
+      "recovery_policy": {
+        "claim_timeout": "requeue",
+        "heartbeat_timeout": "requeue",
+        "runtime_timeout": "requeue",
+        "admission_denied": "dead_letter"
+      }
+    },
+    "backend.write_file": {
+      "limits": {
+        "claim_timeout_seconds": 15,
+        "heartbeat_timeout_seconds": 10,
+        "max_runtime_seconds": 20
+      },
+      "recovery_policy": {
+        "claim_timeout": "requeue",
+        "heartbeat_timeout": "requeue",
+        "runtime_timeout": "dead_letter",
+        "admission_denied": "dead_letter"
+      }
+    },
+    "frontend.write_component": {
+      "limits": {
+        "claim_timeout_seconds": 15,
+        "heartbeat_timeout_seconds": 10,
+        "max_runtime_seconds": 20
+      },
+      "recovery_policy": {
+        "claim_timeout": "requeue",
+        "heartbeat_timeout": "requeue",
+        "runtime_timeout": "requeue",
+        "admission_denied": "dead_letter"
+      }
+    },
+    "research.collect_notes": {
+      "limits": {
+        "claim_timeout_seconds": 15,
+        "heartbeat_timeout_seconds": 10,
+        "max_runtime_seconds": 20
+      },
+      "recovery_policy": {
+        "claim_timeout": "requeue",
+        "heartbeat_timeout": "requeue",
+        "runtime_timeout": "requeue",
+        "admission_denied": "dead_letter"
+      }
+    }
+  }
+}

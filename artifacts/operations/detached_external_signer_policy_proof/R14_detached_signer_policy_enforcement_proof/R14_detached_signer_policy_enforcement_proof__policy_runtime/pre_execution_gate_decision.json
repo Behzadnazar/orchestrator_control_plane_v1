@@ -1,0 +1,23 @@
+{
+  "decision_version": 1,
+  "decision_type": "pre_execution_key_policy_gate",
+  "proof_label": "R14_detached_signer_policy_enforcement_proof",
+  "scenario": "R14_detached_signer_policy_enforcement_proof__policy_runtime",
+  "decision_time_utc": "2026-03-20T13:32:24+00:00",
+  "verification_mode": "base_time",
+  "public_key_path": "artifacts/operations/detached_external_signer_policy_proof/R14_detached_signer_policy_enforcement_proof/public_keys/attestation_public_policy.pem",
+  "checks": {
+    "public_key_exists": true,
+    "registry_key_within_window": true,
+    "public_key_sha256": "6506f036e15228c1e259517dbc40b99e3fc61da3a83447444253aefccdddbe83"
+  },
+  "registry_entry": {
+    "key_id": "r14-attestation-key-policy",
+    "not_before": "2026-03-19T13:32:24+00:00",
+    "not_after": "2026-04-19T13:32:24+00:00"
+  },
+  "derived": {
+    "window_verdict": "within_window"
+  },
+  "gate_decision_allow": true
+}

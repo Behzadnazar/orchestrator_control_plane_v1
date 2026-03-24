@@ -1,0 +1,58 @@
+{
+  "record_version": 2,
+  "record_type": "signed_milestone_record",
+  "signature_type": "sha256_canonical_record",
+  "generated_at_utc": "2026-03-20T10:26:30+00:00",
+  "milestone": "O2_growth_freeze",
+  "project_root": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1",
+  "freeze_gate_directory": "artifacts/freeze_gate/O2_growth_freeze",
+  "freeze_gate_overall_status": "PASS",
+  "gate_statuses": {
+    "baseline_manifest": "PASS",
+    "verification": "PASS",
+    "drift_report": "PASS",
+    "drift_proof": "PASS",
+    "freeze_proof": "PASS"
+  },
+  "artifact_digests": [
+    {
+      "logical_name": "O2_growth_freeze_evidence_bundle.zip",
+      "path": "artifacts/freeze_gate/O2_growth_freeze/O2_growth_freeze_evidence_bundle.zip",
+      "size_bytes": 4917,
+      "sha256": "977b9d16a60486265079cbe0b14486b0bd9aa9067a49225de646326195f33335"
+    },
+    {
+      "logical_name": "evidence_bundle_manifest.json",
+      "path": "artifacts/freeze_gate/O2_growth_freeze/evidence_bundle_manifest.json",
+      "size_bytes": 2336,
+      "sha256": "5622860c395f1123ed4c8c71f4b0514c490a66af064404bd4fd5beb1a484a7d7"
+    },
+    {
+      "logical_name": "freeze_gate_audit_report.md",
+      "path": "artifacts/freeze_gate/O2_growth_freeze/freeze_gate_audit_report.md",
+      "size_bytes": 7402,
+      "sha256": "bc5ecc86ac124ed116220f85dfa01f9c0b945fe1f9ed652b8658871b68ae5172"
+    },
+    {
+      "logical_name": "freeze_gate_summary.json",
+      "path": "artifacts/freeze_gate/O2_growth_freeze/freeze_gate_summary.json",
+      "size_bytes": 1168,
+      "sha256": "9fa8ceed69ba1a0d5e2ccbb89da0514c846524dfa95c2387c780ea7b69c4cc22"
+    }
+  ],
+  "bundle_manifest_overall_status": "PASS",
+  "bundle_manifest_gate_statuses": {
+    "baseline_manifest": "PASS",
+    "verification": "PASS",
+    "drift_report": "PASS",
+    "drift_proof": "PASS",
+    "freeze_proof": "PASS"
+  },
+  "audit_chain_contract": {
+    "link_field": "previous_entry_sha256",
+    "link_target": "previous.entry_sha256",
+    "contract_version": 2
+  },
+  "canonical_payload_sha256": "486aae22b08cf5c7e7c234a831e35e3f374a86e19f5bd5cf215b8bb616cd7903",
+  "canonical_payload_preview": "{\"artifact_digests\":[{\"logical_name\":\"O2_growth_freeze_evidence_bundle.zip\",\"path\":\"artifacts/freeze_gate/O2_growth_freeze/O2_growth_freeze_evidence_bundle.zip\",\"sha256\":\"977b9d16a60486265079cbe0b14486b0bd9aa9067a49225de646326195f33335\",\"size_bytes\":4917},{\"logical_name\":\"evidence_bundle_manifest.json\",\"path\":\"artifacts/freeze_gate/O2_growth_freeze/evidence_bundle_manifest.json\",\"sha256\":\"5622860c395f1123ed4c8c71f4b0514c490a66af064404bd4fd5beb1a484a7d7\",\"size_bytes\":2336},{\"logical_name\":\"freeze_gate_audit_report.md\",\"path\":\"artifacts/freeze_gate/O2_growth_freeze/freeze_gate_audit_report.md\",\"sha256\":\"bc5ecc86ac124ed116220f85dfa01f9c0b945fe1f9ed652b8658871b68ae5172\",\"size_bytes\":7402},{\"logical_name\":\"freeze_gate_summary.json\",\"path\":\"artifacts/freeze_gate/O2_growth_freeze/freeze_gate_summary.json\",\"sha256\":\"9fa8ceed69ba1a0d5e2ccbb89da0514c846524dfa95c2387c780ea7b69c4cc22\",\"size_bytes\":1168}],\"audit_chain_contract\":{\"contract_version\":2,\"link_field\":\"previous_entry_sha256\",\"link_target\":\"previous.entry_sha256\"},\"bundle_manifest_gate_statuses\":{\"baseline_manifest\":\"PASS\",\"drift_proof\":\"PASS\",\"drift_report\":\"PASS\",\"freeze_proof\":\"PASS\",\"verification\":\"PASS\"},\"bundle_manifest_overall_status\":\"PASS\",\"freeze_gate_directory\":\"artifacts/freeze_gate/O2_growth_freeze\",\"freeze_gate_overall_status\":\"PASS\",\"gate_statuses\":{\"baseline_manifest\":\"PASS\",\"drift_proof\":\"PASS\",\"drift_report\":\"PASS\",\"freeze_proof\":\"PASS\",\"verification\":\"PASS\"},\"generated_at_utc\":\"2026-03-20T10:26:30+00:00\",\"milestone\":\"O2_growth_freeze\",\"project_root\":\"/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1\",\"record_type\":\"signed_milestone_record\",\"record_version\":2,\"signature_type\":\"sha256_canonical_record\"}"
+}

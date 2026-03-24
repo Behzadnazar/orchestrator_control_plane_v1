@@ -1,0 +1,202 @@
+{
+  "generated_at_utc": "2026-03-20T10:26:46+00:00",
+  "scenario_label": "O2_growth_tamper_matrix",
+  "index_path": "artifacts/audit/immutable_audit_index.jsonl",
+  "backup_path": "artifacts/audit/tamper_matrix/O2_growth_tamper_matrix/immutable_audit_index.backup.jsonl",
+  "baseline_phase": {
+    "label": "O2_growth_tamper_matrix_baseline",
+    "returncode": 0,
+    "overall_status": "PASS",
+    "summary_path": "artifacts/audit/verification/O2_growth_tamper_matrix_baseline/audit_chain_verification_summary.json",
+    "stdout_sha256": "a9660f4853ddc1fb273a0fb0ae2765638f3d39efa82c3f56014d71e9eb28f55f",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "scenario_results": [
+    {
+      "scenario": "record_sha256_mismatch",
+      "description": "Mutate the last entry record_sha256 so record digest no longer matches file content.",
+      "expected_status": "FAIL",
+      "execution_status": "EXECUTED",
+      "skip_reason": null,
+      "tamper_operation": {
+        "tamper_type": "record_sha256_mismatch",
+        "target_line_number": 4,
+        "field": "record_sha256",
+        "original_value": "d4f549ab41b29a45f9f9c72f80eef661efabbfa885dbdc993fc0310fecdaba75",
+        "tampered_value": "04f549ab41b29a45f9f9c72f80eef661efabbfa885dbdc993fc0310fecdaba75"
+      },
+      "verification": {
+        "label": "O2_growth_tamper_matrix_record_sha256_mismatch",
+        "returncode": 1,
+        "overall_status": "FAIL",
+        "summary_path": "artifacts/audit/verification/O2_growth_tamper_matrix_record_sha256_mismatch/audit_chain_verification_summary.json",
+        "stdout_sha256": "9226e10d0bea1abaa5bf8d97e3ac4cc9d71e357bd53a787288ff452fd2ff08f5",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "observed_status": "FAIL",
+      "expected_failure_observed": true,
+      "scenario_passed": true
+    },
+    {
+      "scenario": "previous_entry_sha256_mismatch",
+      "description": "Mutate the last entry previous_entry_sha256 so chain link breaks.",
+      "expected_status": "FAIL",
+      "execution_status": "EXECUTED",
+      "skip_reason": null,
+      "tamper_operation": {
+        "tamper_type": "previous_entry_sha256_mismatch",
+        "target_line_number": 4,
+        "field": "previous_entry_sha256",
+        "original_value": "59ca75ba79fcfe45cf04e3833c9cf5058aad7949dc23b2818e612dcc07f15ffb",
+        "tampered_value": "09ca75ba79fcfe45cf04e3833c9cf5058aad7949dc23b2818e612dcc07f15ffb"
+      },
+      "verification": {
+        "label": "O2_growth_tamper_matrix_previous_entry_sha256_mismatch",
+        "returncode": 1,
+        "overall_status": "FAIL",
+        "summary_path": "artifacts/audit/verification/O2_growth_tamper_matrix_previous_entry_sha256_mismatch/audit_chain_verification_summary.json",
+        "stdout_sha256": "5f3f3ce408092503501c40cbb4c456a544efb40a4974bbfae6d1b34a2b351a51",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "observed_status": "FAIL",
+      "expected_failure_observed": true,
+      "scenario_passed": true
+    },
+    {
+      "scenario": "entry_sha256_mismatch",
+      "description": "Mutate the last entry entry_sha256 so entry hash verification fails.",
+      "expected_status": "FAIL",
+      "execution_status": "EXECUTED",
+      "skip_reason": null,
+      "tamper_operation": {
+        "tamper_type": "entry_sha256_mismatch",
+        "target_line_number": 4,
+        "field": "entry_sha256",
+        "original_value": "b9b7801437f2f2f14c9d90a233795a8f81ace73f6cb3edda1c77d105d2b6c871",
+        "tampered_value": "09b7801437f2f2f14c9d90a233795a8f81ace73f6cb3edda1c77d105d2b6c871"
+      },
+      "verification": {
+        "label": "O2_growth_tamper_matrix_entry_sha256_mismatch",
+        "returncode": 1,
+        "overall_status": "FAIL",
+        "summary_path": "artifacts/audit/verification/O2_growth_tamper_matrix_entry_sha256_mismatch/audit_chain_verification_summary.json",
+        "stdout_sha256": "2a7f74cb39d3d97edeb4d6007f9ce262b056a80cd9223e63f036af79eddad1e5",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "observed_status": "FAIL",
+      "expected_failure_observed": true,
+      "scenario_passed": true
+    },
+    {
+      "scenario": "record_path_missing_target",
+      "description": "Mutate the last entry record_path so the referenced record no longer exists.",
+      "expected_status": "FAIL",
+      "execution_status": "EXECUTED",
+      "skip_reason": null,
+      "tamper_operation": {
+        "tamper_type": "record_path_missing_target",
+        "target_line_number": 4,
+        "field": "record_path",
+        "original_value": "artifacts/audit/release_candidate_records/RC2/release_candidate_record.json",
+        "tampered_value": "artifacts/audit/release_candidate_records/RC2/release_candidate_record.json.tampered_missing"
+      },
+      "verification": {
+        "label": "O2_growth_tamper_matrix_record_path_missing_target",
+        "returncode": 1,
+        "overall_status": "FAIL",
+        "summary_path": "artifacts/audit/verification/O2_growth_tamper_matrix_record_path_missing_target/audit_chain_verification_summary.json",
+        "stdout_sha256": "85263871e197255ab9968164606615229c17f00cd829211887878ee6607d514b",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "observed_status": "FAIL",
+      "expected_failure_observed": true,
+      "scenario_passed": true
+    },
+    {
+      "scenario": "remove_first_line_truncation",
+      "description": "Remove the first line so the remaining chain starts with a non-null previous link.",
+      "expected_status": "FAIL",
+      "execution_status": "EXECUTED",
+      "skip_reason": null,
+      "tamper_operation": {
+        "tamper_type": "remove_first_line_truncation",
+        "target_line_number": 1,
+        "field": "line_removal",
+        "original_value": "8aad58cc1f15a3d9aacdcbd3b8f23a969f603e366afb7a5bac3cea3e30611779",
+        "tampered_value": "REMOVED"
+      },
+      "verification": {
+        "label": "O2_growth_tamper_matrix_remove_first_line_truncation",
+        "returncode": 1,
+        "overall_status": "FAIL",
+        "summary_path": "artifacts/audit/verification/O2_growth_tamper_matrix_remove_first_line_truncation/audit_chain_verification_summary.json",
+        "stdout_sha256": "4437339a3eb1a689975b290cf03d0e5b2a2ec28c7ea06be1af5afa140ff2062c",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "observed_status": "FAIL",
+      "expected_failure_observed": true,
+      "scenario_passed": true
+    },
+    {
+      "scenario": "swap_first_two_lines_order_break",
+      "description": "Swap the first two entries so ordering and chain semantics break.",
+      "expected_status": "FAIL",
+      "execution_status": "EXECUTED",
+      "skip_reason": null,
+      "tamper_operation": {
+        "tamper_type": "swap_first_two_lines_order_break",
+        "target_line_number": 1,
+        "field": "line_order",
+        "original_value": "1<->2",
+        "tampered_value": "2<->1"
+      },
+      "verification": {
+        "label": "O2_growth_tamper_matrix_swap_first_two_lines_order_break",
+        "returncode": 1,
+        "overall_status": "FAIL",
+        "summary_path": "artifacts/audit/verification/O2_growth_tamper_matrix_swap_first_two_lines_order_break/audit_chain_verification_summary.json",
+        "stdout_sha256": "78564832534cf69aaa1a191ce5219053a4fdd454a824a6b834e14827647471b9",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "observed_status": "FAIL",
+      "expected_failure_observed": true,
+      "scenario_passed": true
+    }
+  ],
+  "restore_phase": {
+    "label": "O2_growth_tamper_matrix_post_restore",
+    "returncode": 0,
+    "overall_status": "PASS",
+    "summary_path": "artifacts/audit/verification/O2_growth_tamper_matrix_post_restore/audit_chain_verification_summary.json",
+    "stdout_sha256": "52a5edce0992137fe4b8f85e2019c8bb3d7d2267c7832d2a1478f2a155a91c68",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "contract_rule": "previous_entry_sha256 must equal previous entry's entry_sha256",
+  "coverage": {
+    "total_defined_scenarios": 6,
+    "executed_scenarios": 6,
+    "skipped_scenarios": 0,
+    "passed_scenarios": 6,
+    "failed_scenarios": 0,
+    "scenario_names": [
+      "record_sha256_mismatch",
+      "previous_entry_sha256_mismatch",
+      "entry_sha256_mismatch",
+      "record_path_missing_target",
+      "remove_first_line_truncation",
+      "swap_first_two_lines_order_break"
+    ],
+    "executed_scenario_names": [
+      "record_sha256_mismatch",
+      "previous_entry_sha256_mismatch",
+      "entry_sha256_mismatch",
+      "record_path_missing_target",
+      "remove_first_line_truncation",
+      "swap_first_two_lines_order_break"
+    ],
+    "skipped_scenario_names": [],
+    "failed_scenario_names": []
+  },
+  "proof_passed": true,
+  "proof_status": "PASS"
+}

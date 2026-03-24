@@ -1,0 +1,22 @@
+{
+  "decision_version": 1,
+  "decision_type": "pre_execution_dual_authorization_gate",
+  "proof_label": "R19_detached_signer_dual_authorization_proof",
+  "scenario": "R19_detached_signer_dual_authorization_proof__dual_authorization_runtime",
+  "decision_time_utc": "2026-03-21T08:04:17+00:00",
+  "verification_mode": "base_time",
+  "checks": {
+    "signer_key_within_window": true,
+    "approver_a_key_within_window": true,
+    "approver_b_key_within_window": true,
+    "signer_public_key_exists": true,
+    "approver_a_public_key_exists": true,
+    "approver_b_public_key_exists": true
+  },
+  "derived": {
+    "signer_window_verdict": "within_window",
+    "approver_a_window_verdict": "within_window",
+    "approver_b_window_verdict": "within_window"
+  },
+  "gate_decision_allow": true
+}

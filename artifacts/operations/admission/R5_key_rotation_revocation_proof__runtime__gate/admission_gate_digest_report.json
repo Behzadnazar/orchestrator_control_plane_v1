@@ -1,0 +1,17 @@
+{
+  "generated_at_utc": "2026-03-20T11:27:52+00:00",
+  "label": "R5_key_rotation_revocation_proof__runtime__gate",
+  "decision": "ALLOW",
+  "artifacts": [
+    {
+      "path": "artifacts/operations/admission/R5_key_rotation_revocation_proof__runtime__gate/admission_gate_decision.json",
+      "size_bytes": 3590,
+      "sha256": "19f3c099e1065cb64d2161f9c0e25aa92146dffd45ad32835d305f42c75b7dea"
+    },
+    {
+      "path": "artifacts/operations/admission/R5_key_rotation_revocation_proof__runtime__gate/admission_gate_decision.md",
+      "size_bytes": 1420,
+      "sha256": "dd7570c6f1eb5cd01617d52509a8f27c110d0825669cf8ec2cca64000add9402"
+    }
+  ]
+}

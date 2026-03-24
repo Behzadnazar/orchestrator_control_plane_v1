@@ -1,0 +1,141 @@
+{
+  "version": 1,
+  "official_discovery_command": "python3 -m unittest discover -s tests -t . -p 'test_*.py' -v",
+  "suite_execution_order": [
+    "smoke",
+    "workflow",
+    "matrix",
+    "contracts",
+    "execution",
+    "queue",
+    "worker",
+    "dispatch",
+    "module",
+    "all"
+  ],
+  "suites": {
+    "smoke": {
+      "description": "Fast health and registration checks.",
+      "patterns": [
+        "test_smoke.py"
+      ],
+      "expected_modules": [
+        "tests.test_smoke"
+      ]
+    },
+    "workflow": {
+      "description": "End-to-end workflow and race-safe control plane checks.",
+      "patterns": [
+        "test_workflow_e2e.py"
+      ],
+      "expected_modules": [
+        "tests.test_workflow_e2e"
+      ]
+    },
+    "matrix": {
+      "description": "Schema, graph, and formal regression matrix checks.",
+      "patterns": [
+        "test_regression_matrix.py"
+      ],
+      "expected_modules": [
+        "tests.test_regression_matrix"
+      ]
+    },
+    "contracts": {
+      "description": "Registry, handler, and executor contract audit checks.",
+      "patterns": [
+        "test_contract_audit.py",
+        "test_suite_contracts.py"
+      ],
+      "expected_modules": [
+        "tests.test_contract_audit",
+        "tests.test_suite_contracts"
+      ]
+    },
+    "execution": {
+      "description": "Executor payload enforcement and handler result conformance checks.",
+      "patterns": [
+        "test_execution_contracts.py"
+      ],
+      "expected_modules": [
+        "tests.test_execution_contracts"
+      ]
+    },
+    "queue": {
+      "description": "Queue claim contract, state transition enforcement, and dead-letter normalization checks.",
+      "patterns": [
+        "test_queue_contracts.py"
+      ],
+      "expected_modules": [
+        "tests.test_queue_contracts"
+      ]
+    },
+    "worker": {
+      "description": "Persistent queue DB integration, worker loop enforcement, and dead-letter replay policy checks.",
+      "patterns": [
+        "test_worker_loop_runtime.py"
+      ],
+      "expected_modules": [
+        "tests.test_worker_loop_runtime"
+      ]
+    },
+    "dispatch": {
+      "description": "Real registry-to-worker wiring, persistent task dispatch, and end-to-end failure recovery checks.",
+      "patterns": [
+        "test_registry_dispatch_runtime.py"
+      ],
+      "expected_modules": [
+        "tests.test_registry_dispatch_runtime"
+      ]
+    },
+    "module": {
+      "description": "Real module contract locking, registry shape freeze, and CLI/worker entry integration checks.",
+      "patterns": [
+        "test_module_contracts.py"
+      ],
+      "expected_modules": [
+        "tests.test_module_contracts"
+      ]
+    },
+    "all": {
+      "description": "Full official regression suite.",
+      "patterns": [
+        "test_smoke.py",
+        "test_workflow_e2e.py",
+        "test_regression_matrix.py",
+        "test_contract_audit.py",
+        "test_suite_contracts.py",
+        "test_execution_contracts.py",
+        "test_queue_contracts.py",
+        "test_worker_loop_runtime.py",
+        "test_registry_dispatch_runtime.py",
+        "test_module_contracts.py"
+      ],
+      "expected_modules": [
+        "tests.test_smoke",
+        "tests.test_workflow_e2e",
+        "tests.test_regression_matrix",
+        "tests.test_contract_audit",
+        "tests.test_suite_contracts",
+        "tests.test_execution_contracts",
+        "tests.test_queue_contracts",
+        "tests.test_worker_loop_runtime",
+        "tests.test_registry_dispatch_runtime",
+        "tests.test_module_contracts"
+      ]
+    }
+  },
+  "stable_failure_categories": [
+    "IMPORT_ERROR",
+    "ASSERTION_FAILURE",
+    "VALIDATION_ERROR",
+    "BUSINESS_RULE_ERROR",
+    "GRAPH_INVARIANT_ERROR",
+    "REGISTRY_CONTRACT_ERROR",
+    "HANDLER_CONTRACT_ERROR",
+    "SUBPROCESS_ERROR",
+    "DATABASE_ERROR",
+    "TIMEOUT_ERROR",
+    "UNKNOWN_ERROR"
+  ]
+}

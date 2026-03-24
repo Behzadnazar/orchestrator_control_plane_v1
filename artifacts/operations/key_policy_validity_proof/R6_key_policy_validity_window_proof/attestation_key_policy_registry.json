@@ -1,0 +1,37 @@
+{
+  "registry_version": 2,
+  "registry_type": "attestation_key_policy_registry",
+  "generated_at_utc": "2026-03-20T11:33:34+00:00",
+  "keys": [
+    {
+      "key_id": "attestation-key-policy-active",
+      "public_key_path": "artifacts/operations/key_rotation_revocation_proof/R5_key_rotation_revocation_proof/attestation_public_v2.pem",
+      "public_key_sha256": "655e68820ed6d8cd54258927e881e295fb01ae544dc8f7e7afcf405823d9d53d",
+      "status": "active",
+      "revoked": false,
+      "usage": "attestation_signing",
+      "not_before": "2026-03-19T11:33:33+00:00",
+      "not_after": "2026-04-19T11:33:33+00:00"
+    },
+    {
+      "key_id": "attestation-key-policy-expired",
+      "public_key_path": "artifacts/operations/key_policy_validity_proof/R6_key_policy_validity_window_proof/attestation_public_expired.pem",
+      "public_key_sha256": "31c0b9b67eaf05739cec43b2f8516a259bf4d8c82332b888df8e9f4b929249ea",
+      "status": "active",
+      "revoked": false,
+      "usage": "attestation_signing",
+      "not_before": "2026-02-18T11:33:33+00:00",
+      "not_after": "2026-03-20T11:33:32+00:00"
+    },
+    {
+      "key_id": "attestation-key-policy-future",
+      "public_key_path": "artifacts/operations/key_policy_validity_proof/R6_key_policy_validity_window_proof/attestation_public_future.pem",
+      "public_key_sha256": "5bfac4631c82bc38b543e19f6f154a386df26409cfb79025b8627eb2a6817a21",
+      "status": "active",
+      "revoked": false,
+      "usage": "attestation_signing",
+      "not_before": "2026-03-20T11:33:34+00:00",
+      "not_after": "2026-04-19T11:33:33+00:00"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "ready": true,
+  "service": "detached_external_signer",
+  "key_id": "r15-attestation-key-ledger",
+  "fd_path": "/proc/self/fd/3",
+  "private_key_path_exists_after_detach": false,
+  "ledger_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/operations/detached_external_signer_audit_ledger_proof/R15_detached_signer_audit_ledger_proof/signing_ledger.jsonl"
+}

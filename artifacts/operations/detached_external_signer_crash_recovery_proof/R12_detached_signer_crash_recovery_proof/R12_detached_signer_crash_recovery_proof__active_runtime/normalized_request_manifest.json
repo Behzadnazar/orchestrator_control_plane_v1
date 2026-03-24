@@ -1,0 +1,27 @@
+{
+  "manifest_version": 1,
+  "proof_type": "detached_external_signer_crash_recovery_proof",
+  "proof_label": "R12_detached_signer_crash_recovery_proof",
+  "scenario": "R12_detached_signer_crash_recovery_proof__active_runtime",
+  "generated_at_utc": "2026-03-20T13:19:04+00:00",
+  "workflow": {
+    "name": "external_signed_runtime_gate",
+    "mode": "normal_active"
+  },
+  "verification_context": {
+    "verification_time_utc": "2026-03-20T13:18:58+00:00",
+    "verification_mode": "base_time"
+  },
+  "task": {
+    "task_id": "R12_detached_signer_crash_recovery_proof__active_runtime__task",
+    "task_type": "backend.write_file",
+    "priority": "high",
+    "payload": {
+      "target_path": "proof/R12_detached_signer_crash_recovery_proof__active_runtime/output.txt",
+      "content": "executed:R12_detached_signer_crash_recovery_proof__active_runtime"
+    }
+  },
+  "attestation": {
+    "public_key_path": "artifacts/operations/detached_external_signer_crash_recovery_proof/R12_detached_signer_crash_recovery_proof/public_keys/attestation_public_active.pem"
+  }
+}

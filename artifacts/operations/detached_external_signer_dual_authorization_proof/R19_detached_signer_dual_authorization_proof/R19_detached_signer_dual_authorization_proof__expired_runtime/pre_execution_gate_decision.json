@@ -1,0 +1,11 @@
+{
+  "decision_version": 1,
+  "decision_type": "pre_execution_key_policy_gate",
+  "proof_label": "R19_detached_signer_dual_authorization_proof",
+  "scenario": "R19_detached_signer_dual_authorization_proof__expired_runtime",
+  "verification_mode": "base_time",
+  "derived": {
+    "window_verdict": "expired"
+  },
+  "gate_decision_allow": false
+}

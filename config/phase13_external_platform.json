@@ -1,0 +1,32 @@
+{
+  "phase": "13",
+  "workflow_run_key": "phase13_external_v1",
+  "external_delivery_model": {
+    "primary_platform": "github_actions",
+    "secondary_platform": "azure_devops",
+    "repository_provider": "github",
+    "artifact_attestation_provider": "github_artifact_attestations",
+    "environment_governance_provider": "github_environments",
+    "secretless_auth_preference": "oidc_or_workload_identity_federation",
+    "fallback_secret_model": "environment_scoped_secrets_only"
+  },
+  "target_environments": [
+    "dev",
+    "test",
+    "staging",
+    "prod"
+  ],
+  "production_rules": {
+    "required_reviewers": 2,
+    "prevent_self_review": true,
+    "branch_policy": [
+      "main",
+      "releases/*"
+    ],
+    "require_attestation": true,
+    "require_signed_sbom": true,
+    "require_provenance": true,
+    "safe_rollout_mode": "ring_canary",
+    "rollback_required": true
+  }
+}

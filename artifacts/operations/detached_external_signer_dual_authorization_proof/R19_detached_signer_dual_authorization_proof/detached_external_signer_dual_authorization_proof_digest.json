@@ -1,0 +1,9 @@
+{
+  "proof_label": "R19_detached_signer_dual_authorization_proof",
+  "proof_status": "PASS",
+  "base_verification_time_utc": "2026-03-21T08:04:17+00:00",
+  "summary_json_path": "artifacts/operations/detached_external_signer_dual_authorization_proof/R19_detached_signer_dual_authorization_proof/detached_external_signer_dual_authorization_proof.json",
+  "summary_md_path": "artifacts/operations/detached_external_signer_dual_authorization_proof/R19_detached_signer_dual_authorization_proof/detached_external_signer_dual_authorization_proof.md",
+  "dual_authorization_safe": true,
+  "no_on_disk_private_keys_after_proof": true
+}

@@ -1,0 +1,26 @@
+{
+  "report_version": 1,
+  "report_type": "detached_external_signer_runtime_report",
+  "proof_label": "R11_2_denied_key_custody_cleanup_proof",
+  "scenario": "R11_2_denied_key_custody_cleanup_proof__active_runtime",
+  "status": "PASS",
+  "runtime_status_allow_executed": true,
+  "executed": true,
+  "execution_started_at_utc": "2026-03-20T13:11:55+00:00",
+  "execution_finished_at_utc": "2026-03-20T13:11:56+00:00",
+  "receipt_signature_verified": true,
+  "receipt_tamper_rejected": true,
+  "attestation_signature_verified": true,
+  "attestation_tamper_rejected": true,
+  "private_key_read_allowed_to_control_plane": false,
+  "detached_signer_ready": true,
+  "detached_signer_key_path_exists_after_detach": false,
+  "window_verdict": "within_window",
+  "notes": [
+    "Signing از طریق detached signer process انجام شد.",
+    "Signer بعد از startup فایل private key را unlink کرد و فقط FD باز را نگه داشت.",
+    "Control plane نتوانست private key را مستقیماً بخواند.",
+    "Receipt و attestation با public key verify شدند.",
+    "Tampered payloadها رد شدند."
+  ]
+}

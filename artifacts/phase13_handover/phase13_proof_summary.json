@@ -1,0 +1,111 @@
+{
+  "generated_at": "2026-03-24T10:15:35+00:00",
+  "passed": 17,
+  "proofs": [
+    {
+      "actual": true,
+      "expected": true,
+      "ok": true,
+      "proof_id": "boundary_exists"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "ok": true,
+      "proof_id": "repo_binding_exists"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "ok": true,
+      "proof_id": "environment_governance_exists"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "ok": true,
+      "proof_id": "secrets_config_exists"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "ok": true,
+      "proof_id": "supply_chain_exists"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "ok": true,
+      "proof_id": "rollout_exists"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "ok": true,
+      "proof_id": "observability_change_exists"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "ok": true,
+      "proof_id": "first_delivery_exists"
+    },
+    {
+      "actual": 2,
+      "expected": 2,
+      "ok": true,
+      "proof_id": "prod_required_reviewers"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "ok": true,
+      "proof_id": "prod_prevent_self_review"
+    },
+    {
+      "actual": "oidc_or_workload_identity_federation",
+      "expected": "oidc_or_workload_identity_federation",
+      "ok": true,
+      "proof_id": "secretless_auth_preferred"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "ok": true,
+      "proof_id": "attestation_required"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "ok": true,
+      "proof_id": "signed_sbom_required"
+    },
+    {
+      "actual": "ring_canary",
+      "expected": "ring_canary",
+      "ok": true,
+      "proof_id": "rollout_mode_ring_canary"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "ok": true,
+      "proof_id": "delivery_attestation_ready"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "ok": true,
+      "proof_id": "delivery_rollback_ready"
+    },
+    {
+      "actual": 1,
+      "detail": "{\"ok\": false, \"task_type\": \"external.configure_secrets_access\", \"error\": \"ValueError: path escapes project root: /tmp/phase13-evil.json\", \"ts\": \"2026-03-24T10:15:35+00:00\"}",
+      "expected": 1,
+      "ok": true,
+      "proof_id": "path_escape_denied"
+    }
+  ],
+  "total": 17,
+  "workflow_run_key": "phase13_external_v1"
+}

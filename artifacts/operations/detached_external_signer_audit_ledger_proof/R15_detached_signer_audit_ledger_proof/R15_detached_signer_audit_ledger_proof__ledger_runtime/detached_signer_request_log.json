@@ -1,0 +1,37 @@
+{
+  "request_a": {
+    "ok": true,
+    "action": "sign",
+    "request_id": "request_a",
+    "payload_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/operations/detached_external_signer_audit_ledger_proof/R15_detached_signer_audit_ledger_proof/R15_detached_signer_audit_ledger_proof__ledger_runtime/allowed_payload_a.json",
+    "signature_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/operations/detached_external_signer_audit_ledger_proof/R15_detached_signer_audit_ledger_proof/R15_detached_signer_audit_ledger_proof__ledger_runtime/allowed_signature_a.sig",
+    "ledger_entry_index": 1,
+    "ledger_entry_hash": "96c186c70d7d05c71fc37e19a7fe3510a1838bfa7af2c0aaf06d6e7ba1f338e2",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "signature_exists": true
+  },
+  "request_b": {
+    "ok": true,
+    "action": "sign",
+    "request_id": "request_b",
+    "payload_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/operations/detached_external_signer_audit_ledger_proof/R15_detached_signer_audit_ledger_proof/R15_detached_signer_audit_ledger_proof__ledger_runtime/allowed_payload_b.json",
+    "signature_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/operations/detached_external_signer_audit_ledger_proof/R15_detached_signer_audit_ledger_proof/R15_detached_signer_audit_ledger_proof__ledger_runtime/allowed_signature_b.sig",
+    "ledger_entry_index": 2,
+    "ledger_entry_hash": "96cd991854c63cdf78d3efc49bd5dcac753b63eeb4cbbf937784e2bc86de2de0",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "signature_exists": true
+  },
+  "replay_request": {
+    "ok": false,
+    "action": "sign",
+    "request_id": "request_a",
+    "payload_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/operations/detached_external_signer_audit_ledger_proof/R15_detached_signer_audit_ledger_proof/R15_detached_signer_audit_ledger_proof__ledger_runtime/replay_payload.json",
+    "signature_path": "/home/behzad/Schreibtisch/ai-dev-system/orchestrator_control_plane_v1/artifacts/operations/detached_external_signer_audit_ledger_proof/R15_detached_signer_audit_ledger_proof/R15_detached_signer_audit_ledger_proof__ledger_runtime/replay_payload.sig",
+    "policy_reason": "replay_request_id",
+    "signature_exists": false
+  }
+}

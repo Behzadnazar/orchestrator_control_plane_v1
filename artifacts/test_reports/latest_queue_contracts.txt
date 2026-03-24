@@ -1,0 +1,7 @@
+phase=J.5
+successful=True
+duplicate_claim_code=DUPLICATE_CLAIM
+invalid_transition_code=INVALID_STATE_TRANSITION
+dead_letter_count=1
+final_status=dead_lettered
+malformed_insert_code=MISSING_QUEUE_ITEM_ID
