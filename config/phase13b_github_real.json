@@ -39,9 +39,7 @@
       "config",
       "scripts",
       ".github/workflows",
-      "artifacts/phase13_handover",
-      "artifacts/phase13_freeze",
-      "artifacts/runs/phase13_external_v1"
+      ".github/CODEOWNERS"
     ],
     "exclude_globs": [
       "**/__pycache__/**",
